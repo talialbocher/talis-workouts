@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-13 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirteen_workout.jsx`.
+14 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_fourteen_workout.jsx`.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -46,7 +46,7 @@
    - ~~March in place~~ → **High knees**
    - ~~Step touch~~ → **Low-impact skaters**
 6. **Push-up/plank targets:** Should reflect what the user can actually complete (dropping to knees mid-set is valid pacing, not failure) — do not set aspirational-only numbers
-7. **Hamstring care:** Recurring sensitivity — avoid stacking too much hip-hinge volume (RDL + lunges + hip thrust) in back-to-back sessions without adequate stretching in cooldowns
+7. **Hamstring care:** Recurring sensitivity — avoid stacking too much hip-hinge volume (RDL + lunges + hip thrust) in back-to-back sessions without adequate stretching in cooldowns. The standing hamstring stretch belongs in the **Monday, Tuesday, Thursday, and Friday** cooldowns/sessions — Friday (RDL day) especially. ⚠️ Weeks 13–14 drifted: the Thursday stretch was dropped in the reset and Friday's cooldown lost it too — restore both in week 15.
 8. **Tempo/technique over raw weight increases:** When 12 lb was too heavy for overhead press and bicep curl, the fix was tempo training (4-count up/4-count down) and alternating-arm curls at 8 lb — NOT simply forcing the heavier weight
 
 ## Chronological Program Evolution (Weeks 1–13)
@@ -149,3 +149,13 @@ Delivered as `week_fourteen_workout.jsx`, matching the real weeks' structure (Sv
 - User strained a muscle during **lateral lunge** (Wednesday session inquiry) — reported as intermittent pain only under load, not constant, no swelling mentioned. **Advised:** avoid direct adductor/inner-thigh loading (lateral lunge, wide-stance sumo squat) until resolved; monitor for sharp pain, swelling, or instability as red flags requiring medical attention.
 - Bent-over row (removed in week 13 reset) and Arnold press (removed in week 13 reset) are candidates for reintroduction once current volume feels sustainable and the leg strain has resolved.
 - Consider whether lateral lunge should be modified, reduced in load, or resequenced (e.g., not paired with reverse lunge) given the strain — worth flagging to the user before simply resuming.
+
+## Program Review Findings (July 2026) — Apply When Building Week 15+
+
+A review of weeks 1–14 found the overall structure and feedback-driven adjustments sound, but the week 13 reset overshot in three ways that week 14 inherited. Address these when building the next week:
+
+1. **Restore pulling work (highest priority).** Since the week 13 reset removed bent-over row (and renegade row disappeared with it), weeks 13–14 contain **zero pulling exercises** — both upper-body days are all push (push-up, overhead press, triceps) plus biceps. For a desk worker this risks postural/shoulder imbalance if it continues. Until the full bent-over row fits the time budget again, include at minimum a cheap pull — e.g. **band pull-aparts 2 × 12–15** (already in the warm-up repertoire, ~90 sec) or a 2-set row on Wednesday.
+2. **Reinstate hamstring stretches on Thursday and Friday** (see standing preference #7). The Thursday standing hamstring stretch (present weeks 10–12) and the Friday cooldown hamstring stretch were both lost in the week 13 reset. Friday is RDL day — it needs one most.
+3. **Resolve the finisher/calorie mismatch.** The Monday and Friday cardio finishers (2 min, later 90 sec of skaters) were silently removed in the week 13 reset, but the files still display "~95–105 cal" and the restoration explicitly targeted ~100 cal. Either restore a short (60–90 sec) finisher, or keep them removed for time and correct the calorie label — don't leave the two inconsistent.
+4. **Plan lower-body progression via technique, not rep-creep.** Goblet squat and hip thrust have been static at 3 × 15 @ 12 lb since week 9. With the 12 lb ceiling, adding reps is the only lever being used, and longer sets are what caused the week 13 time blowout. Apply the same fix that worked for upper body (preference #8): **paused or 1.5-rep goblet squats, tempo work, or single-leg hip thrust progressions** — once the leg strain is resolved.
+5. **Keep this file in sync with the artifacts.** Update the deliverables count and the evolution log whenever a new week file is added, and document intentional removals (like the finishers) so they aren't mistaken for accidental losses.

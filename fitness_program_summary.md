@@ -107,48 +107,42 @@ Retro feedback: Monday and Wednesday both running ~30 min (over budget). Monday 
 - User then flagged Monday still felt too easy with only one superset → **Superset B reinstated** (reverse lunge + lateral lunge back to 3×12), calf raise remains standalone at 2 rounds
 - Bent-over row and Arnold press remain removed for now (time budget), to be reintroduced once the current version feels sustainable
 
-### Week 14 (Reps made explicit + lateral lunge removed)
+### Week 14 (Injury substitutions + small upper-body progression)
 
-User requested: (1) show the **number of repetitions for each exercise** starting week 14 and going forward. Also actioned the open leg-strain thread by removing the lateral lunge.
+Built directly from the real week-13 file (all weeks 1–13 `.jsx` are now in the repo). Rep/time/hold counts are shown on every exercise (they always were, via the `sets` field — this week just carries that forward from the real week-13 baseline). Actioned the open leg-strain thread with two substitutions.
 
-**Changes:**
-- **Every exercise now carries an explicit rep / time / hold count** (see table below). This is now the standard going forward.
-- **Lateral lunge removed** (open adductor/inner-thigh strain). Replaced in Monday Superset B with a **stationary split squat** (8 lb) — sagittal plane, no direct inner-thigh loading. Wide-stance sumo squat continues to be avoided for the same reason.
-- Bent-over row and Arnold press **remain removed** (time budget), pending reintroduction once volume feels sustainable and the strain has fully resolved.
-- All standing preferences held: max 3 sets, 8/12 lb only, ~20–25 min incl. warm-up + cooldown, high knees / low-impact skaters, tempo over load (8 lb overhead press & bicep curl), hamstring care (RDL on Fri kept apart from Mon lunges; standing hamstring stretch in Mon/Tue/Thu/Fri cooldowns).
+**Changes vs. week 13:**
+- **Lateral lunge removed** (open adductor/inner-thigh strain) → **stationary split squat (8 lb), 3 × 10/leg** in Monday Superset B. Sagittal plane, no sideways load on the injured adductor.
+- **Sumo squat removed** (wide stance loads the same inner-thigh muscles) → **narrow-stance goblet squat (12 lb), 3 × 16** in Friday Superset B. Flagged for user confirmation.
+- Small upper-body nudges (as week 13's Sunday note anticipated): Wed knee push-up 10→11, overhead press 14→15, alt bicep curl 14→15, plank 25→28 sec. Lower body held at week-13 loads given the strain.
+- Bent-over row and Arnold press **remain removed** (time budget); reintroduce once the strain resolves.
+- Standing preferences held: max 3 sets, 8/12 lb only, ~22–25 min, high knees warm-ups, tempo (8 lb press/curl), hamstring care (RDL Fri kept apart from Mon lunges; hamstring stretch in cooldowns).
 
 **Week 14 rep scheme:**
 
-| Day | Exercise | Group | Reps |
+| Day | Exercise | Group | Sets × reps |
 |---|---|---|---|
-| Mon | Goblet squat (12 lb) | Superset A | 3 × 12 |
-| Mon | Glute bridge | Superset A | 3 × 15 |
-| Mon | Reverse lunge (8 lb) | Superset B | 3 × 10 / leg |
-| Mon | Stationary split squat (8 lb) — *replaces lateral lunge* | Superset B | 3 × 10 / leg |
-| Mon | Calf raise | Standalone | 2 × 20 |
-| Tue | Brisk walk / cycling | Standalone | 12 min steady |
-| Tue | High knees | Finisher | 4 × 30 sec |
-| Tue | Low-impact skaters | Finisher | 4 × 30 sec |
-| Wed | Overhead press (8 lb, 4-count tempo) | Superset A | 3 × 10 |
-| Wed | Bicep curl (8 lb, alternating) | Superset A | 3 × 10 / arm |
-| Wed | Overhead tricep extension (8 lb) | Superset B | 3 × 12 |
-| Wed | Tricep kickback (8 lb) | Superset B | 3 × 12 / arm |
-| Wed | Dead bug | Core | 2 × 10 / side |
-| Wed | Plank hold | Core | 2 × 25 sec |
-| Thu | 90/90 hip stretch | Mobility | 60 sec / side |
-| Thu | Pigeon pose | Mobility | 60 sec / side |
-| Thu | Standing hamstring stretch | Mobility | 45 sec / leg |
-| Thu | Cat-cow | Mobility | 10 slow reps |
-| Thu | Hip flexor stretch | Mobility | 45 sec / side |
-| Fri | Goblet squat (12 lb) | Superset A | 3 × 12 |
-| Fri | Push-up (knees or full) | Superset A | 3 × 8 |
-| Fri | Romanian deadlift (12 lb) | Superset B | 3 × 10 |
-| Fri | Close-grip push-up | Superset B | 2 × 8 |
-| Fri | Cardio finisher (high knees / skaters) | Finisher | 90 sec |
+| Mon | Goblet squat – 12 lb | Superset A | 3 × 15 |
+| Mon | Hip thrust – 12 lb | Superset A | 3 × 15 |
+| Mon | Reverse lunge – 8 lb | Superset B | 3 × 12 / leg |
+| Mon | Split squat – 8 lb — *replaces lateral lunge* | Superset B | 3 × 10 / leg |
+| Mon | Calf raise (single leg) | Standalone | 2 × 15 / side |
+| Tue | Brisk walk / cycling (or dance / swim) | — | 20 min |
+| Wed | Knee push-up (→ full) | Superset A | 3 × 11 |
+| Wed | Overhead press – 8 lb (tempo) | Superset A | 3 × 15 |
+| Wed | Alternating bicep curl – 8 lb | Superset B | 3 × 15 / arm |
+| Wed | Overhead tricep extension – 8 lb | Superset B | 3 × 12 |
+| Wed | Dead bug | Standalone | 2 × 16 / side |
+| Wed | Plank hold | Standalone | 2 × 28 sec |
+| Thu | Cat-cow / Pigeon / 90-90 / tricep stretch / spinal twist / legs-up-wall | Mobility | holds (see file) |
+| Fri | Romanian deadlift – 12 lb | Superset A | 3 × 14 |
+| Fri | Close-grip push-up (or knee) | Superset A | 3 × 10 |
+| Fri | Goblet squat – 12 lb (narrow) — *replaces sumo squat* | Superset B | 3 × 16 |
+| Fri | Pallof press (resistance band) | Superset B | 3 × 14 / side |
 
-Delivered as `week_fourteen_workout.jsx` (same interactive format: day tabs, SVG figures, YouTube links, superset pills, checkboxes) with the rep count displayed on every exercise card.
+Delivered as `week_fourteen_workout.jsx`, matching the real weeks' structure (SvgWrap/Gnd/Hd/Ln figures, ILLUS/VIDEO/WARMUP_VIDEO maps, day tabs, superset pills, checkboxes, per-exercise `sets` count).
 
-> Note: prior weeks' `.jsx` files were not present in the repo, so week 14's exercise composition was reconstructed from this summary's documented week-13 state. Verify exact exercise selection against the real week-13 file.
+> Confirm with the user: (1) is the strain healed enough to keep lateral lunge / sumo squat, or hold the substitutions; (2) the split squat and narrow goblet squat substitutions.
 
 ## Open Threads / Next Steps for Week 14+
 

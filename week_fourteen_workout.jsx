@@ -1,687 +1,453 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-/**
- * Week 14 Workout — Interactive Program
- *
- * NEW THIS WEEK:
- *  - Explicit rep (or time/hold) count shown for EVERY exercise.
- *  - Lateral lunge REMOVED (open adductor/inner-thigh strain) and replaced
- *    with a stationary split squat — sagittal plane, no direct inner-thigh
- *    loading. Wide-stance sumo squat also avoided for the same reason.
- *
- * Standing preferences respected:
- *  - Max 3 sets; only 8 lb / 12 lb dumbbells; ~20–25 min incl. warm-up + cooldown.
- *  - High knees (not march in place); low-impact skaters (not step touch).
- *  - Hamstring care: RDL (Fri) and lunges (Mon) kept on separate days; standing
- *    hamstring stretch in Mon/Tue/Thu/Fri cooldowns.
- *  - Tempo over load: overhead press & bicep curl stay at 8 lb with 4-count tempo /
- *    alternating arms rather than forcing 12 lb.
- *  - Bent-over row and Arnold press remain removed (time budget), pending
- *    reintroduction once volume feels sustainable.
- */
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-const yt = (q) =>
-  `https://www.youtube.com/results?search_query=${encodeURIComponent(
-    q + " proper form tutorial"
-  )}`;
-
-const SUPERSET_COLORS = {
-  A: { bg: "#e0f2fe", text: "#0369a1", border: "#7dd3fc" },
-  B: { bg: "#fef3c7", text: "#b45309", border: "#fcd34d" },
-  Core: { bg: "#ede9fe", text: "#6d28d9", border: "#c4b5fd" },
-  Finisher: { bg: "#fee2e2", text: "#b91c1c", border: "#fca5a5" },
-  Solo: { bg: "#f1f5f9", text: "#475569", border: "#cbd5e1" },
-};
-
-// Simple, reusable stick-figure poses (kept intentionally minimal & legible).
-function StickFigure({ pose = "stand", done }) {
-  const stroke = done ? "#cbd5e1" : "#0f172a";
-  const common = {
-    stroke,
-    strokeWidth: 4,
-    strokeLinecap: "round",
-    fill: "none",
-  };
-  const head = { fill: done ? "#cbd5e1" : "#0f172a" };
-
-  const poses = {
-    stand: (
-      <>
-        <circle cx="50" cy="18" r="9" {...head} />
-        <line x1="50" y1="27" x2="50" y2="60" {...common} />
-        <line x1="50" y1="35" x2="34" y2="50" {...common} />
-        <line x1="50" y1="35" x2="66" y2="50" {...common} />
-        <line x1="50" y1="60" x2="40" y2="88" {...common} />
-        <line x1="50" y1="60" x2="60" y2="88" {...common} />
-      </>
-    ),
-    squat: (
-      <>
-        <circle cx="50" cy="20" r="9" {...head} />
-        <line x1="50" y1="29" x2="50" y2="52" {...common} />
-        <line x1="50" y1="36" x2="34" y2="30" {...common} />
-        <line x1="50" y1="36" x2="66" y2="30" {...common} />
-        <line x1="50" y1="52" x2="36" y2="66" {...common} />
-        <line x1="36" y1="66" x2="40" y2="88" {...common} />
-        <line x1="50" y1="52" x2="64" y2="66" {...common} />
-        <line x1="64" y1="66" x2="60" y2="88" {...common} />
-      </>
-    ),
-    lunge: (
-      <>
-        <circle cx="50" cy="18" r="9" {...head} />
-        <line x1="50" y1="27" x2="50" y2="55" {...common} />
-        <line x1="50" y1="35" x2="38" y2="48" {...common} />
-        <line x1="50" y1="35" x2="62" y2="48" {...common} />
-        <line x1="50" y1="55" x2="34" y2="70" {...common} />
-        <line x1="34" y1="70" x2="34" y2="88" {...common} />
-        <line x1="50" y1="55" x2="68" y2="72" {...common} />
-        <line x1="68" y1="72" x2="62" y2="88" {...common} />
-      </>
-    ),
-    press: (
-      <>
-        <circle cx="50" cy="24" r="9" {...head} />
-        <line x1="50" y1="33" x2="50" y2="66" {...common} />
-        <line x1="50" y1="40" x2="36" y2="20" {...common} />
-        <line x1="50" y1="40" x2="64" y2="20" {...common} />
-        <line x1="50" y1="66" x2="42" y2="90" {...common} />
-        <line x1="50" y1="66" x2="58" y2="90" {...common} />
-        <rect x="30" y="14" width="12" height="6" rx="2" fill={stroke} />
-        <rect x="58" y="14" width="12" height="6" rx="2" fill={stroke} />
-      </>
-    ),
-    row: (
-      <>
-        <circle cx="30" cy="30" r="9" {...head} />
-        <line x1="38" y1="34" x2="72" y2="46" {...common} />
-        <line x1="54" y1="40" x2="54" y2="26" {...common} />
-        <line x1="72" y1="46" x2="66" y2="72" {...common} />
-        <line x1="72" y1="46" x2="80" y2="72" {...common} />
-        <rect x="50" y="20" width="10" height="6" rx="2" fill={stroke} />
-      </>
-    ),
-    plank: (
-      <>
-        <circle cx="20" cy="52" r="9" {...head} />
-        <line x1="28" y1="54" x2="82" y2="66" {...common} />
-        <line x1="34" y1="55" x2="30" y2="74" {...common} />
-        <line x1="82" y1="66" x2="80" y2="82" {...common} />
-        <line x1="82" y1="66" x2="72" y2="82" {...common} />
-      </>
-    ),
-    bridge: (
-      <>
-        <circle cx="80" cy="60" r="9" {...head} />
-        <path d="M28 78 Q50 40 72 60" {...common} />
-        <line x1="28" y1="60" x2="28" y2="80" {...common} />
-        <line x1="36" y1="58" x2="30" y2="78" {...common} />
-      </>
-    ),
-    stretch: (
-      <>
-        <circle cx="34" cy="26" r="9" {...head} />
-        <line x1="34" y1="35" x2="50" y2="60" {...common} />
-        <line x1="42" y1="47" x2="70" y2="40" {...common} />
-        <line x1="50" y1="60" x2="78" y2="66" {...common} />
-        <line x1="50" y1="60" x2="46" y2="88" {...common} />
-      </>
-    ),
-    cardio: (
-      <>
-        <circle cx="50" cy="16" r="9" {...head} />
-        <line x1="50" y1="25" x2="50" y2="55" {...common} />
-        <line x1="50" y1="33" x2="34" y2="22" {...common} />
-        <line x1="50" y1="33" x2="66" y2="46" {...common} />
-        <line x1="50" y1="55" x2="38" y2="70" {...common} />
-        <line x1="38" y1="70" x2="44" y2="88" {...common} />
-        <line x1="50" y1="55" x2="60" y2="60" {...common} />
-        <line x1="60" y1="60" x2="60" y2="82" {...common} />
-      </>
-    ),
-  };
-
+const BG = "var(--color-background-secondary)";
+function SvgWrap({ children }) {
+  return <svg viewBox="0 0 100 85" style={{ width: "100%", display: "block" }} fill="none">{children}</svg>;
+}
+function Gnd({ y = 79 }) {
+  return <line x1="5" y1={y} x2="95" y2={y} stroke="currentColor" strokeOpacity={0.25} strokeWidth={1} />;
+}
+function Hd({ cx, cy, r = 6 }) {
+  return <circle cx={cx} cy={cy} r={r} fill={BG} stroke="currentColor" strokeWidth={1.5} />;
+}
+function Ln({ p, w = 2 }) {
+  const pts = p.map(([x, y]) => `${x},${y}`).join(" ");
+  return <polyline points={pts} stroke="currentColor" strokeWidth={w} fill="none" strokeLinecap="round" strokeLinejoin="round" />;
+}
+function PlayIcon() {
   return (
-    <svg viewBox="0 0 100 100" width="72" height="72" aria-hidden="true">
-      {poses[pose] || poses.stand}
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ display: "inline", marginRight: 4, verticalAlign: "middle" }}>
+      <circle cx="6" cy="6" r="5.5" stroke="currentColor" strokeWidth="1" />
+      <polygon points="4.5,3.5 4.5,8.5 9,6" fill="currentColor" />
     </svg>
   );
 }
 
-// ---------------------------------------------------------------------------
-// Program data — Week 14
-// ---------------------------------------------------------------------------
-
-const PROGRAM = {
-  Mon: {
-    focus: "Lower Body Strength",
-    calories: "≈ 105 cal",
-    time: "≈ 23 min",
-    warmup: [
-      { name: "High knees", detail: "2 × 30 sec", pose: "cardio" },
-      { name: "Bodyweight squats", detail: "1 × 10", pose: "squat" },
-      { name: "Hip circles", detail: "8 each direction", pose: "stand" },
-      { name: "Leg swings", detail: "10 per leg", pose: "stand" },
-    ],
-    exercises: [
-      {
-        group: "A",
-        name: "Goblet squat (12 lb)",
-        reps: "3 × 12",
-        pose: "squat",
-        note: "Chest tall, sit back into the heels.",
-      },
-      {
-        group: "A",
-        name: "Glute bridge",
-        reps: "3 × 15",
-        pose: "bridge",
-        note: "Squeeze glutes at the top for 1 count.",
-      },
-      {
-        group: "B",
-        name: "Reverse lunge (8 lb)",
-        reps: "3 × 10 per leg",
-        pose: "lunge",
-        note: "Step straight back — sagittal plane only.",
-      },
-      {
-        group: "B",
-        name: "Stationary split squat (8 lb)",
-        reps: "3 × 10 per leg",
-        pose: "lunge",
-        note: "Replaces lateral lunge — no inner-thigh loading while the strain heals.",
-      },
-      {
-        group: "Solo",
-        name: "Calf raise",
-        reps: "2 × 20",
-        pose: "stand",
-        note: "Slow lower, full stretch at the bottom.",
-      },
-    ],
-    cooldown: [
-      "Standing hamstring stretch — 30 sec per leg",
-      "Hip flexor stretch — 30 sec per side",
-      "Quad stretch — 30 sec per leg",
-    ],
-  },
-
-  Tue: {
-    focus: "Low-Impact Cardio",
-    calories: "≈ 110 cal",
-    time: "≈ 20 min",
-    warmup: [
-      { name: "Ankle rolls", detail: "10 each", pose: "stand" },
-      { name: "Arm swings", detail: "10 each", pose: "stand" },
-    ],
-    exercises: [
-      {
-        group: "Solo",
-        name: "Brisk walk / cycling",
-        reps: "12 min steady (choose one)",
-        pose: "cardio",
-        note: "Conversational-but-working pace.",
-      },
-      {
-        group: "Finisher",
-        name: "High knees",
-        reps: "4 × 30 sec (30 sec rest)",
-        pose: "cardio",
-        note: "Replaces march in place.",
-      },
-      {
-        group: "Finisher",
-        name: "Low-impact skaters",
-        reps: "4 × 30 sec (30 sec rest)",
-        pose: "cardio",
-        note: "Replaces step touch. Stay light on the feet.",
-      },
-    ],
-    cooldown: [
-      "Standing hamstring stretch — 30 sec per leg",
-      "Calf stretch — 30 sec per leg",
-    ],
-  },
-
-  Wed: {
-    focus: "Upper Body + Core",
-    calories: "≈ 95 cal",
-    time: "≈ 24 min",
-    warmup: [
-      { name: "Arm circles", detail: "10 each direction", pose: "stand" },
-      { name: "Band pull-apart", detail: "1 × 12", pose: "row" },
-      { name: "High knees", detail: "1 × 30 sec", pose: "cardio" },
-    ],
-    exercises: [
-      {
-        group: "A",
-        name: "Overhead press (8 lb, 4-count tempo)",
-        reps: "3 × 10",
-        pose: "press",
-        note: "Tempo over load — 4 up / 4 down.",
-      },
-      {
-        group: "A",
-        name: "Bicep curl (8 lb, alternating)",
-        reps: "3 × 10 per arm",
-        pose: "stand",
-        note: "Alternating arms, controlled.",
-      },
-      {
-        group: "B",
-        name: "Overhead tricep extension (8 lb)",
-        reps: "3 × 12",
-        pose: "press",
-        note: "Added week 12 for underarm work.",
-      },
-      {
-        group: "B",
-        name: "Tricep kickback (8 lb)",
-        reps: "3 × 12 per arm",
-        pose: "row",
-        note: "Hinge slightly, elbow pinned to side.",
-      },
-      {
-        group: "Core",
-        name: "Dead bug",
-        reps: "2 × 10 per side",
-        pose: "plank",
-        note: "Low back stays flat to the floor.",
-      },
-      {
-        group: "Core",
-        name: "Plank hold",
-        reps: "2 × 25 sec",
-        pose: "plank",
-        note: "Dropping to knees mid-set is valid pacing.",
-      },
-    ],
-    cooldown: [
-      "Chest / shoulder stretch — 30 sec per side",
-      "Overhead tricep stretch — 30 sec per side",
-      "Cat-cow — 8 slow reps",
-    ],
-  },
-
-  Thu: {
-    focus: "Mobility + Recovery",
-    calories: "≈ 45 cal",
-    time: "≈ 20 min",
-    warmup: [{ name: "Gentle marching / breathing", detail: "1 min", pose: "stand" }],
-    exercises: [
-      {
-        group: "Solo",
-        name: "90/90 hip stretch",
-        reps: "60 sec per side (hold)",
-        pose: "stretch",
-        note: "Ease deeper on each exhale.",
-      },
-      {
-        group: "Solo",
-        name: "Pigeon pose",
-        reps: "60 sec per side (hold)",
-        pose: "stretch",
-        note: "Prop a cushion under the hip if needed.",
-      },
-      {
-        group: "Solo",
-        name: "Standing hamstring stretch",
-        reps: "45 sec per leg (hold)",
-        pose: "stretch",
-        note: "Hamstring care — never bounce.",
-      },
-      {
-        group: "Solo",
-        name: "Cat-cow",
-        reps: "10 slow reps",
-        pose: "plank",
-        note: "Move with the breath.",
-      },
-      {
-        group: "Solo",
-        name: "Hip flexor stretch",
-        reps: "45 sec per side (hold)",
-        pose: "stretch",
-        note: "Tuck the pelvis to deepen.",
-      },
-    ],
-    cooldown: ["Standing hamstring stretch — 30 sec per leg", "Child's pose — 60 sec"],
-  },
-
-  Fri: {
-    focus: "Full Body Strength",
-    calories: "≈ 105 cal",
-    time: "≈ 24 min",
-    warmup: [
-      { name: "High knees", detail: "2 × 30 sec", pose: "cardio" },
-      { name: "Low-impact skaters", detail: "1 × 30 sec", pose: "cardio" },
-      { name: "Bodyweight squats", detail: "1 × 10", pose: "squat" },
-    ],
-    exercises: [
-      {
-        group: "A",
-        name: "Goblet squat (12 lb)",
-        reps: "3 × 12",
-        pose: "squat",
-        note: "Drive through mid-foot.",
-      },
-      {
-        group: "A",
-        name: "Push-up (knees or full)",
-        reps: "3 × 8",
-        pose: "plank",
-        note: "Knee push-ups are not a fallback — valid choice.",
-      },
-      {
-        group: "B",
-        name: "Romanian deadlift (12 lb)",
-        reps: "3 × 10",
-        pose: "row",
-        note: "Hamstring care — hold reps steady, soft knees, flat back.",
-      },
-      {
-        group: "B",
-        name: "Close-grip push-up",
-        reps: "2 × 8",
-        pose: "plank",
-        note: "Elbows tucked; targets triceps.",
-      },
-      {
-        group: "Finisher",
-        name: "Cardio finisher (high knees / skaters)",
-        reps: "90 sec (alternate 20 sec each)",
-        pose: "cardio",
-        note: "Shortened finisher to hold the time budget.",
-      },
-    ],
-    cooldown: [
-      "Standing hamstring stretch — 30 sec per leg",
-      "Pigeon pose — 45 sec per side",
-      "Chest stretch — 30 sec per side",
-    ],
-  },
-
-  Sat: {
-    focus: "Rest",
-    calories: "—",
-    time: "—",
-    warmup: [],
-    exercises: [
-      {
-        group: "Solo",
-        name: "Optional gentle walk",
-        reps: "20–30 min easy (optional)",
-        pose: "stand",
-        note: "Recovery only — keep it light.",
-      },
-    ],
-    cooldown: [],
-  },
-
-  Sun: {
-    focus: "Rest — Meal Prep",
-    calories: "—",
-    time: "—",
-    warmup: [],
-    exercises: [
-      {
-        group: "Solo",
-        name: "Rest & meal prep",
-        reps: "No training",
-        pose: "stand",
-        note: "Pescatarian, intuitive eating — prep for the week ahead.",
-      },
-    ],
-    cooldown: [],
-  },
+const WARMUP_VIDEO = {
+  "High knees": "https://www.youtube.com/results?search_query=high+knees+low+impact+warm+up+tutorial",
+  "Hip circles": "https://www.youtube.com/results?search_query=hip+circles+warm+up+mobility+tutorial",
+  "Slow walk": "https://www.youtube.com/results?search_query=walking+warm+up+technique",
+  "Arm swings": "https://www.youtube.com/results?search_query=arm+swings+warm+up+tutorial",
+  "Ankle rolls": "https://www.youtube.com/results?search_query=ankle+rolls+warm+up+mobility",
+  "Arm circles": "https://www.youtube.com/results?search_query=arm+circles+warm+up+shoulder+mobility",
+  "Cat-cow": "https://www.youtube.com/results?search_query=cat+cow+stretch+form+tutorial+beginner",
+  "Wrist circles": "https://www.youtube.com/results?search_query=wrist+circles+warm+up+mobility",
+  "Leg swings": "https://www.youtube.com/results?search_query=leg+swings+warm+up+hip+mobility+tutorial",
+  "Goblet squat hold": "https://www.youtube.com/results?search_query=goblet+squat+hold+warm+up+tutorial",
+  "Standing hamstring sweep": "https://www.youtube.com/results?search_query=standing+hamstring+leg+swing+warm+up+tutorial",
+  "Tricep warm-up circles": "https://www.youtube.com/results?search_query=tricep+arm+circles+warm+up+tutorial",
 };
 
-const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const ILLUS = {
+  "Goblet squat – 12 lb": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={13} />
+      <Ln p={[[50,19],[48,43]]} /><Ln p={[[48,43],[34,62],[36,79]]} /><Ln p={[[48,43],[62,61],[60,79]]} />
+      <circle cx={50} cy={26} r={5} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[50,28],[44,36]]} w={1.5} /><Ln p={[[50,28],[56,36]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Hip thrust – 12 lb": () => (
+    <SvgWrap><Gnd y={74} />
+      <rect x="6" y="46" width="22" height="14" rx="3" stroke="currentColor" strokeOpacity={0.4} strokeWidth={1.5} />
+      <Hd cx={88} cy={68} r={5} /><Ln p={[[80,70],[52,42]]} /><Ln p={[[52,42],[28,58],[16,58]]} />
+      <Ln p={[[68,70],[64,74]]} w={1.5} /><Ln p={[[56,70],[52,74]]} w={1.5} />
+      <circle cx={60} cy={42} r={5} stroke="currentColor" strokeWidth={1.5} />
+    </SvgWrap>
+  ),
+  "Reverse lunge – 8 lb": () => (
+    <SvgWrap><Gnd /><Hd cx={52} cy={13} />
+      <Ln p={[[52,19],[52,43]]} /><Ln p={[[52,43],[37,62],[33,79]]} /><Ln p={[[52,43],[68,60],[70,79]]} />
+      <circle cx={46} cy={30} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <circle cx={58} cy={30} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[46,32],[42,42]]} w={1.5} /><Ln p={[[58,32],[62,42]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Split squat – 8 lb": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={13} />
+      <Ln p={[[50,19],[50,43]]} />
+      <Ln p={[[50,43],[36,60],[34,79]]} />
+      <Ln p={[[50,43],[64,60],[70,72],[74,79]]} />
+      <circle cx={44} cy={30} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <circle cx={56} cy={30} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[44,32],[40,42]]} w={1.5} /><Ln p={[[56,32],[60,42]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Calf raise (single leg)": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={11} />
+      <Ln p={[[50,17],[50,43]]} /><Ln p={[[50,43],[46,65],[44,76],[42,79]]} /><Ln p={[[50,43],[56,58],[60,52]]} />
+      <Ln p={[[50,28],[40,44]]} w={1.5} /><Ln p={[[50,28],[60,44]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Standing hamstring stretch": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={16} />
+      <Ln p={[[50,22],[48,42]]} />
+      <Ln p={[[48,42],[40,52],[34,60]]} />
+      <Ln p={[[34,60],[36,79]]} w={1.5} />
+      <Ln p={[[48,42],[64,46],[78,48]]} />
+      <Ln p={[[78,48],[76,68],[72,79]]} w={1.5} />
+      <Ln p={[[50,28],[60,40]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Brisk walk or light cycling": () => (
+    <SvgWrap><Gnd /><Hd cx={52} cy={12} />
+      <Ln p={[[52,18],[54,42]]} /><Ln p={[[54,42],[39,61],[35,79]]} /><Ln p={[[54,42],[67,58],[70,76]]} />
+      <Ln p={[[53,28],[66,44]]} w={1.5} /><Ln p={[[53,28],[42,46]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Alternatively: dance or swim": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={12} />
+      <Ln p={[[50,18],[50,42]]} /><Ln p={[[50,42],[36,64],[32,79]]} /><Ln p={[[50,42],[64,62],[68,79]]} />
+      <Ln p={[[50,28],[34,18]]} w={1.5} /><Ln p={[[50,28],[66,18]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Knee push-up (progressing to full)": () => (
+    <SvgWrap><Gnd /><Hd cx={22} cy={28} r={6} />
+      <Ln p={[[22,34],[34,42],[66,52]]} /><Ln p={[[22,34],[32,44],[62,52]]} />
+      <Ln p={[[66,52],[70,63],[62,72],[58,79]]} />
+      <circle cx={60} cy={74} r={4} stroke="currentColor" strokeOpacity={0.4} strokeWidth={1.5} />
+    </SvgWrap>
+  ),
+  "Overhead press – 8 lb (tempo)": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={17} />
+      <Ln p={[[50,23],[50,48]]} /><Ln p={[[50,30],[38,22],[34,10]]} /><Ln p={[[50,30],[62,22],[66,10]]} />
+      <circle cx={34} cy={8} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <circle cx={66} cy={8} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[50,48],[44,70],[42,79]]} /><Ln p={[[50,48],[56,70],[58,79]]} />
+    </SvgWrap>
+  ),
+  "Alternating bicep curl – 8 lb": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={14} />
+      <Ln p={[[50,20],[50,46]]} />
+      <Ln p={[[50,30],[36,38],[30,26]]} w={1.5} /><Ln p={[[50,30],[64,46]]} w={1.5} />
+      <circle cx={30} cy={23} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <circle cx={64} cy={47} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[50,46],[44,68],[42,79]]} /><Ln p={[[50,46],[56,68],[58,79]]} />
+    </SvgWrap>
+  ),
+  "Overhead tricep extension – 8 lb": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={13} />
+      <Ln p={[[50,19],[50,46]]} />
+      <Ln p={[[50,26],[42,14],[44,6]]} w={1.5} />
+      <circle cx={44} cy={4} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[50,26],[58,14],[56,6]]} w={1.5} />
+      <circle cx={56} cy={4} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[50,46],[44,68],[42,79]]} /><Ln p={[[50,46],[56,68],[58,79]]} />
+    </SvgWrap>
+  ),
+  "Dead bug": () => (
+    <SvgWrap><Gnd y={72} /><Hd cx={90} cy={54} r={5} />
+      <Ln p={[[84,57],[38,57]]} /><Ln p={[[80,57],[78,40],[76,26]]} />
+      <Ln p={[[68,57],[66,69]]} w={1.5} /><Ln p={[[44,57],[22,65]]} />
+      <Ln p={[[55,57],[54,42],[44,40]]} />
+    </SvgWrap>
+  ),
+  "Plank hold": () => (
+    <SvgWrap><Gnd y={67} /><Hd cx={86} cy={38} r={5} />
+      <Ln p={[[80,43],[30,57]]} />
+      <Ln p={[[80,43],[76,58],[68,67]]} />
+      <Ln p={[[65,50],[62,63],[54,67]]} />
+      <Ln p={[[30,57],[26,67]]} />
+    </SvgWrap>
+  ),
+  "Cat-cow": () => (
+    <SvgWrap><Gnd y={72} /><Hd cx={17} cy={36} r={5} />
+      <Ln p={[[17,41],[20,50],[50,56],[80,50],[83,44]]} />
+      <Ln p={[[22,50],[18,66]]} /><Ln p={[[30,52],[28,66]]} />
+      <Ln p={[[78,50],[76,66]]} /><Ln p={[[84,47],[82,66]]} />
+    </SvgWrap>
+  ),
+  "Pigeon pose": () => (
+    <SvgWrap><Gnd y={75} /><Hd cx={14} cy={38} r={5} />
+      <Ln p={[[14,43],[20,55],[50,60],[80,58]]} />
+      <Ln p={[[50,60],[44,72],[36,75]]} /><Ln p={[[50,60],[70,64],[80,75]]} />
+      <Ln p={[[14,43],[10,55],[8,68]]} w={1.5} /><Ln p={[[14,43],[18,56],[16,68]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "90/90 hip stretch": () => (
+    <SvgWrap><Gnd y={74} /><Hd cx={50} cy={20} r={5} />
+      <Ln p={[[50,25],[50,46]]} /><Ln p={[[50,46],[28,54],[12,54],[12,74]]} />
+      <Ln p={[[50,46],[72,46],[72,66]]} />
+      <Ln p={[[50,32],[38,44]]} w={1.5} /><Ln p={[[50,32],[62,44]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Overhead tricep stretch": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={13} />
+      <Ln p={[[50,19],[50,46]]} />
+      <Ln p={[[50,24],[42,10],[38,4]]} w={1.5} />
+      <Ln p={[[38,4],[46,2]]} w={1} />
+      <Ln p={[[50,24],[58,32]]} w={1.5} />
+      <Ln p={[[50,46],[44,68],[42,79]]} /><Ln p={[[50,46],[56,68],[58,79]]} />
+    </SvgWrap>
+  ),
+  "Supine spinal twist": () => (
+    <SvgWrap><Gnd y={74} /><Hd cx={14} cy={44} r={5} />
+      <Ln p={[[14,49],[14,62],[80,62]]} /><Ln p={[[50,62],[60,48],[72,52]]} />
+      <Ln p={[[14,55],[14,44],[6,44]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Legs-up-the-wall": () => (
+    <SvgWrap>
+      <line x1="92" y1="8" x2="92" y2="78" stroke="currentColor" strokeOpacity={0.4} strokeWidth={2} strokeLinecap="round" />
+      <Gnd /><Hd cx={10} cy={70} r={5} />
+      <Ln p={[[10,75],[80,75]]} /><Ln p={[[78,75],[80,44],[84,10]]} /><Ln p={[[70,75],[72,44],[76,10]]} />
+      <Ln p={[[28,75],[24,79]]} w={1.5} /><Ln p={[[42,75],[38,79]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Romanian deadlift – 12 lb": () => (
+    <SvgWrap><Gnd /><Hd cx={15} cy={27} r={5} />
+      <Ln p={[[15,32],[20,38],[68,44]]} /><Ln p={[[68,44],[64,67],[60,79]]} /><Ln p={[[68,44],[74,65],[72,79]]} />
+      <Ln p={[[34,40],[30,57]]} /><Ln p={[[48,42],[44,59]]} />
+      <circle cx={30} cy={60} r={4} stroke="currentColor" strokeWidth={1.5} />
+      <circle cx={44} cy={62} r={4} stroke="currentColor" strokeWidth={1.5} />
+    </SvgWrap>
+  ),
+  "Goblet squat – 12 lb (narrow)": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={13} />
+      <Ln p={[[50,19],[49,43]]} /><Ln p={[[49,43],[42,62],[42,79]]} /><Ln p={[[49,43],[58,61],[58,79]]} />
+      <circle cx={50} cy={26} r={5} stroke="currentColor" strokeWidth={1.5} />
+      <Ln p={[[50,28],[44,36]]} w={1.5} /><Ln p={[[50,28],[56,36]]} w={1.5} />
+    </SvgWrap>
+  ),
+  "Close-grip push-up (or knee)": () => (
+    <SvgWrap><Gnd /><Hd cx={20} cy={28} r={6} />
+      <Ln p={[[20,34],[30,42],[68,50]]} /><Ln p={[[20,34],[28,44],[66,50]]} />
+      <Ln p={[[68,50],[72,64],[70,79]]} />
+      <circle cx={68} cy={50} r={2} fill="currentColor" />
+      <circle cx={66} cy={50} r={2} fill="currentColor" />
+    </SvgWrap>
+  ),
+  "Pallof press (resistance band)": () => (
+    <SvgWrap>
+      <circle cx={92} cy={35} r={5} stroke="currentColor" strokeOpacity={0.5} strokeWidth={1.5} />
+      <Gnd /><Hd cx={44} cy={14} />
+      <Ln p={[[44,20],[44,44]]} /><Ln p={[[44,30],[24,33]]} />
+      <line x1="24" y1="33" x2="92" y2="35" stroke="currentColor" strokeOpacity={0.3} strokeWidth={1} strokeDasharray="4,3" />
+      <Ln p={[[44,44],[38,68],[36,79]]} /><Ln p={[[44,44],[50,68],[52,79]]} />
+    </SvgWrap>
+  ),
+};
 
-// ---------------------------------------------------------------------------
-// UI
-// ---------------------------------------------------------------------------
+const VIDEO = {
+  "Goblet squat – 12 lb": "https://www.youtube.com/results?search_query=goblet+squat+dumbbell+form+tutorial",
+  "Hip thrust – 12 lb": "https://www.youtube.com/results?search_query=dumbbell+hip+thrust+form+tutorial+beginner",
+  "Reverse lunge – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+reverse+lunge+form+tutorial+beginner",
+  "Split squat – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+split+squat+form+tutorial+beginner",
+  "Calf raise (single leg)": "https://www.youtube.com/results?search_query=single+leg+calf+raise+form+tutorial",
+  "Standing hamstring stretch": "https://www.youtube.com/results?search_query=standing+hamstring+stretch+tutorial+form",
+  "Brisk walk or light cycling": "https://www.youtube.com/results?search_query=brisk+walking+technique+fitness+beginners",
+  "Alternatively: dance or swim": "https://www.youtube.com/results?search_query=beginner+dance+workout+low+impact",
+  "Knee push-up (progressing to full)": "https://www.youtube.com/results?search_query=knee+push+up+to+full+push+up+progression+tutorial",
+  "Overhead press – 8 lb (tempo)": "https://www.youtube.com/results?search_query=dumbbell+overhead+press+slow+tempo+form+tutorial",
+  "Alternating bicep curl – 8 lb": "https://www.youtube.com/results?search_query=alternating+dumbbell+bicep+curl+form+tutorial",
+  "Overhead tricep extension – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+overhead+tricep+extension+form+tutorial",
+  "Dead bug": "https://www.youtube.com/results?search_query=dead+bug+exercise+core+form+tutorial+beginner",
+  "Plank hold": "https://www.youtube.com/results?search_query=plank+forearm+hold+form+tutorial+beginner",
+  "Cat-cow": "https://www.youtube.com/results?search_query=cat+cow+stretch+form+tutorial+beginner",
+  "Pigeon pose": "https://www.youtube.com/results?search_query=pigeon+pose+hip+stretch+tutorial+yoga",
+  "90/90 hip stretch": "https://www.youtube.com/results?search_query=90+90+hip+stretch+tutorial+form+beginner",
+  "Overhead tricep stretch": "https://www.youtube.com/results?search_query=overhead+tricep+stretch+tutorial+form",
+  "Supine spinal twist": "https://www.youtube.com/results?search_query=supine+spinal+twist+stretch+form+tutorial",
+  "Legs-up-the-wall": "https://www.youtube.com/results?search_query=legs+up+the+wall+tutorial+benefits",
+  "Romanian deadlift – 12 lb": "https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift+form+tutorial",
+  "Goblet squat – 12 lb (narrow)": "https://www.youtube.com/results?search_query=goblet+squat+dumbbell+form+tutorial",
+  "Close-grip push-up (or knee)": "https://www.youtube.com/results?search_query=close+grip+push+up+tricep+form+tutorial+beginner",
+  "Pallof press (resistance band)": "https://www.youtube.com/results?search_query=pallof+press+resistance+band+core+tutorial",
+};
 
-function GroupPill({ group }) {
-  const c = SUPERSET_COLORS[group] || SUPERSET_COLORS.Solo;
-  const label =
-    group === "Solo"
-      ? "Standalone"
-      : group === "Core" || group === "Finisher"
-      ? group
-      : `Superset ${group}`;
+const days = [
+  {
+    label: "Mon", name: "Monday", type: "Lower body strength", tag: "strength",
+    warmup: "3 min — high knees x20, standing hamstring sweep x10 each leg, leg swings x10 each",
+    warmupItems: ["High knees", "Standing hamstring sweep", "Leg swings"],
+    note: "Lateral lunge is swapped out for a stationary split squat while the inner-thigh strain heals — same sagittal (front-to-back) plane as the reverse lunge, so no direct load on the injured adductor. Everything else holds at week 13 levels.",
+    exercises: [
+      { name: "Goblet squat – 12 lb", sets: "3 x 15 reps", superset: "A", note: "Same as week 13. Pause 2 sec at the bottom of each rep." },
+      { name: "Hip thrust – 12 lb", sets: "3 x 15 reps", superset: "A", note: "Same as week 13. Squeeze hard at the top, 2-sec hold." },
+      { name: "Reverse lunge – 8 lb", sets: "3 x 12 each leg", superset: "B", note: "Unchanged. Step straight back, controlled descent — front-to-back plane only." },
+      { name: "Split squat – 8 lb", sets: "3 x 10 each leg", superset: "B", note: "Replaces lateral lunge while your strain heals. Stagger your stance (one foot forward, one back) and lower straight down — no sideways movement, so nothing pulls on the inner thigh. Stop if you feel any pinch in the adductor." },
+      { name: "Calf raise (single leg)", sets: "2 x 15 each side", note: "Standalone, unchanged. 5-count descent, controlled." },
+    ],
+    cooldown: "2 min — standing hamstring stretch (30 sec each leg), figure-4 hip stretch (30 sec each side)"
+  },
+  {
+    label: "Tue", name: "Tuesday", type: "Low-impact cardio", tag: "cardio",
+    warmup: "2 min — slow walk, arm swings, ankle rolls",
+    warmupItems: ["Slow walk", "Arm swings", "Ankle rolls"],
+    exercises: [
+      { name: "Brisk walk or light cycling", sets: "20 min", note: "Unchanged. Gentle, repetitive movement is good for a healing strain — keep the pace moderate." },
+      { name: "Alternatively: dance or swim", sets: "20 min", note: "Full 20 minutes. Swimming is ideal if the inner thigh still feels tender — fully supported, no load." },
+    ],
+    cooldown: "2 min — slow walk, deep breathing, standing hamstring stretch (30 sec each leg)"
+  },
+  {
+    label: "Wed", name: "Wednesday", type: "Upper body + core", tag: "strength",
+    warmup: "3 min — arm circles, cat-cow x10, tricep warm-up circles x10",
+    warmupItems: ["Arm circles", "Cat-cow", "Tricep warm-up circles"],
+    note: "Upper body is unaffected by the leg strain — small rep nudges from week 13, as flagged in week 13's Sunday note. Dead bug and plank stay at 2 rounds. Bent-over row still out until this feels solid.",
+    exercises: [
+      { name: "Knee push-up (progressing to full)", sets: "3 x 11 reps", superset: "A", note: "One more rep than week 13. Full reps where you can, knees for the rest — dropping mid-set is smart pacing." },
+      { name: "Overhead press – 8 lb (tempo)", sets: "3 x 15 reps", superset: "A", note: "One more rep than week 13. 4-count up, 4-count down — tempo stays the load." },
+      { name: "Alternating bicep curl – 8 lb", sets: "3 x 15 each arm", superset: "B", note: "One more rep than week 13. 4-count descent, full extension at the bottom." },
+      { name: "Overhead tricep extension – 8 lb", sets: "3 x 12 reps", superset: "B", note: "Same as week 13. Elbows pointing forward, not flared." },
+      { name: "Dead bug", sets: "2 x 16 each side", note: "Standalone, same as week 13. Lower back flat throughout." },
+      { name: "Plank hold", sets: "2 x 28 sec", note: "Standalone. Up 3 sec from week 13's 25 sec — stop the instant your hips sag." },
+    ],
+    cooldown: "2 min — overhead tricep stretch (20 sec each arm), chest opener, doorframe pec stretch"
+  },
+  {
+    label: "Thu", name: "Thursday", type: "Mobility + recovery", tag: "mobility",
+    warmup: null,
+    note: "Unchanged from week 13. Around 18-20 min. Gentle hip work helps the strained area recover without loading it.",
+    exercises: [
+      { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Full breath with every rep." },
+      { name: "Pigeon pose", sets: "2 x 60 sec each side", note: "Breathe into the hip, relax further each exhale. Ease off if the inner thigh complains." },
+      { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Forward lean over the front shin for the deeper version." },
+      { name: "Overhead tricep stretch", sets: "1 x 30 sec each arm", note: "Reach one arm overhead, bend the elbow, gently pull with the other hand." },
+      { name: "Supine spinal twist", sets: "2 x 45 sec each side", note: "Full release, let the knee drop completely." },
+      { name: "Legs-up-the-wall", sets: "1 x 4 min", note: "Eyes closed. Weekly reset." },
+    ],
+    cooldown: "5 slow deep breaths — inhale 5, hold 2, exhale 7"
+  },
+  {
+    label: "Fri", name: "Friday", type: "Full body strength", tag: "strength",
+    warmup: "3 min — high knees x20, goblet squat hold (12 lb, 20 sec), wrist circles",
+    warmupItems: ["High knees", "Goblet squat hold", "Wrist circles"],
+    note: "Sumo squat (wide stance) is swapped for a narrow-stance goblet squat this week — the wide stance loads the same inner-thigh muscles as the lateral lunge, so it's off the menu until the strain resolves. Arnold press stays out for the time budget.",
+    exercises: [
+      { name: "Romanian deadlift – 12 lb", sets: "3 x 14 reps", superset: "A", note: "Same as week 13. Controlled lowering, moderate stretch — not maximum range." },
+      { name: "Close-grip push-up (or knee)", sets: "3 x 10 reps", superset: "A", note: "Same as week 13. Hands shoulder-width, extra tricep emphasis. Drop to knees whenever needed." },
+      { name: "Goblet squat – 12 lb (narrow)", sets: "3 x 16 reps", superset: "B", note: "Replaces sumo squat while the strain heals. Keep your feet about hip-width and toes forward — narrow stance keeps the work in the quads and glutes, off the inner thigh. 2-sec pause at the bottom." },
+      { name: "Pallof press (resistance band)", sets: "3 x 14 each side", superset: "B", note: "Same as week 13. 3-sec hold at full extension." },
+    ],
+    cooldown: "2 min — overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"
+  },
+  {
+    label: "Sat", name: "Saturday", type: "Rest", tag: "rest", isRest: true,
+    note: "Rest. Keep an eye on the inner thigh — a gentle walk is fine, but avoid anything that loads it sideways (wide squats, lateral movements). Sharp pain, swelling, or instability are signs to get it looked at."
+  },
+  {
+    label: "Sun", name: "Sunday", type: "Rest", tag: "rest", isRest: true,
+    note: "Rest and meal prep. If the strain feels fully clear by end of this week, we can bring lateral lunge and sumo squat back next week — and start reintroducing bent-over row and Arnold press."
+  }
+];
+
+const tagStyles = {
+  strength: { background: "#ede9fe", color: "#4c1d95" },
+  cardio:   { background: "#d1fae5", color: "#065f46" },
+  mobility: { background: "#fef3c7", color: "#78350f" },
+  rest:     { background: "#f3f4f6", color: "#374151" },
+};
+
+const supersetColors = { A: "#dbeafe", B: "#fef3c7" };
+const supersetText   = { A: "#1e40af", B: "#92400e" };
+
+export default function WorkoutSchedule() {
+  const [active, setActive] = useState(0);
+  const [checked, setChecked] = useState({});
+  const toggle = (id) => setChecked(prev => ({ ...prev, [id]: !prev[id] }));
+  const d = days[active];
+
   return (
-    <span
-      style={{
-        background: c.bg,
-        color: c.text,
-        border: `1px solid ${c.border}`,
-        borderRadius: 999,
-        padding: "2px 10px",
-        fontSize: 12,
-        fontWeight: 600,
-        whiteSpace: "nowrap",
-      }}
-    >
-      {label}
-    </span>
-  );
-}
+    <div style={{ fontFamily: "system-ui, sans-serif", maxWidth: 680, margin: "0 auto", padding: "1.5rem 1rem 3rem" }}>
+      <h1 style={{ fontSize: 20, fontWeight: 500, marginBottom: 4 }}>Week fourteen workout schedule</h1>
+      <p style={{ fontSize: 13, color: "#888", marginBottom: 20 }}>Tap a day · illustrations show correct form · watch video · check off as you go</p>
 
-function ExerciseCard({ ex, done, onToggle }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: 14,
-        alignItems: "center",
-        padding: 14,
-        borderRadius: 14,
-        border: "1px solid #e2e8f0",
-        background: done ? "#f8fafc" : "#ffffff",
-        opacity: done ? 0.6 : 1,
-        transition: "opacity 0.2s ease, background 0.2s ease",
-      }}
-    >
-      <div style={{ flexShrink: 0 }}>
-        <StickFigure pose={ex.pose} done={done} />
-      </div>
-
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-          <GroupPill group={ex.group} />
-          <span
-            style={{
-              background: "#0f172a",
-              color: "#fff",
-              borderRadius: 8,
-              padding: "2px 10px",
-              fontSize: 13,
-              fontWeight: 700,
-            }}
-          >
-            {ex.reps}
-          </span>
-        </div>
-
-        <div
-          style={{
-            fontSize: 16,
-            fontWeight: 600,
-            marginTop: 6,
-            color: "#0f172a",
-            textDecoration: done ? "line-through" : "none",
-          }}
-        >
-          {ex.name}
-        </div>
-
-        {ex.note && (
-          <div style={{ fontSize: 13, color: "#64748b", marginTop: 2 }}>{ex.note}</div>
-        )}
-
-        <a
-          href={yt(ex.name)}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ fontSize: 13, color: "#2563eb", marginTop: 4, display: "inline-block" }}
-        >
-          ▶ Watch tutorial
-        </a>
-      </div>
-
-      <label style={{ flexShrink: 0, cursor: "pointer", display: "flex", alignItems: "center" }}>
-        <input
-          type="checkbox"
-          checked={done}
-          onChange={onToggle}
-          style={{ width: 22, height: 22, cursor: "pointer" }}
-        />
-      </label>
-    </div>
-  );
-}
-
-export default function WeekFourteenWorkout() {
-  const [activeDay, setActiveDay] = useState("Mon");
-  const [completed, setCompleted] = useState({}); // key: `${day}-${index}`
-
-  const day = PROGRAM[activeDay];
-
-  const toggle = (idx) => {
-    const key = `${activeDay}-${idx}`;
-    setCompleted((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
-  const doneCount = day.exercises.filter((_, i) => completed[`${activeDay}-${i}`]).length;
-
-  return (
-    <div
-      style={{
-        fontFamily:
-          "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
-        maxWidth: 720,
-        margin: "0 auto",
-        padding: 16,
-        color: "#0f172a",
-      }}
-    >
-      <header style={{ marginBottom: 12 }}>
-        <div style={{ fontSize: 13, color: "#64748b", fontWeight: 600 }}>WEEK 14</div>
-        <h1 style={{ fontSize: 26, margin: "2px 0 0" }}>{day.focus}</h1>
-        <div style={{ display: "flex", gap: 16, marginTop: 6, fontSize: 14, color: "#475569" }}>
-          <span>🔥 {day.calories}</span>
-          <span>⏱ {day.time}</span>
-          {day.exercises.length > 0 && (
-            <span>
-              ✅ {doneCount}/{day.exercises.length} done
-            </span>
-          )}
-        </div>
-      </header>
-
-      {/* Day tabs */}
-      <nav
-        style={{
-          display: "flex",
-          gap: 6,
-          marginBottom: 16,
-          overflowX: "auto",
-          paddingBottom: 4,
-        }}
-      >
-        {DAYS.map((d) => {
-          const active = d === activeDay;
-          return (
-            <button
-              key={d}
-              onClick={() => setActiveDay(d)}
-              style={{
-                flex: "1 0 auto",
-                padding: "8px 12px",
-                borderRadius: 10,
-                border: active ? "1px solid #0f172a" : "1px solid #e2e8f0",
-                background: active ? "#0f172a" : "#fff",
-                color: active ? "#fff" : "#475569",
-                fontWeight: 600,
-                fontSize: 14,
-                cursor: "pointer",
-              }}
-            >
-              {d}
-            </button>
-          );
-        })}
-      </nav>
-
-      {/* Warm-up */}
-      {day.warmup.length > 0 && (
-        <section style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 15, textTransform: "uppercase", color: "#64748b" }}>
-            Warm-up
-          </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {day.warmup.map((w, i) => (
-              <a
-                key={i}
-                href={yt(w.name)}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontSize: 13,
-                  background: "#f1f5f9",
-                  borderRadius: 10,
-                  padding: "6px 10px",
-                  color: "#0f172a",
-                  textDecoration: "none",
-                  border: "1px solid #e2e8f0",
-                }}
-              >
-                {w.name} · <strong>{w.detail}</strong> ▶
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Exercises */}
-      <section style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        {day.exercises.map((ex, i) => (
-          <ExerciseCard
-            key={i}
-            ex={ex}
-            done={!!completed[`${activeDay}-${i}`]}
-            onToggle={() => toggle(i)}
-          />
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 20 }}>
+        {days.map((day, i) => (
+          <button key={i} onClick={() => setActive(i)} style={{
+            padding: "6px 14px", borderRadius: 999, fontFamily: "inherit",
+            border: day.isRest ? "1px dashed #ccc" : "1px solid #ccc",
+            fontSize: 13, cursor: "pointer",
+            background: active === i ? "#dbeafe" : "transparent",
+            color: active === i ? "#1e40af" : "#666",
+            fontWeight: active === i ? 500 : 400,
+            borderColor: active === i ? "#93c5fd" : "#ccc",
+          }}>{day.label}</button>
         ))}
-      </section>
+      </div>
 
-      {/* Cooldown */}
-      {day.cooldown.length > 0 && (
-        <section style={{ marginTop: 18 }}>
-          <h2 style={{ fontSize: 15, textTransform: "uppercase", color: "#64748b" }}>
-            Cooldown
-          </h2>
-          <ul style={{ margin: "6px 0 0", paddingLeft: 18, color: "#334155", fontSize: 14 }}>
-            {day.cooldown.map((c, i) => (
-              <li key={i} style={{ marginBottom: 4 }}>
-                {c}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <div style={{ background: "#fff", border: "1px solid #e5e5e5", borderRadius: 12, padding: "1.25rem 1.5rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
+          <span style={{ fontSize: 17, fontWeight: 500 }}>{d.name}</span>
+          <span style={{ fontSize: 12, padding: "3px 10px", borderRadius: 999, fontWeight: 500, ...tagStyles[d.tag] }}>{d.type}</span>
+        </div>
 
-      <footer style={{ marginTop: 22, fontSize: 12, color: "#94a3b8", lineHeight: 1.5 }}>
-        Week 14 · Reps shown per exercise. Lateral lunge removed while the adductor strain
-        heals — swapped for a stationary split squat (no inner-thigh loading). Stop and reassess
-        with sharp pain, swelling, or instability.
-      </footer>
+        {d.isRest ? (
+          <p style={{ textAlign: "center", padding: "2rem 0.5rem", color: "#555", fontSize: 15, lineHeight: 1.7 }}>{d.note}</p>
+        ) : (
+          <>
+            {d.note && (
+              <div style={{ background: d.tag === "mobility" ? "#fefce8" : "#f0fdf4", border: `1px solid ${d.tag === "mobility" ? "#fde68a" : "#bbf7d0"}`, borderRadius: 8, padding: "8px 12px", marginBottom: 14, fontSize: 12, color: d.tag === "mobility" ? "#713f12" : "#166534", lineHeight: 1.5 }}>
+                {d.tag === "mobility" ? <span>&#9675; {d.note}</span> : <span>&#9654; {d.note}</span>}
+              </div>
+            )}
+            <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 6 }}>Warm-up</p>
+            <div style={{ background: "#f9f9f7", borderRadius: 8, padding: "10px 14px", marginBottom: 16, fontSize: 13, color: "#555", lineHeight: 1.6 }}>
+              {d.warmup ?? "No structured warm-up needed — start the session slowly."}
+              {d.warmupItems && (
+                <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {d.warmupItems.map((item, i) => (
+                    <a key={i} href={WARMUP_VIDEO[item] || "#"} target="_blank" rel="noopener noreferrer"
+                      style={{ fontSize: 11, color: "#1d4ed8", textDecoration: "none", display: "inline-flex", alignItems: "center", background: "#eff6ff", padding: "2px 8px", borderRadius: 999, border: "1px solid #bfdbfe" }}>
+                      <PlayIcon />{item}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+            <p style={{ fontSize: 11, fontWeight: 500, color: "#999", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 0 }}>Exercises</p>
+            {d.exercises.map((ex, i) => {
+              const id = `${active}-${i}`;
+              const done = !!checked[id];
+              const IllusComp = ILLUS[ex.name];
+              const videoUrl = VIDEO[ex.name];
+              return (
+                <div key={id} style={{ borderTop: "1px solid #eee", padding: "12px 0", display: "flex", gap: 12, alignItems: "flex-start" }}>
+                  {IllusComp && (
+                    <div style={{ width: 72, flexShrink: 0, color: "#6b7280", opacity: done ? 0.3 : 0.9, paddingTop: 2 }}>
+                      <IllusComp />
+                    </div>
+                  )}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                      <div style={{ flex: 1 }}>
+                        {ex.superset && (
+                          <span style={{ fontSize: 10, fontWeight: 500, padding: "1px 6px", borderRadius: 999, marginRight: 6, background: supersetColors[ex.superset], color: supersetText[ex.superset] }}>
+                            Superset {ex.superset}
+                          </span>
+                        )}
+                        <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 3, marginTop: ex.superset ? 3 : 0, textDecoration: done ? "line-through" : "none", color: done ? "#bbb" : "#1a1a1a" }}>
+                          {ex.name}
+                        </div>
+                        <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5, marginBottom: videoUrl && !done ? 5 : 0 }}>{ex.note}</div>
+                        {videoUrl && !done && (
+                          <a href={videoUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: "#1d4ed8", textDecoration: "none", display: "inline-flex", alignItems: "center" }}>
+                            <PlayIcon />watch tutorial
+                          </a>
+                        )}
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6, flexShrink: 0 }}>
+                        <span style={{ fontSize: 13, fontWeight: 500, color: "#1d4ed8", whiteSpace: "nowrap" }}>{ex.sets}</span>
+                        <div onClick={() => toggle(id)} style={{ width: 18, height: 18, borderRadius: 4, border: `1px solid ${done ? "#6ee7b7" : "#ccc"}`, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", background: done ? "#d1fae5" : "transparent" }}>
+                          {done && <svg width="10" height="10" viewBox="0 0 10 10"><polyline points="1.5,5 4,7.5 8.5,2.5" stroke="#059669" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+            <div style={{ borderTop: "1px solid #eee" }} />
+            <div style={{ background: "#f9f9f7", borderRadius: 8, padding: "10px 14px", marginTop: 16, fontSize: 13, color: "#555", lineHeight: 1.6 }}>
+              <strong style={{ fontWeight: 500 }}>Cool-down:</strong> {d.cooldown}
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
+              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.tag === "mobility" ? "~50-60 cal (recovery session)" : "~95-105 cal"}</span>
+              <span style={{ fontSize: 12, color: "#bbb" }}>~22-25 min total</span>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

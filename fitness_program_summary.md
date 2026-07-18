@@ -46,7 +46,7 @@
    - ~~March in place~~ → **High knees**
    - ~~Step touch~~ → **Low-impact skaters**
 6. **Push-up/plank targets:** Should reflect what the user can actually complete (dropping to knees mid-set is valid pacing, not failure) — do not set aspirational-only numbers
-7. **Hamstring care:** Recurring sensitivity — avoid stacking too much hip-hinge volume (RDL + lunges + hip thrust) in back-to-back sessions without adequate stretching in cooldowns. The standing hamstring stretch belongs in the **Monday, Tuesday, Thursday, and Friday** cooldowns/sessions — Friday (RDL day) especially. ⚠️ Weeks 13–14 drifted: the Thursday stretch was dropped in the reset and Friday's cooldown lost it too — restore both in week 15.
+7. **Hamstring care:** Recurring sensitivity — avoid stacking too much hip-hinge volume (RDL + lunges + hip thrust) in back-to-back sessions without adequate stretching in cooldowns. The standing hamstring stretch belongs in the **Monday, Tuesday, Thursday, and Friday** cooldowns/sessions — Friday (RDL day) especially. Hold **30 sec each leg** in cooldowns; in the Thursday mobility session do **2 × 45 sec each leg**. ⚠️ Weeks 13–14 drifted: the Thursday stretch was dropped in the reset and Friday's cooldown lost it too — restore both in week 15.
 8. **Tempo/technique over raw weight increases:** When 12 lb was too heavy for overhead press and bicep curl, the fix was tempo training (4-count up/4-count down) and alternating-arm curls at 8 lb — NOT simply forcing the heavier weight
 
 ## Chronological Program Evolution (Weeks 1–13)
@@ -134,7 +134,12 @@ Built directly from the real week-13 file (all weeks 1–13 `.jsx` are now in th
 | Wed | Overhead tricep extension – 8 lb | Superset B | 3 × 12 |
 | Wed | Dead bug | Standalone | 2 × 16 / side |
 | Wed | Plank hold | Standalone | 2 × 28 sec |
-| Thu | Cat-cow / Pigeon / 90-90 / tricep stretch / spinal twist / legs-up-wall | Mobility | holds (see file) |
+| Thu | Cat-cow | Mobility | 2 × 10 slow reps |
+| Thu | Pigeon pose | Mobility | 2 × 60 sec / side |
+| Thu | 90/90 hip stretch | Mobility | 2 × 45 sec / side |
+| Thu | Overhead tricep stretch | Mobility | 1 × 30 sec / arm |
+| Thu | Supine spinal twist | Mobility | 2 × 45 sec / side |
+| Thu | Legs-up-the-wall | Mobility | 1 × 4 min |
 | Fri | Romanian deadlift – 12 lb | Superset A | 3 × 14 |
 | Fri | Close-grip push-up (or knee) | Superset A | 3 × 10 |
 | Fri | Goblet squat – 12 lb (narrow) — *replaces sumo squat* | Superset B | 3 × 16 |
@@ -155,7 +160,7 @@ Delivered as `week_fourteen_workout.jsx`, matching the real weeks' structure (Sv
 A review of weeks 1–14 found the overall structure and feedback-driven adjustments sound, but the week 13 reset overshot in three ways that week 14 inherited. Address these when building the next week:
 
 1. **Restore pulling work (highest priority).** Since the week 13 reset removed bent-over row (and renegade row disappeared with it), weeks 13–14 contain **zero pulling exercises** — both upper-body days are all push (push-up, overhead press, triceps) plus biceps. For a desk worker this risks postural/shoulder imbalance if it continues. Until the full bent-over row fits the time budget again, include at minimum a cheap pull — e.g. **band pull-aparts 2 × 12–15** (already in the warm-up repertoire, ~90 sec) or a 2-set row on Wednesday.
-2. **Reinstate hamstring stretches on Thursday and Friday** (see standing preference #7). The Thursday standing hamstring stretch (present weeks 10–12) and the Friday cooldown hamstring stretch were both lost in the week 13 reset. Friday is RDL day — it needs one most.
+2. **Reinstate hamstring stretches on Thursday and Friday** (see standing preference #7). The Thursday standing hamstring stretch (present weeks 10–12 as **2 × 45 sec each leg**) and the Friday cooldown hamstring stretch (**30 sec each leg**) were both lost in the week 13 reset. Friday is RDL day — it needs one most.
 3. **Resolve the finisher/calorie mismatch.** The Monday and Friday cardio finishers (2 min, later 90 sec of skaters) were silently removed in the week 13 reset, but the files still display "~95–105 cal" and the restoration explicitly targeted ~100 cal. Either restore a short (60–90 sec) finisher, or keep them removed for time and correct the calorie label — don't leave the two inconsistent.
 4. **Plan lower-body progression via technique, not rep-creep.** Goblet squat and hip thrust have been static at 3 × 15 @ 12 lb since week 9. With the 12 lb ceiling, adding reps is the only lever being used, and longer sets are what caused the week 13 time blowout. Apply the same fix that worked for upper body (preference #8): **paused or 1.5-rep goblet squats, tempo work, or single-leg hip thrust progressions** — once the leg strain is resolved.
 5. **Keep this file in sync with the artifacts.** Update the deliverables count and the evolution log whenever a new week file is added, and document intentional removals (like the finishers) so they aren't mistaken for accidental losses.

@@ -127,13 +127,16 @@ Built directly from the real week-13 file (all weeks 1–13 `.jsx` are now in th
 | Mon | Reverse lunge – 8 lb | Superset B | 3 × 12 / leg |
 | Mon | Split squat – 8 lb — *replaces lateral lunge* | Superset B | 3 × 10 / leg |
 | Mon | Calf raise (single leg) | Standalone | 2 × 15 / side |
+| Mon | High knees (finisher) | Finisher | 60 sec |
 | Tue | Brisk walk / cycling (or dance / swim) | — | 20 min |
 | Wed | Knee push-up (→ full) | Superset A | 3 × 11 |
 | Wed | Overhead press – 8 lb (tempo) | Superset A | 3 × 15 |
 | Wed | Alternating bicep curl – 8 lb | Superset B | 3 × 15 / arm |
 | Wed | Overhead tricep extension – 8 lb | Superset B | 3 × 12 |
+| Wed | Band pull-apart | Standalone | 2 × 15 |
 | Wed | Dead bug | Standalone | 2 × 16 / side |
 | Wed | Plank hold | Standalone | 2 × 28 sec |
+| Thu | Standing hamstring stretch | Mobility | 2 × 45 sec / leg |
 | Thu | Cat-cow | Mobility | 2 × 10 slow reps |
 | Thu | Pigeon pose | Mobility | 2 × 60 sec / side |
 | Thu | 90/90 hip stretch | Mobility | 2 × 45 sec / side |
@@ -144,8 +147,14 @@ Built directly from the real week-13 file (all weeks 1–13 `.jsx` are now in th
 | Fri | Close-grip push-up (or knee) | Superset A | 3 × 10 |
 | Fri | Goblet squat – 12 lb (narrow) — *replaces sumo squat* | Superset B | 3 × 16 |
 | Fri | Pallof press (resistance band) | Superset B | 3 × 14 / side |
+| Fri | High knees (finisher) | Finisher | 60 sec |
 
 Delivered as `week_fourteen_workout.jsx`, matching the real weeks' structure (SvgWrap/Gnd/Hd/Ln figures, ILLUS/VIDEO/WARMUP_VIDEO maps, day tabs, superset pills, checkboxes, per-exercise `sets` count).
+
+**Week 14 revision (July 2026)** — applied review findings 1–3 to the file:
+- **Band pull-apart 2 × 15** added to Wednesday (standalone, ~90 sec) so the week has at least one pulling movement while bent-over/renegade row are out.
+- **Standing hamstring stretch reinstated**: Thursday mobility (2 × 45 sec/leg, as in weeks 10–12) and Friday cooldown (30 sec/leg — RDL day).
+- **Finishers restored at half length (60 sec)** on Monday and Friday, using **high knees instead of skaters** while the adductor strain heals (skaters are a lateral push). Skaters return when the strain resolves. This makes the ~95–105 cal label honest again.
 
 > Confirm with the user: (1) is the strain healed enough to keep lateral lunge / sumo squat, or hold the substitutions; (2) the split squat and narrow goblet squat substitutions.
 
@@ -157,7 +166,7 @@ Delivered as `week_fourteen_workout.jsx`, matching the real weeks' structure (Sv
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+
 
-A review of weeks 1–14 found the overall structure and feedback-driven adjustments sound, but the week 13 reset overshot in three ways that week 14 inherited. Address these when building the next week:
+A review of weeks 1–14 found the overall structure and feedback-driven adjustments sound, but the week 13 reset overshot in three ways that week 14 inherited. **Items 1–3 were applied to the revised week 14 file (July 2026)** — keep them in place for week 15+; items 4–5 remain open:
 
 1. **Restore pulling work (highest priority).** Since the week 13 reset removed bent-over row (and renegade row disappeared with it), weeks 13–14 contain **zero pulling exercises** — both upper-body days are all push (push-up, overhead press, triceps) plus biceps. For a desk worker this risks postural/shoulder imbalance if it continues. Until the full bent-over row fits the time budget again, include at minimum a cheap pull — e.g. **band pull-aparts 2 × 12–15** (already in the warm-up repertoire, ~90 sec) or a 2-set row on Wednesday.
 2. **Reinstate hamstring stretches on Thursday and Friday** (see standing preference #7). The Thursday standing hamstring stretch (present weeks 10–12 as **2 × 45 sec each leg**) and the Friday cooldown hamstring stretch (**30 sec each leg**) were both lost in the week 13 reset. Friday is RDL day — it needs one most.

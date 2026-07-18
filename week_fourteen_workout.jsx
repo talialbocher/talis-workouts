@@ -78,6 +78,23 @@ const ILLUS = {
       <Ln p={[[50,28],[40,44]]} w={1.5} /><Ln p={[[50,28],[60,44]]} w={1.5} />
     </SvgWrap>
   ),
+  "Band pull-apart": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={13} />
+      <Ln p={[[50,19],[50,46]]} />
+      <Ln p={[[50,28],[36,26],[24,22]]} w={1.5} />
+      <Ln p={[[50,28],[64,26],[76,22]]} w={1.5} />
+      <line x1="24" y1="22" x2="76" y2="22" stroke="currentColor" strokeOpacity={0.3} strokeWidth={1} strokeDasharray="4,3" />
+      <Ln p={[[50,46],[44,68],[42,79]]} /><Ln p={[[50,46],[56,68],[58,79]]} />
+    </SvgWrap>
+  ),
+  "High knees (finisher)": () => (
+    <SvgWrap><Gnd /><Hd cx={50} cy={12} />
+      <Ln p={[[50,18],[50,44]]} />
+      <Ln p={[[50,44],[48,62],[46,79]]} />
+      <Ln p={[[50,44],[64,48],[62,60]]} />
+      <Ln p={[[50,26],[62,34]]} w={1.5} /><Ln p={[[50,26],[38,20]]} w={1.5} />
+    </SvgWrap>
+  ),
   "Standing hamstring stretch": () => (
     <SvgWrap><Gnd /><Hd cx={50} cy={16} />
       <Ln p={[[50,22],[48,42]]} />
@@ -234,6 +251,8 @@ const VIDEO = {
   "Split squat – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+split+squat+form+tutorial+beginner",
   "Calf raise (single leg)": "https://www.youtube.com/results?search_query=single+leg+calf+raise+form+tutorial",
   "Standing hamstring stretch": "https://www.youtube.com/results?search_query=standing+hamstring+stretch+tutorial+form",
+  "Band pull-apart": "https://www.youtube.com/results?search_query=resistance+band+pull+apart+form+tutorial",
+  "High knees (finisher)": "https://www.youtube.com/results?search_query=high+knees+low+impact+cardio+tutorial",
   "Brisk walk or light cycling": "https://www.youtube.com/results?search_query=brisk+walking+technique+fitness+beginners",
   "Alternatively: dance or swim": "https://www.youtube.com/results?search_query=beginner+dance+workout+low+impact",
   "Knee push-up (progressing to full)": "https://www.youtube.com/results?search_query=knee+push+up+to+full+push+up+progression+tutorial",
@@ -266,6 +285,7 @@ const days = [
       { name: "Reverse lunge – 8 lb", sets: "3 x 12 each leg", superset: "B", note: "Unchanged. Step straight back, controlled descent — front-to-back plane only." },
       { name: "Split squat – 8 lb", sets: "3 x 10 each leg", superset: "B", note: "Replaces lateral lunge while your strain heals. Stagger your stance (one foot forward, one back) and lower straight down — no sideways movement, so nothing pulls on the inner thigh. Stop if you feel any pinch in the adductor." },
       { name: "Calf raise (single leg)", sets: "2 x 15 each side", note: "Standalone, unchanged. 5-count descent, controlled." },
+      { name: "High knees (finisher)", sets: "60 sec continuous", note: "The finisher is back after the week 13 cut, at half length to protect the time budget — it's what keeps the session near 100 cal. High knees instead of skaters this week: skaters are a lateral push, exactly what the healing inner thigh doesn't need." },
     ],
     cooldown: "2 min — standing hamstring stretch (30 sec each leg), figure-4 hip stretch (30 sec each side)"
   },
@@ -283,12 +303,13 @@ const days = [
     label: "Wed", name: "Wednesday", type: "Upper body + core", tag: "strength",
     warmup: "3 min — arm circles, cat-cow x10, tricep warm-up circles x10",
     warmupItems: ["Arm circles", "Cat-cow", "Tricep warm-up circles"],
-    note: "Upper body is unaffected by the leg strain — small rep nudges from week 13, as flagged in week 13's Sunday note. Dead bug and plank stay at 2 rounds. Bent-over row still out until this feels solid.",
+    note: "Upper body is unaffected by the leg strain — small rep nudges from week 13, as flagged in week 13's Sunday note. Dead bug and plank stay at 2 rounds. Band pull-aparts are in (~90 sec) so the week has at least one pulling movement — since the row came out in week 13 everything here has been push + biceps, which isn't great for desk-job posture. Full bent-over row returns once this feels solid.",
     exercises: [
       { name: "Knee push-up (progressing to full)", sets: "3 x 11 reps", superset: "A", note: "One more rep than week 13. Full reps where you can, knees for the rest — dropping mid-set is smart pacing." },
       { name: "Overhead press – 8 lb (tempo)", sets: "3 x 15 reps", superset: "A", note: "One more rep than week 13. 4-count up, 4-count down — tempo stays the load." },
       { name: "Alternating bicep curl – 8 lb", sets: "3 x 15 each arm", superset: "B", note: "One more rep than week 13. 4-count descent, full extension at the bottom." },
       { name: "Overhead tricep extension – 8 lb", sets: "3 x 12 reps", superset: "B", note: "Same as week 13. Elbows pointing forward, not flared." },
+      { name: "Band pull-apart", sets: "2 x 15 reps", note: "Standalone, ~90 sec. Arms straight at chest height, pull the band apart by squeezing the shoulder blades together. Your only pull this week — don't skip it." },
       { name: "Dead bug", sets: "2 x 16 each side", note: "Standalone, same as week 13. Lower back flat throughout." },
       { name: "Plank hold", sets: "2 x 28 sec", note: "Standalone. Up 3 sec from week 13's 25 sec — stop the instant your hips sag." },
     ],
@@ -297,8 +318,9 @@ const days = [
   {
     label: "Thu", name: "Thursday", type: "Mobility + recovery", tag: "mobility",
     warmup: null,
-    note: "Unchanged from week 13. Around 18-20 min. Gentle hip work helps the strained area recover without loading it.",
+    note: "Around 20 min. The standing hamstring stretch is back — it was dropped in the week 13 reset, but it's part of the hamstring-care routine from week 10 and belongs here. Gentle hip work helps the strained area recover without loading it.",
     exercises: [
+      { name: "Standing hamstring stretch", sets: "2 x 45 sec each leg", note: "Reinstated from weeks 10-12. Foot forward on a low step or the floor, hinge from the hips with a flat back until you feel the stretch. No bouncing." },
       { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Full breath with every rep." },
       { name: "Pigeon pose", sets: "2 x 60 sec each side", note: "Breathe into the hip, relax further each exhale. Ease off if the inner thigh complains." },
       { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Forward lean over the front shin for the deeper version." },
@@ -318,8 +340,9 @@ const days = [
       { name: "Close-grip push-up (or knee)", sets: "3 x 10 reps", superset: "A", note: "Same as week 13. Hands shoulder-width, extra tricep emphasis. Drop to knees whenever needed." },
       { name: "Goblet squat – 12 lb (narrow)", sets: "3 x 16 reps", superset: "B", note: "Replaces sumo squat while the strain heals. Keep your feet about hip-width and toes forward — narrow stance keeps the work in the quads and glutes, off the inner thigh. 2-sec pause at the bottom." },
       { name: "Pallof press (resistance band)", sets: "3 x 14 each side", superset: "B", note: "Same as week 13. 3-sec hold at full extension." },
+      { name: "High knees (finisher)", sets: "60 sec continuous", note: "Finisher restored at half length. High knees instead of skaters while the inner thigh heals — no lateral push." },
     ],
-    cooldown: "2 min — overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"
+    cooldown: "3 min — standing hamstring stretch (30 sec each leg), overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"
   },
   {
     label: "Sat", name: "Saturday", type: "Rest", tag: "rest", isRest: true,

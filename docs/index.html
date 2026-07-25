@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tali's Workouts</title>
+
+<!-- iPhone home-screen app -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Workouts">
+<meta name="theme-color" content="#1e40af">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<link rel="manifest" href="app.webmanifest">
+
+<style>
+  :root {
+    /* The week components read this for SVG figure fills. They are hardcoded
+       light (#fff cards, #f9f9f7 panels), so the page commits to a light scheme. */
+    --color-background-secondary: #fff;
+    color-scheme: light;
+  }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: #fafaf9;
+    color: #111;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+             env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  #bar {
+    display: flex; align-items: center; gap: 10px;
+    max-width: 680px; margin: 0 auto; padding: 10px 16px 0;
+  }
+  #bar label { font-size: 12px; color: #888; }
+  #picker {
+    flex: 1; min-width: 0; font: inherit; font-size: 13px; color: #333;
+    padding: 7px 10px; border: 1px solid #d4d4d4; border-radius: 8px;
+    background: #fff; -webkit-appearance: none; appearance: none;
+  }
+  #note {
+    max-width: 680px; margin: 10px auto 0; padding: 0 16px;
+    font-size: 12px; color: #92400e;
+  }
+  #note a { color: #1d4ed8; }
+  #msg {
+    max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem;
+    color: #666; font-size: 14px; line-height: 1.6;
+  }
+  #msg code {
+    display: block; margin-top: 10px; padding: 8px 10px; background: #f4f4f5;
+    border-radius: 6px; font-size: 12px; color: #444; white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div id="bar" class="hidden">
+  <label for="picker">Week</label>
+  <select id="picker"></select>
+</div>
+<div id="note" class="hidden"></div>
+<div id="msg">Loading this week's workout…</div>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js" crossorigin></script>
+
+<script>
+(function () {
+  var msg = document.getElementById('msg');
+  var bar = document.getElementById('bar');
+  var note = document.getElementById('note');
+  var picker = document.getElementById('picker');
+  var root = document.getElementById('root');
+
+  function fail(what, err) {
+    root.innerHTML = '';
+    msg.classList.remove('hidden');
+    msg.innerHTML = "Couldn't load " + what + '.<code></code>';
+    msg.querySelector('code').textContent = String(err && err.message || err);
+  }
+
+  // The week files are authored as ES modules for the artifact runtime. Strip the
+  // module syntax so Babel's JSX transform output can run as a plain function body.
+  function compile(src) {
+    var body = src
+      .replace(/^[ \t]*import[\s\S]*?from\s*["'][^"']+["'];?[ \t]*$/gm, '')
+      .replace(/export\s+default\s+function\s+/, 'function ');
+    var code = Babel.transform(body, { presets: ['react'] }).code;
+    return new Function('React', 'useState', code + '\nreturn WorkoutSchedule;')(
+      React, React.useState
+    );
+  }
+
+  function render(entry, weeks) {
+    fetch('weeks/' + entry.file, { cache: 'no-cache' })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status + ' ' + r.statusText + ' — weeks/' + entry.file);
+        return r.text();
+      })
+      .then(function (src) {
+        var Comp = compile(src);
+        msg.classList.add('hidden');
+        ReactDOM.createRoot(root).render(React.createElement(Comp));
+        document.title = 'Week ' + entry.week + " · Tali's Workouts";
+        if (entry.week !== weeks[0].week) {
+          note.classList.remove('hidden');
+          note.innerHTML = 'Viewing an earlier week. ' +
+            '<a href="./">Go to week ' + weeks[0].week + '</a>';
+        } else {
+          note.classList.add('hidden');
+        }
+      })
+      .catch(function (e) { fail('week ' + entry.week, e); });
+  }
+
+  fetch('weeks/manifest.json', { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error(r.status + ' ' + r.statusText + ' — weeks/manifest.json');
+      return r.json();
+    })
+    .then(function (weeks) {
+      if (!Array.isArray(weeks) || !weeks.length) throw new Error('manifest.json is empty');
+      weeks.sort(function (a, b) { return b.week - a.week; });
+
+      weeks.forEach(function (w) {
+        var o = document.createElement('option');
+        o.value = w.week;
+        o.textContent = 'Week ' + w.week + (w.title ? ' — ' + w.title : '');
+        picker.appendChild(o);
+      });
+
+      var want = parseInt(new URLSearchParams(location.search).get('week'), 10);
+      var entry = weeks.filter(function (w) { return w.week === want; })[0] || weeks[0];
+
+      picker.value = entry.week;
+      bar.classList.remove('hidden');
+      picker.addEventListener('change', function () {
+        location.search = '?week=' + picker.value;
+      });
+
+      render(entry, weeks);
+    })
+    .catch(function (e) { fail('the workout list', e); });
+})();
+</script>
+</body>
+</html>

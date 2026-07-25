@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-14 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_fourteen_workout.jsx`.
+15 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_fifteen_workout.jsx`.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -158,11 +158,27 @@ Delivered as `week_fourteen_workout.jsx`, matching the real weeks' structure (Sv
 
 > Confirm with the user: (1) is the strain healed enough to keep lateral lunge / sumo squat, or hold the substitutions; (2) the split squat and narrow goblet squat substitutions.
 
+### Week 15 (Return to full volume)
+
+User confirmed the adductor strain was **fully healed** and asked to bring back both removed exercises. Built from the revised week-14 file.
+
+**Changes vs. week 14:**
+- **Lateral lunge returns** (3 × 12/side, replacing the split squat) — at week 13's rep count, not week 10's 14, to ease back into lateral load.
+- **Sumo squat returns** (3 × 16, replacing the narrow-stance goblet squat) on Friday.
+- **Bent-over row returns** (2 × 15, Wednesday, supersetted with dead bug) — reintroduced at 2 rounds, not 3. The band pull-apart moves up into the Wednesday warm-up now that a real horizontal pull is back.
+- **Arnold press returns** (2 × 12, Friday, supersetted with sumo squat). **Paid for by dropping Pallof press to 2 rounds** — the time budget did not otherwise absorb both returning exercises.
+- **Skater finishers replace high knees** on Monday and Friday (60 sec) now the lateral push is safe again.
+- **Review finding #4 applied — lower-body progression via technique, not rep-creep:** goblet squat holds at 3 × 15 but gains a **3-sec bottom pause**; hip thrust top squeeze goes 2 sec → 3 sec. Wednesday's press and curl **hold at 15 reps** to make room for the row.
+- Small progressions: knee push-up 11 → 12, plank 28 → 30 sec.
+
+> ⚠️ **Time-budget risk:** week 15 is the fullest Wednesday and Friday since week 12. Both were explicitly trimmed elsewhere to compensate, but this is the exact pattern that caused the week 13 blowout. The Sunday note asks the user to report whether Wed/Fri stayed under 25 min. **If over budget, cut rounds — do not drop the pull again.**
+
 ## Open Threads / Next Steps for Week 14+
 
-- User strained a muscle during **lateral lunge** (Wednesday session inquiry) — reported as intermittent pain only under load, not constant, no swelling mentioned. **Advised:** avoid direct adductor/inner-thigh loading (lateral lunge, wide-stance sumo squat) until resolved; monitor for sharp pain, swelling, or instability as red flags requiring medical attention.
-- Bent-over row (removed in week 13 reset) and Arnold press (removed in week 13 reset) are candidates for reintroduction once current volume feels sustainable and the leg strain has resolved.
-- Consider whether lateral lunge should be modified, reduced in load, or resequenced (e.g., not paired with reverse lunge) given the strain — worth flagging to the user before simply resuming.
+- ~~User strained a muscle during **lateral lunge**~~ — **resolved as of week 15**; user confirmed fully healed. Lateral lunge and sumo squat both restored. Standing red-flag guidance still applies if it recurs: sharp pain, swelling, or instability warrant medical attention.
+- ~~Bent-over row and Arnold press are candidates for reintroduction~~ — **both reintroduced in week 15** at 2 rounds each. Watch whether they fit the time budget before restoring them to 3.
+- **Open for week 16:** did Wednesday and Friday stay under 25 min with the row and Arnold press back? If yes, consider taking the row to 3 rounds and restoring Pallof press to 3. If no, cut rounds elsewhere rather than removing the pull.
+- **Open for week 16:** continue technique-based lower-body progression (finding #4) — next steps after the 3-sec pause could be 1.5-rep goblet squats or a single-leg hip thrust progression.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+
 

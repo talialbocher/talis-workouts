@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-15 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_fifteen_workout.jsx`.
+16 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_sixteen_workout.jsx`.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -173,12 +173,21 @@ User confirmed the adductor strain was **fully healed** and asked to bring back 
 
 > ⚠️ **Time-budget risk:** week 15 is the fullest Wednesday and Friday since week 12. Both were explicitly trimmed elsewhere to compensate, but this is the exact pattern that caused the week 13 blowout. The Sunday note asks the user to report whether Wed/Fri stayed under 25 min. **If over budget, cut rounds — do not drop the pull again.**
 
-## Open Threads / Next Steps for Week 14+
+### Week 16 (Holding pattern + technique progression)
+
+No retro feedback had come in yet on whether week 15's fuller Wednesday and Friday (row and Arnold press both back) stayed under the 25-minute budget, or on how the returning lateral lunge/sumo squat felt the day after. Rather than guess, week 16 holds those volumes steady and applies the one open item that didn't depend on that feedback.
+
+**Changes vs. week 15:**
+- **Goblet squat progresses to 1.5-rep style** (finding #4, next step after the 3-sec pause): 3 × 12 reps, each rep = full depth → halfway up → back down → full stand. Reps drop from 15 to 12 since each rep takes ~1.5x as long, so time under tension still increases without adding session length. Hip thrust holds at its week-15 3-sec squeeze — only one lower-body lift progresses at a time.
+- **Everything else holds at week 15's volume**: lateral lunge (3×12/side), sumo squat (3×16), bent-over row (2×15), Arnold press (2×12), Pallof press (2×14/side). Sunday's note asks for the three data points needed to unlock the next moves — row/Pallof to 3 rounds if Wed/Fri fit under budget, lateral lunge/sumo squat progression if the inner thigh held up, and how the new goblet squat progression felt.
+
+## Open Threads / Next Steps for Week 17+
 
 - ~~User strained a muscle during **lateral lunge**~~ — **resolved as of week 15**; user confirmed fully healed. Lateral lunge and sumo squat both restored. Standing red-flag guidance still applies if it recurs: sharp pain, swelling, or instability warrant medical attention.
-- ~~Bent-over row and Arnold press are candidates for reintroduction~~ — **both reintroduced in week 15** at 2 rounds each. Watch whether they fit the time budget before restoring them to 3.
-- **Open for week 16:** did Wednesday and Friday stay under 25 min with the row and Arnold press back? If yes, consider taking the row to 3 rounds and restoring Pallof press to 3. If no, cut rounds elsewhere rather than removing the pull.
-- **Open for week 16:** continue technique-based lower-body progression (finding #4) — next steps after the 3-sec pause could be 1.5-rep goblet squats or a single-leg hip thrust progression.
+- ~~Bent-over row and Arnold press are candidates for reintroduction~~ — **both reintroduced in week 15** at 2 rounds each; **held steady in week 16** pending feedback.
+- **Open for week 17:** did Wednesday and Friday stay under 25 min with the row and Arnold press back (asked again in week 16)? If yes, take the row to 3 rounds and restore Pallof press to 3. If no, cut rounds elsewhere rather than removing the pull.
+- **Open for week 17:** did lateral lunge / sumo squat feel fine through two weeks back? If yes, small rep bump is reasonable.
+- **Open for week 17:** how did the 1.5-rep goblet squat feel — if it landed well, hip thrust is the next candidate for a technique-based progression (longer squeeze or single-leg variation) rather than more reps.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+
 

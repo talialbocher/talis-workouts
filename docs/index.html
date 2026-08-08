@@ -30,21 +30,38 @@
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
              env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
-  #bar {
-    display: flex; align-items: center; gap: 10px;
-    max-width: 680px; margin: 0 auto; padding: 10px 16px 0;
+
+  #bar { max-width: 680px; margin: 0 auto; padding: 1.25rem 1rem 0.5rem; }
+  #brand { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  #brand b {
+    font-size: 15px; font-weight: 600; letter-spacing: 0.02em; color: #1a1a1a;
   }
-  #bar label { font-size: 12px; color: #888; }
-  #picker {
-    flex: 1; min-width: 0; font: inherit; font-size: 13px; color: #333;
-    padding: 7px 10px; border: 1px solid #d4d4d4; border-radius: 8px;
-    background: #fff; -webkit-appearance: none; appearance: none;
+  #count { font-size: 12px; color: #9a9a9a; font-weight: 500; }
+  /* Manifest titles run long, so cap the line at two rows — the header stays a
+     fixed height as weeks are switched. The full text lives on each button's
+     aria-label, and the week's own opening note explains the change in full. */
+  #subtitle {
+    font-size: 12px; color: #9a9a9a; margin: 0 0 10px; line-height: 1.45;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+    overflow: hidden;
   }
-  #note {
-    max-width: 680px; margin: 10px auto 0; padding: 0 16px;
-    font-size: 12px; color: #92400e;
+
+  /* Horizontal week strip — newest is the rightmost button. */
+  #strip {
+    display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: thin;
   }
-  #note a { color: #1d4ed8; }
+  #strip button {
+    flex: 0 0 auto; min-width: 40px; width: 40px; padding: 7px 0;
+    border-radius: 10px; font-family: inherit; font-size: 14px; font-weight: 500;
+    cursor: pointer; border: 1px solid #e2e2e2; background: #fff; color: #666;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+  #strip button[aria-current="true"] {
+    font-weight: 600; border-color: #93c5fd; background: #dbeafe; color: #1e40af;
+  }
+  #strip button:focus-visible { outline: 2px solid #1e40af; outline-offset: 2px; }
+
   #msg {
     max-width: 680px; margin: 0 auto; padding: 3rem 1.5rem;
     color: #666; font-size: 14px; line-height: 1.6;
@@ -55,15 +72,19 @@
     word-break: break-word;
   }
   .hidden { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    #strip button { transition: none; }
+  }
 </style>
 </head>
 <body>
 
 <div id="bar" class="hidden">
-  <label for="picker">Week</label>
-  <select id="picker"></select>
+  <div id="brand"><b>Talis</b><span id="count"></span></div>
+  <p id="subtitle"></p>
+  <div id="strip"></div>
 </div>
-<div id="note" class="hidden"></div>
 <div id="msg">Loading this week's workout…</div>
 <div id="root"></div>
 
@@ -75,12 +96,19 @@
 (function () {
   var msg = document.getElementById('msg');
   var bar = document.getElementById('bar');
-  var note = document.getElementById('note');
-  var picker = document.getElementById('picker');
-  var root = document.getElementById('root');
+  var count = document.getElementById('count');
+  var subtitle = document.getElementById('subtitle');
+  var strip = document.getElementById('strip');
+  var rootEl = document.getElementById('root');
+
+  // One React root for the life of the page — switching weeks re-renders it
+  // rather than reloading, so the strip stays put and scroll feels instant.
+  var reactRoot = ReactDOM.createRoot(rootEl);
+  var compiled = {};   // week number -> component, so revisits skip Babel
+  var buttons = {};    // week number -> button element
 
   function fail(what, err) {
-    root.innerHTML = '';
+    reactRoot.render(null);
     msg.classList.remove('hidden');
     msg.innerHTML = "Couldn't load " + what + '.<code></code>';
     msg.querySelector('code').textContent = String(err && err.message || err);
@@ -98,27 +126,45 @@
     );
   }
 
-  function render(entry, weeks) {
+  function select(entry) {
+    Object.keys(buttons).forEach(function (n) {
+      buttons[n].setAttribute('aria-current', String(+n === entry.week));
+    });
+    var active = buttons[entry.week];
+    if (active) active.scrollIntoView({ block: 'nearest', inline: 'center' });
+
+    subtitle.textContent = entry.title ? 'Pick a week · ' + entry.title : 'Pick a week';
+    document.title = 'Week ' + entry.week + " · Tali's Workouts";
+
+    // Keep the URL shareable/refreshable without adding history entries.
+    try {
+      history.replaceState(null, '', entry.week === newest ? './' : '?week=' + entry.week);
+    } catch (e) { /* file:// and the like — not worth failing the render over */ }
+
+    if (compiled[entry.week]) {
+      msg.classList.add('hidden');
+      reactRoot.render(React.createElement(compiled[entry.week]));
+      return;
+    }
+
+    msg.classList.remove('hidden');
+    msg.textContent = 'Loading week ' + entry.week + '…';
+    reactRoot.render(null);
+
     fetch('weeks/' + entry.file, { cache: 'no-cache' })
       .then(function (r) {
         if (!r.ok) throw new Error(r.status + ' ' + r.statusText + ' — weeks/' + entry.file);
         return r.text();
       })
       .then(function (src) {
-        var Comp = compile(src);
+        compiled[entry.week] = compile(src);
         msg.classList.add('hidden');
-        ReactDOM.createRoot(root).render(React.createElement(Comp));
-        document.title = 'Week ' + entry.week + " · Tali's Workouts";
-        if (entry.week !== weeks[0].week) {
-          note.classList.remove('hidden');
-          note.innerHTML = 'Viewing an earlier week. ' +
-            '<a href="./">Go to week ' + weeks[0].week + '</a>';
-        } else {
-          note.classList.add('hidden');
-        }
+        reactRoot.render(React.createElement(compiled[entry.week]));
       })
       .catch(function (e) { fail('week ' + entry.week, e); });
   }
+
+  var newest = null;
 
   fetch('weeks/manifest.json', { cache: 'no-store' })
     .then(function (r) {
@@ -127,25 +173,28 @@
     })
     .then(function (weeks) {
       if (!Array.isArray(weeks) || !weeks.length) throw new Error('manifest.json is empty');
-      weeks.sort(function (a, b) { return b.week - a.week; });
+      weeks.sort(function (a, b) { return a.week - b.week; });  // oldest -> newest
+      newest = weeks[weeks.length - 1].week;
+
+      count.textContent = weeks.length + '-week program';
 
       weeks.forEach(function (w) {
-        var o = document.createElement('option');
-        o.value = w.week;
-        o.textContent = 'Week ' + w.week + (w.title ? ' — ' + w.title : '');
-        picker.appendChild(o);
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = w.week;
+        b.setAttribute('aria-label', 'Week ' + w.week + (w.title ? ' — ' + w.title : ''));
+        b.setAttribute('aria-current', 'false');
+        b.addEventListener('click', function () { select(w); });
+        strip.appendChild(b);
+        buttons[w.week] = b;
       });
 
       var want = parseInt(new URLSearchParams(location.search).get('week'), 10);
-      var entry = weeks.filter(function (w) { return w.week === want; })[0] || weeks[0];
+      var entry = weeks.filter(function (w) { return w.week === want; })[0] ||
+                  weeks[weeks.length - 1];
 
-      picker.value = entry.week;
       bar.classList.remove('hidden');
-      picker.addEventListener('change', function () {
-        location.search = '?week=' + picker.value;
-      });
-
-      render(entry, weeks);
+      select(entry);
     })
     .catch(function (e) { fail('the workout list', e); });
 })();

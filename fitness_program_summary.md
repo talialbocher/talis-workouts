@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-17 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_seventeen_workout.jsx`.
+18 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_eighteen_workout.jsx`.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -189,13 +189,24 @@ No retro feedback arrived on any of the three questions week 16 asked — Wednes
 
 **New rule for week 18:** if the same three questions still go unanswered, treat two consecutive clean weeks with no negative report as sufficient signal to make one small, low-risk move rather than holding a fourth week — most likely bent-over row to 3 rounds (pulling work is the highest program-review priority, and a rep bump on an already-tolerated exercise is lower-risk than bumping a previously-injured lift). Lateral lunge/sumo squat and hip thrust remain "wait for an explicit felt-fine report" items given the injury history.
 
-## Open Threads / Next Steps for Week 18+
+### Week 18 (Fallback rule applied — bent-over row to 3 rounds)
+
+No feedback arrived on any of the three open questions for a fourth straight week (Wed/Fri time budget, lateral lunge/sumo squat feel, 1.5-rep goblet squat). Per the week-17 fallback rule, week 18 makes the one designated low-risk move rather than holding a fourth time.
+
+**Changes vs. week 17:**
+- **Bent-over row moves to 3 rounds** (3 × 15, up from 2 × 15) — the only numeric change in the file. Chosen per the fallback rule: pulling work is the highest program-review priority, and a rep bump on an already-tolerated exercise is lower-risk than bumping a previously-injured lift.
+- **Everything else holds at week 15/16/17's level**: goblet squat (3×12, 1.5-rep style), hip thrust (3×15, 3-sec squeeze), lateral lunge (3×12/side), sumo squat (3×16), knee push-up/press/curl (week 15 volumes), Arnold press (2×12), Pallof press (2×14/side). These remain "wait for an explicit felt-fine report" items given the injury history — the fallback rule only authorized moving the row.
+- Narrative notes updated throughout (third week → fourth week where applicable) to reflect the elapsed time; Wednesday and Sunday notes explain the fallback move.
+
+`week_eighteen_workout.jsx` reviewed against `week_seventeen_workout.jsx`: confirmed the row's `sets` field is the only exercise-level value that changed, all other exercises byte-identical, standing preferences (3-set cap, 8/12 lb only, hamstring stretch placement) intact.
+
+## Open Threads / Next Steps for Week 19+
 
 - ~~User strained a muscle during **lateral lunge**~~ — **resolved as of week 15**; user confirmed fully healed. Lateral lunge and sumo squat both restored. Standing red-flag guidance still applies if it recurs: sharp pain, swelling, or instability warrant medical attention.
-- ~~Bent-over row and Arnold press are candidates for reintroduction~~ — **both reintroduced in week 15** at 2 rounds each; **held steady in weeks 16–17** pending feedback.
-- **Open for week 18 (asked three weeks running):** did Wednesday and Friday stay under 25 min with the row and Arnold press back? If yes, take the row to 3 rounds and restore Pallof press to 3. If no feedback arrives at all, apply the week-17 fallback rule above and move the row to 3 rounds anyway.
-- **Open for week 18 (asked three weeks running):** did lateral lunge / sumo squat feel fine through three weeks back? If yes, a small rep bump is reasonable. Absent explicit confirmation, hold — this is the previously-injured lift and gets a higher bar than the row.
-- **Open for week 18:** how did the 1.5-rep goblet squat feel after two weeks — if it landed well, hip thrust is the next candidate for a technique-based progression (longer squeeze or single-leg variation) rather than more reps.
+- ~~Bent-over row and Arnold press are candidates for reintroduction~~ — **both reintroduced in week 15** at 2 rounds each; **held steady in weeks 16–17**; **row moved to 3 rounds in week 18** via the fallback rule (no feedback received). Arnold press still held at 2 rounds.
+- **Open for week 19:** did the row at 3 rounds fit inside Wednesday's 25-minute budget? If yes and Friday was also fine, restore Pallof press to 3 rounds too — that was the other half of the original ask. If the row pushed Wednesday over budget, drop it back to 2 rounds rather than compounding the overage.
+- **Open for week 19 (asked four weeks running):** did lateral lunge / sumo squat feel fine through four weeks back? If yes, a small rep bump is reasonable. Absent explicit confirmation, keep holding — this is the previously-injured lift and gets a higher bar than the row, and there is no fallback rule authorizing a move here yet.
+- **Open for week 19:** how did the 1.5-rep goblet squat feel after three weeks — if it landed well, hip thrust is the next candidate for a technique-based progression (longer squeeze or single-leg variation) rather than more reps.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+
 

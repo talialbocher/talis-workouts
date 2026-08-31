@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-20 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_workout.jsx`.
+21 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_one_workout.jsx`.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -221,13 +221,67 @@ No feedback arrived on any of the open questions for a sixth straight week (late
 
 `week_twenty_workout.jsx` reviewed against `week_nineteen_workout.jsx`: confirmed the Pallof press `sets` field is the only exercise-level value that changed, all other exercises byte-identical, standing preferences (3-set cap, 8/12 lb only, hamstring stretch placement) intact.
 
-## Open Threads / Next Steps for Week 21+
+### Week 21 (Return week after two weeks travelling — Brazil)
 
-- ~~User strained a muscle during **lateral lunge**~~ — **resolved as of week 15**; user confirmed fully healed. Lateral lunge and sumo squat both restored. Standing red-flag guidance still applies if it recurs: sharp pain, swelling, or instability warrant medical attention.
-- ~~Bent-over row and Arnold press are candidates for reintroduction~~ — **both reintroduced in week 15** at 2 rounds each; **held steady in weeks 16–17**; **row moved to 3 rounds in week 18** via the fallback rule; **Pallof press followed to 3 rounds in week 20**, completing the reintroduction. Arnold press still held at 2 rounds.
-- **Open for week 21 (asked six weeks running):** did lateral lunge / sumo squat feel fine through six weeks back? If yes, a small rep bump is reasonable. Absent explicit confirmation, keep holding — this is the previously-injured lift and gets a higher bar than the row/Pallof pair, and there is no fallback rule authorizing a move here yet.
-- **Open for week 21:** how did the 1.5-rep goblet squat feel after five weeks — if it landed well, hip thrust is the next candidate for a technique-based progression (longer squeeze or single-leg variation) rather than more reps.
-- **Watch for week 21:** with the row and Pallof press both now at full volume, confirm Wednesday and Friday stayed under the 25-min budget. If either reports over budget, roll Pallof press back to 2 rounds first rather than touching the row.
+User reported no structured training for **two weeks** while travelling in Brazil. Activity during the trip: **heavy walking daily, some swimming**. No pain or injury reported. This is the second travel interruption in the program (week 6 was the first, after a hiking vacation), and week 21 follows the same shape: cut volume, re-groove patterns, rebuild over the following one to two weeks.
+
+**Critical bookkeeping — weeks 19 and 20 were never trained.** Both files were generated on schedule and both described their predecessors' bumps as having passed "clean weeks." Those weeks were *unworked*, not clean, so the signal they were supposed to provide does not exist:
+- **Bent-over row** at 3 rounds has exactly **one** real week of training (week 18), not three.
+- **Pallof press** at 3 rounds (introduced week 20) was **never trained at all**.
+Both were rolled back to 2 rounds in week 21 to re-earn the bump on real data. This is the risk the `derive-state-from-the-ledger` habit does not cover: the repo records what was *prescribed*, not what was *performed*.
+
+**What the trip did and did not maintain** — this drove every per-exercise decision:
+
+| Preserved by walking / swimming | Not trained at all on the trip |
+|---|---|
+| Aerobic base (Tuesday cardio uncut) | Loaded pressing (push-up, overhead press, close-grip) |
+| Calves, quads, general leg endurance | Lateral / frontal-plane load (lateral lunge, sumo squat, skaters) |
+| Glutes (partially — walking) | Anti-rotation and anti-extension core (Pallof, plank, dead bug) |
+| Pulling, partially (swimming) | Eccentric hamstring work (RDL) — walking is not hiking descents |
+
+**Changes vs. week 20:**
+- **Volume cut roughly 20–25% across all three strength days**, weights held at 8/12 lb throughout. Two weeks off costs coordination and work capacity, not much strength, and the 12 lb ceiling means dropping load is not a useful lever anyway (contrast week 6, which dropped goblet squat to 8 lb when 12 lb was still new).
+- **Rounds cut to 2** on the four movements the trip did nothing for and that carry injury or novelty risk: **lateral lunge** (2 × 10/side), **sumo squat** (2 × 12) — both adductor work, same tissue as the old strain; **bent-over row** (2 × 12) and **Pallof press** (2 × 12/side) — both rolled back per the bookkeeping note above. **Overhead tricep extension** also dropped to 2 × 10 for the Wednesday time budget.
+- **1.5-rep goblet squat parked for one week** — plain 3 × 12 @ 12 lb. High time-under-tension technique work is the wrong first session back; the 1.5-rep style returns in week 22, which also gives the still-unanswered "how did it feel" question a fresh chance.
+- **Finishers shortened 60 → 45 sec** on Monday and Friday, mirroring week 6's precedent.
+- **Thursday rebuilt around the trip, not the training week:** added **calf + soleus wall stretch** (2 × 45 sec/leg) and **kneeling hip flexor stretch** (2 × 45 sec/side) — walking loads the calves and shortens the hip flexors, and long flights compound both. Paid for by **90/90 hip stretch sitting out one week**, pigeon trimmed 60 → 45 sec/side, and supine spinal twist trimmed to 1 round. Legs-up-the-wall raised 4 → 5 min. Standing hamstring stretch untouched (preference #7). Still ~20 min. Two new SVG illustrations and video links were authored for the new stretches.
+- **Tuesday cardio is the only session not cut** — 20 min at normal effort. It is the one quality the trip actively maintained; swimming flagged as the preferred option since the user has been doing it and it is the only choice there that also loads the shoulders and lats.
+- **Calorie and time labels corrected to `~75-85 cal` and `~18-22 min total`** (from `~95-105 cal` / `~22-25 min`), per program review finding #3 — do not leave a reduced session wearing the old labels.
+
+**Week 21 rep scheme (vs. week 20):**
+
+| Day | Exercise | Week 20 | Week 21 |
+|---|---|---|---|
+| Mon | Goblet squat – 12 lb | 3 × 12 (1.5-rep) | 3 × 12 (straight) |
+| Mon | Hip thrust – 12 lb | 3 × 15 | 3 × 12 |
+| Mon | Reverse lunge – 8 lb | 3 × 12/leg | 3 × 10/leg |
+| Mon | Lateral lunge – 8 lb | 3 × 12/side | **2** × 10/side |
+| Mon | Calf raise (single leg) | 2 × 15/side | 2 × 12/side |
+| Mon | Low-impact skaters | 60 sec | 45 sec |
+| Wed | Knee push-up | 3 × 12 | 3 × 9 |
+| Wed | Overhead press – 8 lb (tempo) | 3 × 15 | 3 × 11 |
+| Wed | Alternating bicep curl – 8 lb | 3 × 15/arm | 3 × 11/arm |
+| Wed | Overhead tricep extension – 8 lb | 3 × 12 | **2** × 10 |
+| Wed | Bent-over row – 12 lb | 3 × 15 | **2** × 12 |
+| Wed | Dead bug | 2 × 16/side | 2 × 12/side |
+| Wed | Plank hold | 2 × 30 sec | 2 × 20 sec |
+| Fri | Romanian deadlift – 12 lb | 3 × 14 | 3 × 10 |
+| Fri | Close-grip push-up | 3 × 10 | 3 × 7 |
+| Fri | Sumo squat – 12 lb | 3 × 16 | **2** × 12 |
+| Fri | Arnold press – 8 lb | 2 × 12 | 2 × 9 |
+| Fri | Pallof press (band) | 3 × 14/side | **2** × 12/side |
+| Fri | Low-impact skaters | 60 sec | 45 sec |
+
+**Ramp plan for weeks 22–23:** week 22 moves back toward week 20's numbers — restore lateral lunge, bent-over row and Pallof press to 3 rounds, bring back the 1.5-rep goblet squat, finishers to 60 sec, 90/90 hip stretch back in — provided week 21 passed without complaint. Week 23 lands the reps fully. Do **not** compress this into a single week; week 7 needed a full week at ~95% before returning to peak.
+
+## Open Threads / Next Steps for Week 22+
+
+- **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19 and 20 were written, pushed, and never performed, and week 20's own notes claimed clean weeks that never happened. Before applying any "two clean weeks" style fallback rule, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions.
+- **Week 21 was a deload — none of its numbers are a benchmark.** Ramp per the plan above.
+- **Open (asked seven weeks running):** did lateral lunge / sumo squat feel fine? Week 21 gives a cleaner read than the last six, since both are coming back cold at reduced volume — the morning-after report matters more than usual.
+- **Open:** how does the 1.5-rep goblet squat feel? Parked in week 21, returns week 22.
+- **Watch:** whether the two new Thursday stretches (calf + soleus, kneeling hip flexor) earn permanent spots or hand their slots back to 90/90 once the travel stiffness clears.
+- Standing red-flag guidance still applies: sharp pain, swelling, or instability warrant medical attention. General soreness returning from two weeks off is expected.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+
 

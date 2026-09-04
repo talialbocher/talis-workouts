@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-21 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_one_workout.jsx`.
+22 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_two_workout.jsx`.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -274,14 +274,29 @@ Both were rolled back to 2 rounds in week 21 to re-earn the bump on real data. T
 
 **Ramp plan for weeks 22–23:** week 22 moves back toward week 20's numbers — restore lateral lunge, bent-over row and Pallof press to 3 rounds, bring back the 1.5-rep goblet squat, finishers to 60 sec, 90/90 hip stretch back in — provided week 21 passed without complaint. Week 23 lands the reps fully. Do **not** compress this into a single week; week 7 needed a full week at ~95% before returning to peak.
 
-## Open Threads / Next Steps for Week 22+
+### Week 22 (Ramp — restore what week 21 pre-authorized)
+
+No feedback had arrived on how week 21 (the return week) actually felt by the time week 22 was due. Rather than guess, week 22 executes exactly the ramp plan week 21 wrote for itself — the plan named specific items to restore rather than leaving the whole week open, so it went ahead on schedule.
+
+**Changes vs. week 21:**
+- **Lateral lunge, bent-over row, and Pallof press all return to 3 rounds** — the three items the week-21 plan named explicitly for this week's restore. Lateral lunge because it's the movement behind the old strain and the plan called it out by name; row and Pallof because they complete the same reintroduction that started (and was undone by the untrained weeks 19–20) earlier in the program.
+- **1.5-rep goblet squat returns**, reps unchanged at 12 — this is a technique restore, not a load or rep change. How it actually feels is still unanswered, now nine weeks running.
+- **Every other strength number steps roughly halfway back toward week 20's level**: hip thrust 12→14 reps, reverse lunge 10→11, calf raise 12→14/side, knee push-up 9→11, overhead press 11→14, bicep curl 11→14, dead bug 12→14/side, plank 20→25 sec, RDL 10→12, close-grip push-up 7→9, Arnold press 9→11. Week 23 is set to land all of these fully if week 22 goes cleanly.
+- **Sumo squat and overhead tricep extension deliberately hold at 2 rounds for one more week.** Sumo squat carries the same adductor-strain reasoning as lateral lunge but wasn't named in the week-21 plan, so it waits for week 23 rather than assuming the same green light. Overhead tricep extension holds to keep Wednesday's time budget in check now that the row's third round is back — it's the one to trim further if Wednesday runs long, not the row.
+- **Finishers back to 60 sec** (Monday, Friday), matching week 20.
+- **Thursday mobility reverts to the standard seven-stretch routine.** The two stretches added for the trip (calf + soleus wall stretch, kneeling hip flexor stretch) step back out now that travel is two weeks behind; 90/90 hip stretch returns, pigeon pose and supine spinal twist return to their full week-20 durations (60 sec/side and 2 rounds respectively), and legs-up-the-wall returns to 4 min from the travel week's 5.
+- **Calorie/time labels updated to `~85-95 cal` / `~20-23 min total`** — halfway between week 21's deload labels and week 20's peak labels, matching the halfway rep ramp.
+
+`week_22_workout.jsx` built directly from `week_21_workout.jsx`'s own pre-written ramp plan; reviewed against `week_20_workout.jsx` and `week_21_workout.jsx` to confirm every restored number matches one of those two files' values and no exercise was added or dropped beyond the two Thursday stretches named above.
+
+## Open Threads / Next Steps for Week 23+
 
 - **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19 and 20 were written, pushed, and never performed, and week 20's own notes claimed clean weeks that never happened. Before applying any "two clean weeks" style fallback rule, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions.
-- **Week 21 was a deload — none of its numbers are a benchmark.** Ramp per the plan above.
-- **Open (asked seven weeks running):** did lateral lunge / sumo squat feel fine? Week 21 gives a cleaner read than the last six, since both are coming back cold at reduced volume — the morning-after report matters more than usual.
-- **Open:** how does the 1.5-rep goblet squat feel? Parked in week 21, returns week 22.
-- **Watch:** whether the two new Thursday stretches (calf + soleus, kneeling hip flexor) earn permanent spots or hand their slots back to 90/90 once the travel stiffness clears.
-- Standing red-flag guidance still applies: sharp pain, swelling, or instability warrant medical attention. General soreness returning from two weeks off is expected.
+- **Week 22 is a partial ramp — the halfway numbers are not a benchmark.** Week 23 is set to land the full week-20 numbers across the board (including sumo squat and overhead tricep extension to 3 rounds) if week 22 goes cleanly; hold instead of climbing further if anything reports as sore, tight, or off.
+- **Open (asked eight weeks running):** did lateral lunge / sumo squat feel fine? Week 22 restores lateral lunge to 3 rounds cold, with no confirmation in hand — the morning-after report matters more than usual.
+- **Open:** how does the 1.5-rep goblet squat feel? Now back for a second real week (the first was week 15–20's run before the week-21 travel park); still unanswered.
+- **Resolved:** the two travel-specific Thursday stretches (calf + soleus, kneeling hip flexor) handed their slots back to 90/90 hip stretch in week 22, as flagged for watching in week 21.
+- Standing red-flag guidance still applies: sharp pain, swelling, or instability warrant medical attention.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+
 

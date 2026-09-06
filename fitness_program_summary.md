@@ -25,7 +25,9 @@
 
 ## File Deliverables
 
-22 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_two_workout.jsx`.
+23 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_three_workout.jsx`.
+
+⚠️ **Prescribed ≠ performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). Treat this file as a record of what was written, not what was done.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -289,13 +291,56 @@ No feedback had arrived on how week 21 (the return week) actually felt by the ti
 
 `week_22_workout.jsx` built directly from `week_21_workout.jsx`'s own pre-written ramp plan; reviewed against `week_20_workout.jsx` and `week_21_workout.jsx` to confirm every restored number matches one of those two files' values and no exercise was added or dropped beyond the two Thursday stretches named above.
 
-## Open Threads / Next Steps for Week 23+
+### Week 23 (Return week after three weeks with no training)
 
-- **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19 and 20 were written, pushed, and never performed, and week 20's own notes claimed clean weeks that never happened. Before applying any "two clean weeks" style fallback rule, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions.
-- **Week 22 is a partial ramp — the halfway numbers are not a benchmark.** Week 23 is set to land the full week-20 numbers across the board (including sumo squat and overhead tricep extension to 3 rounds) if week 22 goes cleanly; hold instead of climbing further if anything reports as sore, tight, or off.
-- **Open (asked eight weeks running):** did lateral lunge / sumo squat feel fine? Week 22 restores lateral lunge to 3 rounds cold, with no confirmation in hand — the morning-after report matters more than usual.
-- **Open:** how does the 1.5-rep goblet squat feel? Now back for a second real week (the first was week 15–20's run before the week-21 travel park); still unanswered.
-- **Resolved:** the two travel-specific Thursday stretches (calf + soleus, kneeling hip flexor) handed their slots back to 90/90 hip stretch in week 22, as flagged for watching in week 21.
+User reported **no workouts for three weeks** (reported 2026-09-06). This supersedes the week-22 ramp plan entirely.
+
+**Bookkeeping — weeks 21 and 22 were also never trained.** Week 21 was written as the return week from the Brazil trip and week 22 as its ramp, but neither was performed. Combined with the already-recorded weeks 19–20, **the last actually-trained week was week 18**. Consequences carried into week 23:
+- **Bent-over row** at 3 rounds still has exactly **one** real week of training (week 18). Prescribed at 3 rounds again in week 22; never trained. Back to 2 rounds.
+- **Pallof press** at 3 rounds has now been prescribed twice (weeks 20 and 22) and trained **zero** times. Back to 2 rounds.
+- **Lateral lunge** at 3 rounds was restored in week 22 and never trained. Back to 2 rounds.
+- **Week 22's halfway ramp numbers are not a baseline** — nothing was performed at them. Week 23 does not build on them.
+
+**Why not week 21's numbers exactly.** Week 21 was the closest precedent (a return week), but its situation was more favourable in two ways: the break was two weeks, not three, and it contained daily heavy walking plus swimming. This break had no reported activity at all. So week 23 sits one step below week 21 throughout, and makes one structural change week 21 did not:
+- **Tuesday cardio is eased in** (20 min at conversational effort). Week 21 deliberately left cardio uncut because walking and swimming had preserved the aerobic base. That reasoning does not transfer to a break with no activity — this is the one place week 23 departs from the week 21 template rather than just scaling it.
+- **Calf raise cut further** (2 × 10/side vs week 21's 2 × 12) for the same reason: week 21's calves had two weeks of walking behind them; these did not.
+- **Thursday rebuilt for sitting, not travelling.** The kneeling hip flexor stretch **stays in** — three weeks of desk work without training shortens hip flexors as effectively as long flights did. The **calf + soleus wall stretch steps out** (no walking load this time) and **90/90 hip stretch takes its slot back**. Eight items, still ~20 min, standing hamstring stretch untouched (preference #7).
+- **1.5-rep goblet squat parked again** — technique work under load is the wrong ask for a first session back. Now unanswered for ten weeks running.
+- **Finishers 45 sec**, calorie/time labels `~70-80 cal` / `~18-22 min` (below week 21's `~75-85`), per finding #3.
+
+**Week 23 rep scheme (vs. week 21, the previous return week):**
+
+| Day | Exercise | Week 21 | Week 23 |
+|---|---|---|---|
+| Mon | Goblet squat – 12 lb | 3 × 12 | 3 × 10 |
+| Mon | Hip thrust – 12 lb | 3 × 12 | 3 × 10 |
+| Mon | Reverse lunge – 8 lb | 3 × 10/leg | 3 × 8/leg |
+| Mon | Lateral lunge – 8 lb | 2 × 10/side | 2 × 8/side |
+| Mon | Calf raise (single leg) | 2 × 12/side | 2 × 10/side |
+| Tue | Cardio | 20 min, normal effort | 20 min, **conversational effort** |
+| Wed | Knee push-up | 3 × 9 | 3 × 8 |
+| Wed | Overhead press – 8 lb (tempo) | 3 × 11 | 3 × 10 |
+| Wed | Alternating bicep curl – 8 lb | 3 × 11/arm | 3 × 10/arm |
+| Wed | Overhead tricep extension – 8 lb | 2 × 10 | 2 × 9 |
+| Wed | Bent-over row – 12 lb | 2 × 12 | 2 × 10 |
+| Wed | Dead bug | 2 × 12/side | 2 × 10/side |
+| Wed | Plank hold | 2 × 20 sec | 2 × 18 sec |
+| Fri | Romanian deadlift – 12 lb | 3 × 10 | 3 × 9 |
+| Fri | Close-grip push-up | 3 × 7 | 3 × 6 |
+| Fri | Sumo squat – 12 lb | 2 × 12 | 2 × 10 |
+| Fri | Arnold press – 8 lb | 2 × 9 | 2 × 8 |
+| Fri | Pallof press (band) | 2 × 12/side | 2 × 10/side |
+
+**Ramp plan for weeks 24–25:** do **not** repeat the weeks 21→22 mistake of ramping on an unconfirmed week. Week 24 should only step up **if week 23 was actually trained** — confirm that first. If confirmed clean, week 24 moves back toward week 21's numbers (not week 20's), restores 60-sec finishers, and brings the 1.5-rep goblet squat back. Lateral lunge, sumo squat, row and Pallof stay at 2 rounds until a trained week is confirmed. Week 25 lands week 20's numbers at the earliest.
+
+## Open Threads / Next Steps for Week 24+
+
+- **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19, 20, 21 and 22 were all written, pushed, and never performed, and weeks 20 and 22 wrote notes claiming clean weeks that never happened. **The last confirmed trained week is week 18.** Before applying any "two clean weeks" style fallback rule, or ramping off a previous week, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions. This has now caused two bad ramps in a row — it is the single most expensive recurring failure in this program.
+- **Ask before ramping, every time.** The routine has no way to know whether a week was performed. A one-line check ("did you get last week's sessions in?") is worth more than any inference from the file history. If there's no answer, hold rather than climb — the cost of an extra easy week is far lower than ramping onto three weeks of detraining.
+- **Week 24 must not assume week 23 happened.** Week 23 is a return week built for a three-week layoff. If it was trained cleanly, week 24 steps toward week 21's numbers (not week 20's) and restores 60-sec finishers and the 1.5-rep goblet squat. If unconfirmed, repeat week 23's numbers.
+- **Open (asked ten weeks running):** did lateral lunge / sumo squat feel fine? Still no confirmation, and both have now been cold-started twice. Week 23 keeps both at 2 rounds — the morning-after report is the gate for going back to 3.
+- **Open:** how does the 1.5-rep goblet squat feel? Parked again in week 23 (wrong thing for a first session back). Last actually trained during weeks 15–18; unanswered for ten weeks.
+- **Watching:** the kneeling hip flexor stretch stayed in for week 23 on desk-sitting grounds rather than travel grounds; the calf + soleus wall stretch stepped back out and 90/90 returned. Revisit if the layoff pattern changes again.
 - Standing red-flag guidance still applies: sharp pain, swelling, or instability warrant medical attention.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+

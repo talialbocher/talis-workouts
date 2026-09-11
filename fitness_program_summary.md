@@ -25,9 +25,9 @@
 
 ## File Deliverables
 
-23 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_three_workout.jsx`.
+24 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_four_workout.jsx`.
 
-⚠️ **Prescribed ≠ performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). Treat this file as a record of what was written, not what was done.
+⚠️ **Prescribed ≠ performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). Week 23's status is unconfirmed as of week 24. Treat this file as a record of what was written, not what was done.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -333,14 +333,24 @@ User reported **no workouts for three weeks** (reported 2026-09-06). This supers
 
 **Ramp plan for weeks 24–25:** do **not** repeat the weeks 21→22 mistake of ramping on an unconfirmed week. Week 24 should only step up **if week 23 was actually trained** — confirm that first. If confirmed clean, week 24 moves back toward week 21's numbers (not week 20's), restores 60-sec finishers, and brings the 1.5-rep goblet squat back. Lateral lunge, sumo squat, row and Pallof stay at 2 rounds until a trained week is confirmed. Week 25 lands week 20's numbers at the earliest.
 
-## Open Threads / Next Steps for Week 24+
+### Week 24 (Hold — week 23 unconfirmed)
 
-- **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19, 20, 21 and 22 were all written, pushed, and never performed, and weeks 20 and 22 wrote notes claiming clean weeks that never happened. **The last confirmed trained week is week 18.** Before applying any "two clean weeks" style fallback rule, or ramping off a previous week, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions. This has now caused two bad ramps in a row — it is the single most expensive recurring failure in this program.
-- **Ask before ramping, every time.** The routine has no way to know whether a week was performed. A one-line check ("did you get last week's sessions in?") is worth more than any inference from the file history. If there's no answer, hold rather than climb — the cost of an extra easy week is far lower than ramping onto three weeks of detraining.
-- **Week 24 must not assume week 23 happened.** Week 23 is a return week built for a three-week layoff. If it was trained cleanly, week 24 steps toward week 21's numbers (not week 20's) and restores 60-sec finishers and the 1.5-rep goblet squat. If unconfirmed, repeat week 23's numbers.
-- **Open (asked ten weeks running):** did lateral lunge / sumo squat feel fine? Still no confirmation, and both have now been cold-started twice. Week 23 keeps both at 2 rounds — the morning-after report is the gate for going back to 3.
-- **Open:** how does the 1.5-rep goblet squat feel? Parked again in week 23 (wrong thing for a first session back). Last actually trained during weeks 15–18; unanswered for ten weeks.
-- **Watching:** the kneeling hip flexor stretch stayed in for week 23 on desk-sitting grounds rather than travel grounds; the calf + soleus wall stretch stepped back out and 90/90 returned. Revisit if the layoff pattern changes again.
+No word arrived on whether week 23 (the three-week return week) was actually trained by the time week 24 was due. Per the standing rule written into week 23's own plan — "do not repeat the weeks 21→22 mistake of ramping on an unconfirmed week" — week 24 holds rather than climbs.
+
+**Changes vs. week 23:** none. `week_23_workout.jsx` and `week_24_workout.jsx` are byte-identical on every `sets` field; only the title and narrative note text changed, to explain the hold and re-ask the still-open questions (lateral lunge/sumo squat feel, 1.5-rep goblet squat feel — both now eleven weeks unanswered) rather than to claim progress that hasn't been confirmed.
+
+**Rule for week 25:** if week 23 and/or week 24 are confirmed as actually trained (not just generated), week 25 steps toward week 21's return-week numbers — not week 20's, and not a full restoration. If still unconfirmed, week 25 repeats week 24's numbers again rather than guessing. Do not let more than one hold week pass without an explicit check-in question to the user about whether sessions are happening.
+
+`week_24_workout.jsx` reviewed against `week_23_workout.jsx`: confirmed every exercise's `sets` field is byte-identical; only the `<h1>` title and the day/exercise note strings listed above changed. No exercise added or removed.
+
+## Open Threads / Next Steps for Week 25+
+
+- **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19, 20, 21 and 22 were all written, pushed, and never performed, and weeks 20 and 22 wrote notes claiming clean weeks that never happened. **The last confirmed trained week is still week 18.** Week 23's status remains unconfirmed as of week 24, which is why week 24 repeated week 23's numbers instead of ramping. Before applying any "two clean weeks" style fallback rule, or ramping off a previous week, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions. This has now caused two bad ramps in a row — it is the single most expensive recurring failure in this program.
+- **Ask before ramping, every time.** The routine has no way to know whether a week was performed. A one-line check ("did you get last week's sessions in?") is worth more than any inference from the file history. If there's no answer, hold rather than climb — the cost of an extra easy week is far lower than ramping onto three or four weeks of detraining.
+- **Week 25 must not assume weeks 23–24 happened.** If confirmed trained, week 25 steps toward week 21's return-week numbers (not week 20's) and restores 60-sec finishers and the 1.5-rep goblet squat. If still unconfirmed, repeat week 24's numbers again rather than guessing — do not let a second consecutive hold week pass without asking explicitly.
+- **Open (asked eleven weeks running):** did lateral lunge / sumo squat feel fine? Still no confirmation, and both have now been cold-started twice. Weeks 23 and 24 keep both at 2 rounds — the morning-after report is the gate for going back to 3.
+- **Open:** how does the 1.5-rep goblet squat feel? Parked again in weeks 23 and 24 (wrong thing to reintroduce before a trained week is confirmed). Last actually trained during weeks 15–18; unanswered for eleven weeks.
+- **Watching:** the kneeling hip flexor stretch stayed in for weeks 23–24 on desk-sitting grounds rather than travel grounds; the calf + soleus wall stretch stepped back out and 90/90 returned. Revisit if the layoff pattern changes again.
 - Standing red-flag guidance still applies: sharp pain, swelling, or instability warrant medical attention.
 
 ## Program Review Findings (July 2026) — Apply When Building Week 15+

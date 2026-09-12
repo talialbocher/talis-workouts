@@ -305,14 +305,14 @@ const days = [
     label: "Mon", name: "Monday", type: "Lower body strength", tag: "strength",
     warmup: "3 min — high knees x20, standing hamstring sweep x10 each leg, leg swings x10 each, ankle rolls x10 each",
     warmupItems: ["High knees", "Standing hamstring sweep", "Leg swings", "Ankle rolls"],
-    note: "No word arrived on whether week 23 actually got trained. That question decides whether this week climbs or holds — weeks 19→20 and 21→22 both ramped on unconfirmed weeks, and both ramps turned out to be built on nothing. So week 24 does not repeat that mistake: every number below is identical to week 23's. If week 23 was in fact completed cleanly, week 25 is the one to step toward week 21's return-week numbers — not this one. Weight stays at 8/12 lb, and the 1.5-rep goblet squat stays parked until there's a confirmed clean week to build it back in on.",
+    note: "You trained week 23 — that is the first confirmed week since week 18, and it is what unlocks this one. Reps step back up to the levels from the last return week, and the 1.5-rep goblet squat comes back. Rounds mostly do not move yet: one clean week earns a rep ramp, not four round bumps at once. Lateral lunge stays at 2 rounds and goes to 3 next week if the inner thigh stays quiet.",
     exercises: [
-      { name: "Goblet squat – 12 lb", sets: "3 x 10 reps", superset: "A", note: "Straight reps, no 1.5-rep style. 12 lb holds — this is about re-grooving the pattern, so think smooth and controlled rather than deep and heavy. If 10 feels like plenty, 10 is the right number." },
-      { name: "Hip thrust – 12 lb", sets: "3 x 10 reps", superset: "A", note: "Down from 15 at your peak. Glutes come back faster than anything else after a layoff, so this one will feel closer to normal than the rest. Keep the 3-sec top squeeze — that costs nothing to hold on to." },
-      { name: "Reverse lunge – 8 lb", sets: "3 x 8 each leg", superset: "B", note: "Step straight back, slow descent. Single-leg balance is the first thing to go and the first thing to come back — expect the first round to wobble and the third to feel noticeably steadier." },
-      { name: "Lateral lunge – 8 lb", sets: "2 x 8 each side", superset: "B", note: "2 rounds, not 3. Week 22 put this back to 3 rounds on paper, but that week was never trained, so the bump does not carry over. This is also the movement behind the old adductor strain, which earns it the most cautious return in the week. Sideways load is the pattern that detrains fastest." },
-      { name: "Calf raise (single leg)", sets: "2 x 10 each side", note: "Standalone, and lower than the last return week — that one followed two weeks of heavy walking, which kept the calves loaded. This break did not. 5-count descent, hold the rail if you need it." },
-      { name: "Low-impact skaters (finisher)", sets: "45 sec continuous", note: "45 sec, not 60. Easy pace, land soft. Back to 60 sec once there's a confirmed clean week to build on." },
+      { name: "Goblet squat – 12 lb", sets: "3 x 10 reps", superset: "A", note: "The 1.5-rep style is back: full depth, halfway up, back down, then all the way up — that whole sequence is one rep. Reps deliberately stay at 10 rather than climbing, because the technique is the progression this week. This is the one that has gone unreported for ten weeks now — how it feels is genuinely useful information." },
+      { name: "Hip thrust – 12 lb", sets: "3 x 12 reps", superset: "A", note: "Up from 10. Keep the 3-sec squeeze at the top — glutes recover fastest after a break, so this is the lift that can take a step up soonest." },
+      { name: "Reverse lunge – 8 lb", sets: "3 x 10 each leg", superset: "B", note: "Up from 8. Step straight back, controlled descent. Balance should already feel steadier than it did last Monday — that comes back within a session or two." },
+      { name: "Lateral lunge – 8 lb", sets: "2 x 10 each side", superset: "B", note: "Reps up from 8, still 2 rounds. This is the movement behind the old adductor strain and it has been cold-started twice now, so it gets reps back before it gets its third round. That comes next week if nothing complains." },
+      { name: "Calf raise (single leg)", sets: "2 x 12 each side", note: "Standalone, up from 10. 5-count descent, full stretch at the bottom." },
+      { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Back to the full 60 sec from the return week's 45. Land soft, keep it smooth rather than fast." },
     ],
     cooldown: "3 min — standing hamstring stretch (30 sec each leg), calf stretch against a wall (30 sec each leg), figure-4 hip stretch (30 sec each side)"
   },
@@ -320,10 +320,10 @@ const days = [
     label: "Tue", name: "Tuesday", type: "Low-impact cardio", tag: "cardio",
     warmup: "2 min — slow walk, arm swings, ankle rolls",
     warmupItems: ["Slow walk", "Arm swings", "Ankle rolls"],
-    note: "This is the one change from how the last return week was built. That time cardio was left at full effort because two weeks of daily walking and swimming had kept the aerobic base intact. Three weeks of no training does not, so Tuesday eases in this time: same 20 minutes, but at a genuinely conversational pace. Building the habit back matters more this week than the effort level.",
+    note: "Last week's cardio was deliberately kept at conversational effort to ease back in. With one full week behind you, this goes back to normal effort. The aerobic base rebuilds faster than anything else in the program, so this is a safe one to push first.",
     exercises: [
-      { name: "Brisk walk or light cycling", sets: "20 min", note: "Full 20 min, easy effort — you should be able to hold a conversation the whole way. Do not chase the pace you had a month ago; it comes back on its own within a week or two." },
-      { name: "Alternatively: dance or swim", sets: "20 min", note: "A swim is a good pick after a layoff — it warms up the shoulders and lats gently, which sets Wednesday up nicely. Same rule: easy effort." },
+      { name: "Brisk walk or light cycling", sets: "20 min", note: "Full 20 min at talk-but-slightly-breathless pace — a step up from last week's easy effort." },
+      { name: "Alternatively: dance or swim", sets: "20 min", note: "Swimming is still a good pick: it adds shoulder and lat work that nothing else in the week covers twice." },
     ],
     cooldown: "2 min — slow walk, deep breathing, standing hamstring stretch (30 sec each leg)"
   },
@@ -331,31 +331,30 @@ const days = [
     label: "Wed", name: "Wednesday", type: "Upper body + core", tag: "strength",
     warmup: "3 min — arm circles, cat-cow x10, band pull-aparts x12, tricep warm-up circles x10",
     warmupItems: ["Arm circles", "Cat-cow", "Band pull-aparts", "Tricep warm-up circles"],
-    note: "Same numbers as week 23, held rather than climbed while week 23 stays unconfirmed. Being straight about the row: it has had exactly one real week at 3 rounds, back in week 18. Every 3-round row prescribed since then landed in a week that was never confirmed trained. It re-earns the third round on real, reported sessions rather than inheriting it from files.",
+    note: "The one round bump this week goes here. Bent-over row returns to 3 rounds — it is the only real pulling movement in the program, restoring pulling work is the highest-priority item from the program review, and it is the lowest-risk of the four movements sitting at 2 rounds. Everything else gains reps rather than rounds. If this Wednesday runs past 25 minutes, cut the tricep extension, not the row.",
     exercises: [
-      { name: "Knee push-up (progressing to full)", sets: "3 x 8 reps", superset: "A", note: "Expect to be on your knees more than you were before the break. That is correct pacing after a layoff, not a step backwards — the reps count either way." },
-      { name: "Overhead press – 8 lb (tempo)", sets: "3 x 10 reps", superset: "A", note: "8 lb, and keep the 4-count up and 4-count down. The tempo is doing the work here, which is exactly why it survives the deload when the reps do not." },
-      { name: "Alternating bicep curl – 8 lb", sets: "3 x 10 each arm", superset: "B", note: "4-count descent, full extension at the bottom. One arm at a time, no swinging from the hips." },
-      { name: "Overhead tricep extension – 8 lb", sets: "2 x 9 reps", superset: "B", note: "2 rounds. Elbows pointing forward rather than flared out. If Wednesday starts running long, this is the first thing to trim — not the row." },
-      { name: "Bent-over row – 12 lb", sets: "2 x 10 reps", superset: "C", note: "2 rounds. This is the only real pulling movement in the week, so it matters more than its position on the list suggests — a desk week plus three weeks off is a lot of forward-rounded shoulder time. Back flat, elbows driving toward your hips." },
-      { name: "Dead bug", sets: "2 x 10 each side", superset: "C", note: "Paired with the row to save time. Lower back stays flat against the floor the whole way — if it lifts, shorten the range." },
-      { name: "Plank hold", sets: "2 x 18 sec", note: "Standalone, and deliberately short. Core endurance falls off faster than anything else across a break. Stop the moment your hips start to sag rather than grinding out the clock." },
+      { name: "Knee push-up (progressing to full)", sets: "3 x 9 reps", superset: "A", note: "Up from 8. Knees whenever you need them — the rep still counts, and pressing is the slowest thing to come back after a layoff." },
+      { name: "Overhead press – 8 lb (tempo)", sets: "3 x 11 reps", superset: "A", note: "Up from 10, 8 lb held. 4-count up, 4-count down — the tempo is the load here, so it never gets dropped to make the reps." },
+      { name: "Alternating bicep curl – 8 lb", sets: "3 x 11 each arm", superset: "B", note: "Up from 10. 4-count descent, full extension at the bottom, no swing from the hips." },
+      { name: "Overhead tricep extension – 8 lb", sets: "2 x 10 reps", superset: "B", note: "Up from 9, still 2 rounds. Elbows pointing forward rather than flared. This is the designated trim if Wednesday runs long." },
+      { name: "Bent-over row – 12 lb", sets: "3 x 12 reps", superset: "C", note: "Third round back. Rounds first, reps later — 12 reps matches the last return week rather than chasing week 18's 15. Back flat, elbows driving toward your hips, no yanking with the lower back. This is the movement a desk job most needs." },
+      { name: "Dead bug", sets: "2 x 12 each side", superset: "C", note: "Up from 10. Still paired with the row. Lower back stays flat — shorten the range before you let it arch." },
+      { name: "Plank hold", sets: "2 x 20 sec", note: "Standalone, up from 18 sec. Stop the moment your hips sag rather than grinding out the clock." },
     ],
     cooldown: "2 min — overhead tricep stretch (20 sec each arm), chest opener, doorframe pec stretch"
   },
   {
     label: "Thu", name: "Thursday", type: "Mobility + recovery", tag: "mobility",
     warmup: null,
-    note: "Built for three weeks of sitting rather than three weeks of travelling. The kneeling hip flexor stretch stays in from the travel weeks — a desk job with no training behind it shortens hip flexors just as effectively as long flights did. The calf and soleus stretch steps back out, since there was no walking load this time, and 90/90 takes its slot back. Still about 20 min, and the standing hamstring stretch is untouched as always.",
+    note: "Back to the standard seven-stretch routine. The kneeling hip flexor stretch came in for the three weeks of sitting and has done its job now that you are training again, so it hands its slot back — pigeon returns to a full 60 sec and the spinal twist to 2 rounds. The standing hamstring stretch is untouched, as always.",
     exercises: [
-      { name: "Standing hamstring stretch", sets: "2 x 45 sec each leg", note: "Unchanged, and the one stretch that never moves. Foot forward on a low step or the floor, hinge from the hips with a flat back. No bouncing." },
-      { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Full breath with every rep. A good first thing after weeks of desk posture." },
-      { name: "Kneeling hip flexor stretch", sets: "2 x 45 sec each side", note: "Stays in from the travel weeks, for a different reason: three weeks of sitting without training is exactly what shortens these. Back knee down, front foot forward, squeeze the back glute and tuck the pelvis before you lean in — the tuck is what actually reaches the hip flexor." },
-      { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Back in, taking the calf stretch's slot. Both knees at right angles, sit tall first, then walk the hands forward over the front shin." },
-      { name: "Pigeon pose", sets: "2 x 45 sec each side", note: "Breathe into the hip and let it release a little further on each exhale. Prop the hip on a cushion if the knee complains." },
+      { name: "Standing hamstring stretch", sets: "2 x 45 sec each leg", note: "Unchanged, and the one that never moves. Foot forward on a low step or the floor, hinge from the hips with a flat back. No bouncing." },
+      { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Full breath with every rep — inhale into the arch, exhale into the round." },
+      { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Both knees at right angles, sit tall first, then walk the hands forward over the front shin. Stop where it is a stretch, not a pinch." },
+      { name: "Pigeon pose", sets: "2 x 60 sec each side", note: "Back to the full 60 sec, up from the return week's 45. Prop the hip on a cushion if the knee complains." },
       { name: "Overhead tricep stretch", sets: "1 x 30 sec each arm", note: "Reach one arm overhead, bend the elbow, gently pull with the other hand." },
-      { name: "Supine spinal twist", sets: "1 x 45 sec each side", note: "Full release — let the knee drop completely and keep both shoulders on the floor." },
-      { name: "Legs-up-the-wall", sets: "1 x 4 min", note: "Back to the standard 4 min now that there are no flights to recover from. Eyes closed, nothing else going on." },
+      { name: "Supine spinal twist", sets: "2 x 45 sec each side", note: "Back to 2 rounds. Let the knee drop completely and keep both shoulders on the floor." },
+      { name: "Legs-up-the-wall", sets: "1 x 4 min", note: "Standard 4 min. Eyes closed, nothing else going on." },
     ],
     cooldown: "5 slow deep breaths — inhale 5, hold 2, exhale 7"
   },
@@ -363,24 +362,24 @@ const days = [
     label: "Fri", name: "Friday", type: "Full body strength", tag: "strength",
     warmup: "3 min — high knees x20, goblet squat hold (12 lb, 20 sec), wrist circles",
     warmupItems: ["High knees", "Goblet squat hold", "Wrist circles"],
-    note: "Same logic as Monday. The RDL comes down hardest — nothing in three weeks off loads hamstrings eccentrically, and this is the lift with the longest history of causing next-day tightness. Sumo squat and Pallof press both stay at 2 rounds; Pallof's move to 3 rounds has now been prescribed twice, in weeks 20 and 22, and trained zero times.",
+    note: "Reps step up across the board, rounds hold. Sumo squat and Pallof press both stay at 2 rounds this week — sumo squat because it is adductor work like the lateral lunge, Pallof because its third round has now been prescribed three times and trained zero times, so it goes back in the queue behind the row rather than alongside it. Both are first in line for week 25.",
     exercises: [
-      { name: "Romanian deadlift – 12 lb", sets: "3 x 9 reps", superset: "A", note: "12 lb held, reps well down. Controlled lowering, moderate range — stop where you feel the stretch, not where your back starts to round. This is the lift to be most patient with after a break." },
-      { name: "Close-grip push-up (or knee)", sets: "3 x 6 reps", superset: "A", note: "Hands shoulder-width for extra tricep work. Matching Wednesday's pressing cut — drop to knees whenever you need to." },
-      { name: "Sumo squat – 12 lb", sets: "2 x 10 reps", superset: "B", note: "2 rounds. Wide stance is adductor work, the same tissue as the old strain, and it detrains completely across a full break. Toes turned out, dumbbell at the chest, no rushing the bottom." },
-      { name: "Arnold press – 8 lb", sets: "2 x 8 reps", superset: "B", note: "Palms facing you to start, rotate outward as you press. Control the rotation rather than throwing it — the rotation is the whole point of the exercise." },
-      { name: "Pallof press (resistance band)", sets: "2 x 10 each side", note: "Standalone, 2 rounds. 3-sec hold at full extension, ribs down, and do not let your torso rotate toward the band." },
-      { name: "Low-impact skaters (finisher)", sets: "45 sec continuous", note: "45 sec, same as Monday. Easy pace — this is a finisher, not a sprint." },
+      { name: "Romanian deadlift – 12 lb", sets: "3 x 10 reps", superset: "A", note: "Up from 9, 12 lb held. Controlled lowering, moderate range — stop where you feel the hamstring stretch, not where the back rounds. Friday's cooldown hamstring stretch matters most on this day." },
+      { name: "Close-grip push-up (or knee)", sets: "3 x 7 reps", superset: "A", note: "Up from 6. Hands shoulder-width for the tricep emphasis. Knees whenever needed." },
+      { name: "Sumo squat – 12 lb", sets: "2 x 12 reps", superset: "B", note: "Reps up from 10, still 2 rounds. Wide stance is adductor work — same tissue as the old strain, so it follows the lateral lunge's schedule rather than leading it. Toes turned out, dumbbell at the chest." },
+      { name: "Arnold press – 8 lb", sets: "2 x 9 reps", superset: "B", note: "Up from 8. Palms facing you to start, rotate outward as you press, and control the rotation on the way down too." },
+      { name: "Pallof press (resistance band)", sets: "2 x 12 each side", note: "Standalone, reps up from 10, still 2 rounds. 3-sec hold at full extension, ribs down, and do not let the torso rotate toward the band." },
+      { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Back to 60 sec, same as Monday. Smooth and controlled, not a sprint." },
     ],
     cooldown: "3 min — standing hamstring stretch (30 sec each leg), overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"
   },
   {
     label: "Sat", name: "Saturday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest or a gentle walk. Same watch-item as last week: general, even, both-sides soreness after Monday and Wednesday is expected and fine. Sharp, one-sided, or specifically inner-thigh soreness from lateral lunge or sumo squat is the one thing that should stop any climb, whenever it's reported."
+    note: "Rest or a gentle walk. Two things are new this week and worth paying attention to the morning after: the 1.5-rep goblet squat on Monday and the row's third round on Wednesday. Even, both-sides soreness is fine and expected. Sharp, one-sided, or inner-thigh specific is not — report that and week 25 holds instead of climbing."
   },
   {
     label: "Sun", name: "Sunday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest and meal prep. Week 24 repeats week 23 number-for-number because no confirmation arrived on whether week 23 was actually trained — climbing on an unconfirmed week is exactly the mistake that produced two bad ramps already (weeks 19→20, then 21→22), both later found to be built on weeks that were never performed. Worth reporting before next week: (1) were weeks 23 and 24 actually trained, and did anything feel harder than expected; (2) how the inner thigh handled lateral lunge and sumo squat; (3) whether Wednesday and Friday fit inside 25 minutes at these numbers; (4) how the 1.5-rep goblet squat feels whenever it's back in — still unanswered eleven weeks running. Once a week here is confirmed clean, the next step up is week 21's numbers, not a bigger jump."
+    note: "Rest and meal prep. Two confirmed weeks in a row would be the best run since week 18, so the single most useful thing you can report is simply whether you got the sessions in. Beyond that: (1) how the 1.5-rep goblet squat felt — genuinely unanswered for ten weeks; (2) whether the inner thigh stayed quiet through lateral lunge and sumo squat; (3) whether Wednesday still fit inside 25 minutes with the row's third round back. If this week goes cleanly, week 25 moves lateral lunge, sumo squat and Pallof press to 3 rounds and lands the reps at week 20's levels."
   }
 ];
 const tagStyles = {
@@ -494,8 +493,8 @@ export default function WorkoutSchedule() {
               <strong style={{ fontWeight: 500 }}>Cool-down:</strong> {d.cooldown}
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
-              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.tag === "mobility" ? "~50-60 cal (recovery session)" : "~70-80 cal"}</span>
-              <span style={{ fontSize: 12, color: "#bbb" }}>~18-22 min total</span>
+              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.tag === "mobility" ? "~50-60 cal (recovery session)" : "~80-90 cal"}</span>
+              <span style={{ fontSize: 12, color: "#bbb" }}>~20-23 min total</span>
             </div>
           </>
         )}

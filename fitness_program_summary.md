@@ -27,7 +27,7 @@
 
 25 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_five_workout.jsx`.
 
-⚠️ **Prescribed ≠ performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **Week 23 was confirmed trained on 2026-09-12** — the first confirmed week since week 18. **Week 24's training status is unconfirmed as of week 25's generation (2026-09-18)** — no report arrived either way, so week 25 holds at week 24's numbers rather than assuming it was trained. Treat this file as a record of what was written, not what was done: confirm before ramping.
+⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **Week 23 was confirmed trained on 2026-09-12** — the last week confirmed by an actual report. **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9), so weeks 24 and 25 are treated as trained without confirmation. Keep recording which weeks were *confirmed* versus *assumed* — this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
 **Each file includes:**
 - SVG stick-figure illustrations demonstrating correct form per exercise
@@ -50,6 +50,7 @@
 6. **Push-up/plank targets:** Should reflect what the user can actually complete (dropping to knees mid-set is valid pacing, not failure) — do not set aspirational-only numbers
 7. **Hamstring care:** Recurring sensitivity — avoid stacking too much hip-hinge volume (RDL + lunges + hip thrust) in back-to-back sessions without adequate stretching in cooldowns. The standing hamstring stretch belongs in the **Monday, Tuesday, Thursday, and Friday** cooldowns/sessions — Friday (RDL day) especially. Hold **30 sec each leg** in cooldowns; in the Thursday mobility session do **2 × 45 sec each leg**. ⚠️ Weeks 13–14 drifted: the Thursday stretch was dropped in the reset and Friday's cooldown lost it too — restore both in week 15.
 8. **Tempo/technique over raw weight increases:** When 12 lb was too heavy for overhead press and bicep curl, the fix was tempo training (4-count up/4-count down) and alternating-arm curls at 8 lb — NOT simply forcing the heavier weight
+9. **Assume last week was trained when generating a new week** (set 2026-09-18): if no report has arrived about whether the previous week's sessions were actually done, treat them as done and ramp off them — do not hold, and do not wait for confirmation before generating. Only an explicit report of a missed week rolls a ramp back. Two things this preference does **not** change: (a) keep asking the one-line "did you get last week's sessions in?" question and record the answer; (b) soreness and injury history are a separate gate — assuming a week was trained never means assuming it felt fine, so items held for an explicit felt-fine report (currently lateral lunge and sumo squat, per the old adductor strain) stay held. To keep a wrong assumption cheap, ramp small: **at most one round bump per week**, with reps stepping toward a known-good ceiling rather than past it.
 
 ## Chronological Program Evolution (Weeks 1–13)
 
@@ -374,28 +375,57 @@ Week 24 was originally generated on 2026-09-11 as a **hold week**, correctly, be
 
 **Rule for week 25:** confirm week 24 was trained before ramping again — same check, every week. If confirmed clean, week 25 moves **lateral lunge, sumo squat and Pallof press to 3 rounds** and lands reps at week 20's levels. If anything reported sore, tight, or one-sided — especially inner thigh — hold instead. If unconfirmed, repeat week 24.
 
-### Week 25 (Hold — no confirmation week 24 was trained)
+### Week 25 (Ramp — regenerated under the new assume-trained default)
 
-No report arrived on whether week 24 was actually trained. Per the program's own ramp-only-on-confirmed-weeks rule (restated explicitly in week 24's own "Rule for week 25"), week 25 repeats week 24's numbers exactly rather than assuming the ramp landed and pushing further.
+Week 25 was first generated on 2026-09-18 as a **hold**, because no report had arrived on whether week 24 was trained and the program's rule at the time was hold-on-silence. Later the same day the user changed that rule: **assume the previous week was trained unless told otherwise**, and apply it to week 25 as well. The file was therefore **regenerated in place as a ramp**, the same hold-then-regenerate move used for week 24 — and legitimate for the same reason: week 25 begins Mon 2026-09-21, so nothing performed was overwritten.
 
-**Changes vs. week 24:** none numerically. `week_24_workout.jsx` and `week_25_workout.jsx` are identical on every exercise's `sets` field — confirmed by a direct diff of every `name`/`sets` pair between the two files. Only narrative notes and the title changed to reflect the hold.
+**What the new default does and does not license.** It licenses ramping off week 24 without confirmation. It does **not** license assuming a week felt *fine* — soreness and injury history are a separate gate. So week 25 ramps in the smallest shape that still counts as a ramp:
 
-- **Bent-over row holds at 3 rounds (3 × 12)** rather than climbing toward week 18's 15 reps or dropping back to 2. Week 24 hasn't been reported as a problem, just unreported, so there's no basis to roll it back — but no basis to advance it either.
-- **Lateral lunge, sumo squat and Pallof press all hold at 2 rounds**, same reps as week 24. All three remain "wait for an explicit felt-fine report" items, and none of them have one yet.
-- **1.5-rep goblet squat holds at 10 reps.** Unanswered for twelve weeks running now.
-- Thursday, Tuesday effort, and finisher lengths all hold at week 24's levels.
+- **One round bump: Pallof press to 3 rounds (3 x 12/side).** It is anti-rotation core work rather than loaded adductor work, making it the lowest-risk of the three movements sitting at 2 rounds, and week 24 already spent its bump on the row. Reps held at 12 (week 20 had 14) — rounds restored before reps.
+- **Lateral lunge and sumo squat gain reps but hold at 2 rounds.** Both are adductor work on the same tissue as the old strain, and the explicit felt-fine report that gates their third round has still never arrived. The trained-or-not question is not that gate.
+- **Bent-over row: 3 x 12 → 3 x 13.** Its third round has one real week behind it (week 24, assumed) and this is the second, so reps step by one rather than chasing week 18's 15.
+- **Overhead tricep extension holds at 2 rounds** and gains the smallest rep step (10 → 11) — it stays the designated trim if Wednesday runs long.
+- **Every other rep steps most of the way back toward week 20's levels**, none exceeding them. 1.5-rep goblet squat 10 → 11; hip thrust 12 → 14; reverse lunge 10 → 11; calf raise 12 → 14/side; knee push-up 9 → 11; overhead press 11 → 13; bicep curl 11 → 13; dead bug 12 → 14/side; plank 20 → 25 sec; RDL 10 → 12; close-grip push-up 7 → 9; Arnold press 9 → 11.
+- **Finishers stay at 60 sec and Tuesday cardio at normal effort** — both already at full length; a ramp week has nothing to add there.
+- **Thursday unchanged** — the standard seven stretches. Mobility does not ramp with the strength days.
+- **Labels raised to `~85-95 cal` / `~21-24 min total`**, matching week 22's ramp labels, per finding #3.
 
-**Rule for week 26:** confirm week 25 (and ideally week 24) was trained before ramping — same check, every week. If confirmed clean, week 26 moves lateral lunge, sumo squat and Pallof press to 3 rounds and lands reps at week 20's levels (the move week 24's own note queued for "week 25" assuming confirmation, now deferred one more week). If unconfirmed, repeat week 25.
+**Week 25 rep scheme (vs. week 24), with week 20 as the ceiling:**
+
+| Day | Exercise | Week 24 | Week 25 | Week 20 ceiling |
+|---|---|---|---|---|
+| Mon | Goblet squat – 12 lb (1.5-rep) | 3 x 10 | 3 x 11 | 3 x 12 |
+| Mon | Hip thrust – 12 lb | 3 x 12 | 3 x 14 | 3 x 15 |
+| Mon | Reverse lunge – 8 lb | 3 x 10/leg | 3 x 11/leg | 3 x 12/leg |
+| Mon | Lateral lunge – 8 lb | 2 x 10/side | 2 x 12/side | **3** x 12/side |
+| Mon | Calf raise (single leg) | 2 x 12/side | 2 x 14/side | 2 x 15/side |
+| Mon/Fri | Skaters finisher | 60 sec | 60 sec | 60 sec |
+| Wed | Knee push-up | 3 x 9 | 3 x 11 | 3 x 12 |
+| Wed | Overhead press – 8 lb (tempo) | 3 x 11 | 3 x 13 | 3 x 15 |
+| Wed | Alternating bicep curl – 8 lb | 3 x 11/arm | 3 x 13/arm | 3 x 15/arm |
+| Wed | Overhead tricep extension – 8 lb | 2 x 10 | 2 x 11 | 3 x 12 |
+| Wed | Bent-over row – 12 lb | 3 x 12 | 3 x 13 | 3 x 15 |
+| Wed | Dead bug | 2 x 12/side | 2 x 14/side | 2 x 16/side |
+| Wed | Plank hold | 2 x 20 sec | 2 x 25 sec | 2 x 30 sec |
+| Fri | Romanian deadlift – 12 lb | 3 x 10 | 3 x 12 | 3 x 14 |
+| Fri | Close-grip push-up | 3 x 7 | 3 x 9 | 3 x 10 |
+| Fri | Sumo squat – 12 lb | 2 x 12 | 2 x 14 | **3** x 16 |
+| Fri | Arnold press – 8 lb | 2 x 9 | 2 x 11 | 2 x 12 |
+| Fri | Pallof press (band) | 2 x 12/side | **3** x 12/side | 3 x 14/side |
+
+`week_25_workout.jsx` verified against `week_24_workout.jsx`: exercise list identical in order and content, every `sets` change is one of the rows above, nothing exceeds week 20's value, the 3-set cap and the 8/12 lb equipment limit both hold, and the file parses.
+
+**Rule for week 26:** assume week 25 was trained and ramp again — one round bump at most, reps landing at week 20's levels. **Lateral lunge and sumo squat still hold at 2 rounds** until the inner-thigh felt-fine report arrives; that gate is not satisfied by silence. If a missed week or any soreness is reported, week 26 holds or drops back instead.
 
 ## Open Threads / Next Steps for Week 26+
 
-- **Highest priority — do not treat generated weeks as trained weeks.** Weeks 19, 20, 21 and 22 were all written, pushed, and never performed, and weeks 20 and 22 wrote notes claiming clean weeks that never happened. **The last confirmed trained week is week 23** (confirmed 2026-09-12) — the first since week 18. **Week 24 remains unconfirmed as of week 25's generation.** Before applying any "two clean weeks" style fallback rule, or ramping off a previous week, confirm the weeks in question were actually trained. The repo is a record of prescriptions, not of sessions.
-- **The hold-then-regenerate pattern works — keep using it.** Week 24 was generated as a hold because confirmation hadn't arrived, then regenerated as a ramp the moment it did. Week 25 used the same default (hold) because no new confirmation arrived for week 24. That is the correct shape: hold by default, ramp on confirmation. It costs nothing when the answer comes late and prevents the weeks 21→22 failure when it doesn't.
-- **Ask before ramping, every time.** The routine has no way to know whether a week was performed. A one-line check ("did you get last week's sessions in?") is worth more than any inference from the file history. If there's no answer, hold rather than climb.
-- **Week 26 must not assume week 24 or 25 happened.** If a week in this pair is confirmed trained and clean, week 26 moves lateral lunge, sumo squat and Pallof press to 3 rounds and lands reps at week 20's levels. If unconfirmed, repeat week 25's numbers.
-- **Open (asked twelve weeks running):** did lateral lunge / sumo squat feel fine? Still no explicit report, and both have been cold-started twice. Week 25 holds them at 2 rounds — the morning-after report is the gate for the third round.
-- **Open:** how does the 1.5-rep goblet squat feel? Reintroduced in week 24 at 10 reps after being parked through weeks 21–23; still unanswered for twelve weeks.
-- **Watching:** the bent-over row's third round (3 × 12, since week 24) has no confirmed session behind it yet. Confirm it was actually trained, and that Wednesday fits inside 25 minutes. If time is the issue, cut the overhead tricep extension — not the row.
+- **Default: assume the previous week was trained.** As of 2026-09-18 the user's standing instruction is to treat an unreported week as having been trained when generating the next one. A new week therefore ramps off its predecessor by default; only an explicit report of a missed week, or of soreness/pain, holds or rolls it back. This replaces the earlier hold-on-silence default and the "if unconfirmed, repeat last week" rules written into the week 24 and 25 notes.
+- **Still ask, and still record the answer.** The default removes the need to *wait* for an answer, not the value of getting one. Keep asking the one-line question ("did you get last week's sessions in?") and write the answer into this file when it arrives, because a reported miss is now the only signal that can correct a ramp.
+- **Ramp small, so a wrong assumption is cheap.** The reason weeks 19-22 did real damage is that the ramps built on them were large and compounding. Under the new default the mitigation is size, not delay: **at most one round bump per week**, reps stepping toward a known-good ceiling rather than past it, and the adductor items excluded (see below). A week built that way is recoverable in one week if a miss gets reported.
+- **Historical record, unchanged:** weeks 19, 20, 21 and 22 were all written, pushed, and never performed, and weeks 20 and 22 wrote notes claiming clean weeks that never happened. **The last confirmed-trained week is week 23** (confirmed 2026-09-12). Weeks 24 and 25 are *assumed* trained under the new default, not confirmed. Keep the distinction visible in these notes — the repo is still a record of prescriptions, not of sessions.
+- **The adductor items are gated on a felt-fine report, not on the trained/untrained question.** Lateral lunge and sumo squat sit at 2 rounds because of the old inner-thigh strain and the absence of any explicit "felt fine" report — twelve weeks running. That gate is independent of the new default and is **not** opened by assuming a week was trained. They gain reps; the third round waits for the report.
+- **Open:** how does the 1.5-rep goblet squat feel? Reintroduced in week 24 at 10 reps after being parked through weeks 21-23; at 11 reps in week 25; still unanswered for twelve weeks.
+- **Watching:** the bent-over row's third round (3 rounds since week 24, 3 x 13 in week 25) has no confirmed session behind it. Week 25 is its second assumed week, which is why reps climbed by one rather than to week 18's 15. Also confirm Wednesday still fits inside 25 minutes; if time is the issue, cut the overhead tricep extension — not the row.
 - **Resolved:** the kneeling hip flexor stretch handed its slot back in week 24 as training resumed; Thursday is back to the standard seven stretches.
 - Standing red-flag guidance still applies: sharp pain, swelling, or instability warrant medical attention.
 

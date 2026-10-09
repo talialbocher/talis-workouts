@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-27 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_seven_workout.jsx`.
+28 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_eight_workout.jsx`.
 
 ⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9). **Week 25 was confirmed trained on 2026-09-24** — the user reported a specific failure on its Wednesday (the overhead press's third round), which is direct evidence the session happened. That makes weeks 23 and 25 confirmed and week 24 assumed. Keep recording which weeks were *confirmed* versus *assumed*: this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
@@ -481,7 +481,17 @@ Generated 2026-10-02 by the scheduled routine. No report arrived on week 26, so 
 
 **Rule for week 28:** assume week 27 trained. If the press report says it held, press → 3 x 14 and push-up → 12, and one round bump may be spent (tricep extension to 3 rounds is the only candidate not gated). If it failed again, press drops to 11 reps with tempo kept.
 
-## Open Threads / Next Steps for Week 27+
+### Week 28 (Light ramp — Wednesday reshuffle still unreported)
+
+Generated 2026-10-09 by the scheduled routine. No report arrived on week 27, so per preference #9 it is **assumed trained** (not confirmed). The overhead press fix is still unconfirmed.
+
+- **Knee push-up 3 x 11 → 3 x 12** (week 20's number) and **overhead tricep extension 2 x 12 → 2 x 13**. Push-ups were never the problem in the Wednesday failure, so they can step.
+- **Overhead press holds at 3 x 13** for a third week until the reshuffle is reported on.
+- **All other days unchanged** — already at week 20's levels. **No round bump anywhere**; lateral lunge and sumo squat remain at 2 rounds pending the inner-thigh felt-fine report.
+
+**Rule for week 29:** assume week 28 trained. If the press report says it held, press → 3 x 14 and one round bump may be spent. If it failed, press drops to 11 reps with tempo kept.
+
+## Open Threads / Next Steps for Week 28+
 
 - **Highest priority — did the Wednesday reshuffle work?** Week 26 moved overhead press to first in the session and paired it with the bent-over row instead of the knee push-up, holding it at 3 x 13. Ask specifically: did the third round hold up this time, and did the row feel like a rest or like more work? If it held, the press resumes climbing (3 x 14, then week 20's 15) and week 27 can spend a round bump again. If it still failed, reps come down to 11 with the 4-count tempo kept, and the tempo itself gets re-examined before the load does.
 - **Default: assume the previous week was trained** (preference #9, set 2026-09-18). A week with no report ramps off its predecessor; only an explicit report of a missed week, or of soreness, holds or rolls it back. Weeks 23 and 25 are **confirmed** trained; week 24 is **assumed**. Keep the distinction visible.

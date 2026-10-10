@@ -491,6 +491,10 @@ Generated 2026-10-09 by the scheduled routine. No report arrived on week 27, so 
 
 **Rule for week 29:** assume week 28 trained. If the press report says it held, press → 3 x 14 and one round bump may be spent. If it failed, press drops to 11 reps with tempo kept.
 
+**Report on week 28 (received 2026-10-10): NOT trained — strained neck and back.** The week 28 sessions were skipped. Per preference #9 this is an explicit missed-week report, so the ramp rolls back, and because it is an injury it is also a soreness gate: the week 28 push-up and tricep steps (12 / 13) were never performed and should not be treated as banked.
+
+**Rule for week 29:** do not ramp off week 28. Build a return week from week 27 levels or lower, not week 28, with no rep or round increases anywhere. Neck/back-loading items need an explicit "felt fine" report before returning at full volume: overhead press, bent-over row, plank, dead bug, close-grip/knee push-ups, Arnold press, Romanian deadlift and the loaded hip-hinge work. Prefer gentle mobility (cat-cow, thoracic and chest openers, walking) and light lower-body work that does not load the spine, and drop anything that provokes pain. Ask how the neck/back is before progressing. Standing red-flag guidance applies: sharp or radiating pain, numbness or tingling in the arms or legs, or pain that is not improving warrants medical attention.
+
 ## Open Threads / Next Steps for Week 28+
 
 - **Highest priority — did the Wednesday reshuffle work?** Week 26 moved overhead press to first in the session and paired it with the bent-over row instead of the knee push-up, holding it at 3 x 13. Ask specifically: did the third round hold up this time, and did the row feel like a rest or like more work? If it held, the press resumes climbing (3 x 14, then week 20's 15) and week 27 can spend a round bump again. If it still failed, reps come down to 11 with the 4-count tempo kept, and the tempo itself gets re-examined before the load does.

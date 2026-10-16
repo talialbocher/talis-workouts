@@ -508,6 +508,16 @@ Generated 2026-10-11 on request. Week 28 was reported **not trained** (strained 
 
 **Rule for week 30:** ask how the neck and back are and which sessions, if any, provoked them. Assume week 29 was trained per preference #9 *unless* the neck/back report says otherwise, but treat the felt-fine report as the gate: return parked items one or two at a time (curl/tricep and row first, then push-ups, then overhead press, then hinge work), at week 27 reps minus about 20 percent, one new movement per session. Red-flag guidance stands: sharp or radiating pain, numbness or tingling, or pain that is not improving warrants medical attention.
 
+### Week 30 (Cautious step off the return week)
+
+Generated 2026-10-16 by the scheduled routine. No neck/back report arrived on week 29, so it is **assumed trained** (not confirmed) and the felt-fine gate is still closed.
+
+- **Legs:** chair squat 2 x 12, reverse lunge 2 x 10/leg, wall sit 2 x 25 sec, glute bridge 2 x 12. Still 2 rounds, bodyweight; lateral lunge and sumo squat unchanged (adductor gate).
+- **Wednesday:** bicep curl 2 x 12/arm, and one new movement: **supported one-arm row 8 lb, 2 x 8/arm** (hand and knee on a sofa, back supported).
+- **Tuesday walk and Thursday mobility unchanged.** Still parked: overhead press, full bent-over row, push-ups, plank, dead bug, tricep extension, Arnold press, Romanian deadlift, hip thrust, goblet squat, Pallof press, finishers, cycling, swimming.
+
+**Rule for week 31:** ask how neck/back feel and whether the supported row was fine. If fine, return one or two parked items (tricep extension, then knee push-up) at ~week 27 reps minus 20 percent; if worse, roll back to week 29. Red-flag guidance stands.
+
 ## Open Threads / Next Steps for Week 28+
 
 - **Highest priority — did the Wednesday reshuffle work?** Week 26 moved overhead press to first in the session and paired it with the bent-over row instead of the knee push-up, holding it at 3 x 13. Ask specifically: did the third round hold up this time, and did the row feel like a rest or like more work? If it held, the press resumes climbing (3 x 14, then week 20's 15) and week 27 can spend a round bump again. If it still failed, reps come down to 11 with the 4-count tempo kept, and the tempo itself gets re-examined before the load does.

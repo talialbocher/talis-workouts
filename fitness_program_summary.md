@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-29 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_nine_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
+30 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
 
 ⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9). **Week 25 was confirmed trained on 2026-09-24** — the user reported a specific failure on its Wednesday (the overhead press's third round), which is direct evidence the session happened. That makes weeks 23 and 25 confirmed and week 24 assumed. Keep recording which weeks were *confirmed* versus *assumed*: this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
@@ -507,6 +507,19 @@ Generated 2026-10-20 on request, replacing the deleted gentle weeks 29 and 30. B
 - Labels unchanged (`~90-100 cal` / `~22-25 min total`).
 
 **Rule for week 30:** assume week 29 trained. Ask how the neck and back held up on the overhead press and row. If the press report says it held, press → 3 x 14 and one round bump may be spent (tricep extension to 3 rounds is the only ungated candidate). If it failed, press drops to 11 with tempo kept. If the neck or back flared, roll back to a gentle week. Red-flag guidance stands: sharp or radiating pain, numbness or tingling, or pain that is not improving warrants medical attention.
+
+### Week 30 (Progression reset after a program review)
+
+Generated 2026-10-20 on request after a review found the program had effectively stalled at week 20's ceiling (rep-creep to 14-16 at 8-12 lb), pressing outweighed pulling roughly 4:1 for a desk worker, cardio was thin, and sets had no effort target. **No heavier dumbbells** (standing preference #2): progression comes from technique, not load.
+
+- **Legs harder through technique, fewer reps:** goblet squat 3 x 8 (4-sec lowering, 2-sec pause); hip thrust becomes **single-leg hip thrust 3 x 6/leg**; reverse lunge becomes **rear-foot-elevated split squat 2 x 8/leg**; Romanian deadlift 3 x 8 (4-sec lowering); sumo squat 2 x 10 (3-sec lowering). Lateral lunge and calf raise unchanged. Adductor gate unchanged.
+- **Push/pull balance:** Arnold press removed; **supported one-arm row 12 lb 2 x 10/arm** added Friday; **band face pull 2 x 12** added Wednesday; bicep curl 3 x 15 to 2 x 12 with a 5-sec lowering. Overhead press still 3 x 13 (fifth week unreported), tricep extension 2 x 14.
+- **Cardio:** Tuesday offers an optional 6 x (1 min brisk / 1 min easy) interval structure; Saturday becomes an easy 30-40 min walk.
+- **Effort target** added to the Mon/Wed/Fri notes: stop each set about 2 reps short of failure.
+- New movements link to YouTube Shorts searches (search links with "shorts" in the query, not specific videos).
+- Deferred: small bone-loading impact work (heel drops, tiny hops) and side plank / bird dog, once the new movements are bedded in.
+
+**Rule for week 31:** assume week 30 trained. Ask how the single-leg hip thrust and split squat felt, and whether the neck and back were fine on the row and face pull. If fine, progress by slowing the lowering further or adding a pause, then a rep (hip thrust to 3 x 8/leg), one change at a time; hold anything that was unstable. Press fix report still outstanding.
 
 ## Open Threads / Next Steps for Week 28+
 

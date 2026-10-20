@@ -36,7 +36,6 @@ const WARMUP_VIDEO = {
   "Goblet squat hold": "https://www.youtube.com/results?search_query=goblet+squat+hold+warm+up+tutorial",
   "Standing hamstring sweep": "https://www.youtube.com/results?search_query=standing+hamstring+leg+swing+warm+up+tutorial",
   "Tricep warm-up circles": "https://www.youtube.com/results?search_query=tricep+arm+circles+warm+up+tutorial",
-  "Shoulder rolls": "https://www.youtube.com/results?search_query=shoulder+rolls+warm+up+mobility+tutorial",
   "Band pull-aparts": "https://www.youtube.com/results?search_query=band+pull+apart+warm+up+shoulder+tutorial",
 };
 
@@ -269,58 +268,7 @@ const ILLUS = {
   ),
 };
 
-ILLUS["Chair squat (bodyweight)"] = ILLUS["Goblet squat – 12 lb"];
-ILLUS["Reverse lunge (bodyweight)"] = ILLUS["Reverse lunge – 8 lb"];
-ILLUS["Lateral lunge (bodyweight)"] = ILLUS["Lateral lunge – 8 lb"];
-ILLUS["Glute bridge (bodyweight)"] = ILLUS["Hip thrust – 12 lb"];
-ILLUS["Sumo squat (bodyweight)"] = ILLUS["Sumo squat – 12 lb"];
-ILLUS["Chin tuck"] = () => (
-  <SvgWrap><Gnd /><Hd cx={50} cy={22} r={9} />
-    <Ln p={[[50,31],[50,50]]} /><Ln p={[[50,36],[38,46]]} w={1.5} /><Ln p={[[50,36],[62,46]]} w={1.5} />
-    <Ln p={[[50,50],[44,70],[42,79]]} /><Ln p={[[50,50],[56,70],[58,79]]} />
-    <Ln p={[[78,22],[66,22]]} w={1.5} /><Ln p={[[69,19],[66,22],[69,25]]} w={1.5} />
-  </SvgWrap>
-);
-ILLUS["Wall angel"] = () => (
-  <SvgWrap>
-    <line x1="30" y1="4" x2="30" y2="79" stroke="currentColor" strokeOpacity={0.4} strokeWidth={2} strokeLinecap="round" />
-    <Gnd /><Hd cx={38} cy={16} r={6} />
-    <Ln p={[[38,22],[38,50]]} /><Ln p={[[38,28],[52,24],[50,10]]} w={1.5} /><Ln p={[[38,28],[52,34],[56,22]]} w={1.5} />
-    <Ln p={[[38,50],[36,70],[36,79]]} /><Ln p={[[38,50],[44,70],[44,79]]} />
-  </SvgWrap>
-);
-ILLUS["Band pull-apart (light)"] = () => (
-  <SvgWrap><Gnd /><Hd cx={50} cy={14} />
-    <Ln p={[[50,20],[50,48]]} /><Ln p={[[50,30],[22,32]]} w={1.5} /><Ln p={[[50,30],[78,32]]} w={1.5} />
-    <line x1="22" y1="32" x2="78" y2="32" stroke="currentColor" strokeOpacity={0.35} strokeWidth={1} strokeDasharray="4,3" />
-    <Ln p={[[50,48],[44,68],[42,79]]} /><Ln p={[[50,48],[56,68],[58,79]]} />
-  </SvgWrap>
-);
-ILLUS["Child's pose"] = () => (
-  <SvgWrap><Gnd y={72} /><Hd cx={20} cy={58} r={5} />
-    <Ln p={[[26,56],[60,44],[74,60],[60,68]]} /><Ln p={[[24,56],[6,66]]} w={1.5} />
-    <Ln p={[[74,60],[70,72]]} w={1.5} />
-  </SvgWrap>
-);
-ILLUS["Wall sit"] = () => (
-  <SvgWrap>
-    <line x1="24" y1="4" x2="24" y2="79" stroke="currentColor" strokeOpacity={0.4} strokeWidth={2} strokeLinecap="round" />
-    <Gnd /><Hd cx={32} cy={16} r={6} />
-    <Ln p={[[32,22],[32,52]]} /><Ln p={[[32,52],[62,52],[62,78]]} /><Ln p={[[32,32],[48,42]]} w={1.5} />
-  </SvgWrap>
-);
-
 const VIDEO = {
-  "Chair squat (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+chair+squat+form+tutorial+beginner",
-  "Reverse lunge (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+reverse+lunge+form+tutorial+beginner",
-  "Lateral lunge (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+lateral+lunge+form+tutorial+beginner",
-  "Chin tuck": "https://www.youtube.com/results?search_query=chin+tuck+exercise+neck+pain+tutorial",
-  "Wall angel": "https://www.youtube.com/results?search_query=wall+angels+exercise+form+tutorial+beginner",
-  "Band pull-apart (light)": "https://www.youtube.com/results?search_query=band+pull+apart+form+tutorial+beginner",
-  "Child's pose": "https://www.youtube.com/results?search_query=childs+pose+stretch+tutorial+beginner",
-  "Wall sit": "https://www.youtube.com/results?search_query=wall+sit+exercise+form+tutorial+beginner",
-  "Glute bridge (bodyweight)": "https://www.youtube.com/results?search_query=glute+bridge+form+tutorial+beginner",
-  "Sumo squat (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+sumo+squat+form+tutorial+beginner",
   "Goblet squat – 12 lb": "https://www.youtube.com/results?search_query=goblet+squat+dumbbell+form+tutorial",
   "Hip thrust – 12 lb": "https://www.youtube.com/results?search_query=dumbbell+hip+thrust+form+tutorial+beginner",
   "Reverse lunge – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+reverse+lunge+form+tutorial+beginner",
@@ -354,75 +302,84 @@ const VIDEO = {
 
 const days = [
   {
-    label: "Mon", name: "Monday", type: "Gentle lower body", tag: "strength", cal: "~50-60 cal", time: "~18-22 min total",
-    warmup: "3 min — slow walk, hip circles x10 each way, ankle rolls x10 each, cat-cow x6 (small and slow)",
-    warmupItems: ["Slow walk", "Hip circles", "Ankle rolls", "Cat-cow"],
-    note: "Return week after the neck and back strain. Everything is bodyweight, nothing is held overhead or at the chest, nothing hinges forward, and there is no finisher. Reps are at or below week 27's, with fewer rounds. The rule for the whole week: if a movement pulls on the neck or back, stop that movement and move on — pain-free is the only way to do it. Stand tall, ribs stacked over hips, eyes forward.",
+    label: "Mon", name: "Monday", type: "Lower body strength", tag: "strength",
+    warmup: "3 min — high knees x20, standing hamstring sweep x10 each leg, leg swings x10 each, ankle rolls x10 each",
+    warmupItems: ["High knees", "Standing hamstring sweep", "Leg swings", "Ankle rolls"],
+    note: "Monday holds exactly where week 26 left it. Every lower-body number is already at week 20's level, so there is nowhere further to ramp without adding a round — and the one round that is left, the lateral lunge's third, still waits on an explicit felt-fine report for the inner thigh. Silence is not that report.",
     exercises: [
-      { name: "Chair squat (bodyweight)", sets: "2 x 10 reps", superset: "A", note: "Sit back to a chair, touch down lightly, stand up. No weight in your hands, so nothing pushes down on the spine. Chest up, eyes forward, don't tuck the chin or look at the floor." },
-      { name: "Calf raise (single leg)", sets: "2 x 10 each side", superset: "A", note: "Fingertips on a wall or counter for balance, so you can stay upright. 5-count descent, full stretch at the bottom." },
-      { name: "Reverse lunge (bodyweight)", sets: "2 x 8 each leg", superset: "B", note: "Hands on hips, step straight back, torso stays upright. Short step is fine — you are not chasing depth this week." },
-      { name: "Lateral lunge (bodyweight)", sets: "2 x 8 each side", superset: "B", note: "No dumbbell and a small range. Stay tall and keep the hips back only as far as is comfortable. Inner-thigh gate unchanged — stop and tell me if it feels sharp or one-sided." },
+      { name: "Goblet squat – 12 lb", sets: "3 x 12 reps", superset: "A", note: "Up to 12 — week 20's number, still 1.5-rep style: full depth, halfway up, back down, then all the way up — that whole sequence is one rep. This is the one that's gone unreported for fourteen weeks now — how it feels is genuinely useful information whenever it comes in." },
+      { name: "Hip thrust – 12 lb", sets: "3 x 15 reps", superset: "A", note: "Up to 15 — back at week 20's number. Keep the 3-sec squeeze at the top." },
+      { name: "Reverse lunge – 8 lb", sets: "3 x 12 each leg", superset: "B", note: "Up to 12 each leg, back at week 20's number. Step straight back, controlled descent." },
+      { name: "Lateral lunge – 8 lb", sets: "2 x 12 each side", superset: "B", note: "Holding exactly where week 26 left it — reps already at week 20's 12, rounds still at 2. Its third round is the one thing in the program waiting on a specific answer: how the inner thigh feels the morning after. Say the word and it moves." },
+      { name: "Calf raise (single leg)", sets: "2 x 15 each side", note: "Standalone, up to 15 each side — week 20's number. 5-count descent, full stretch at the bottom." },
+      { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Staying at 60 sec — the finisher is already at its full length. Land soft, keep it smooth rather than fast." },
     ],
-    cooldown: "3 min — standing hamstring stretch (30 sec each leg, upright, hand on a chair — don't round the back), calf stretch against a wall (30 sec each leg), slow walk and deep breathing"
+    cooldown: "3 min — standing hamstring stretch (30 sec each leg), calf stretch against a wall (30 sec each leg), figure-4 hip stretch (30 sec each side)"
   },
   {
-    label: "Tue", name: "Tuesday", type: "Easy walk", tag: "cardio", cal: "~60-70 cal", time: "~20 min total",
-    warmup: "2 min — slow walk, relaxed arm swings, ankle rolls",
+    label: "Tue", name: "Tuesday", type: "Low-impact cardio", tag: "cardio",
+    warmup: "2 min — slow walk, arm swings, ankle rolls",
     warmupItems: ["Slow walk", "Arm swings", "Ankle rolls"],
-    note: "Walking is the best thing you can do for a strained back, so this is the one day that stays at full length — but at an easy, conversational pace, on flat ground. Cycling and swimming are out for now: both hold the neck and upper back in one bent or turned position for 20 minutes.",
+    note: "Normal effort, unchanged. Cardio is already at full length, so there is nothing to ramp here.",
     exercises: [
-      { name: "Brisk walk or light cycling", sets: "20 min", note: "Easy walk only. Walk tall, eyes on the horizon rather than the ground, arms swinging loosely. You should be able to chat the whole way. Cut it short if the back or neck starts to ache — even 10 minutes counts. (Skip the cycling option this week.)" },
+      { name: "Brisk walk or light cycling", sets: "20 min", note: "Full 20 min at talk-but-slightly-breathless pace." },
+      { name: "Alternatively: dance or swim", sets: "20 min", note: "Swimming is still a good pick: it adds shoulder and lat work that nothing else in the week covers twice." },
     ],
-    cooldown: "2 min — slow walk, deep breathing, standing hamstring stretch (30 sec each leg, hand on a chair)"
+    cooldown: "2 min — slow walk, deep breathing, standing hamstring stretch (30 sec each leg)"
   },
   {
-    label: "Wed", name: "Wednesday", type: "Neck + upper-back care", tag: "mobility", cal: "~30-40 cal", time: "~15-20 min total",
-    warmup: "2 min — slow walk, shoulder rolls x10 backward, cat-cow x6",
-    warmupItems: ["Slow walk", "Shoulder rolls", "Cat-cow"],
-    note: "This week's upper-body day is gentle posture work instead of the usual session. Overhead press, bent-over row, push-ups, tricep extension, dead bug and plank are all parked: they load the neck, upper back or lower back, and each needs a felt-fine report before it returns. Move slowly, stop at the first twinge, and skip anything that provokes pain.",
+    label: "Wed", name: "Wednesday", type: "Upper body + core", tag: "strength",
+    warmup: "3 min — arm circles, cat-cow x10, band pull-aparts x12, tricep warm-up circles x10",
+    warmupItems: ["Arm circles", "Cat-cow", "Band pull-aparts", "Tricep warm-up circles"],
+    note: "Wednesday keeps the same structure: overhead press first, paired with the bent-over row; knee push-up with the dead bug; curl with the tricep extension. Still no report on whether the press held up in its new slot, so it holds at 13 for a fourth week — a fix that has not been confirmed yet is not the thing to build on. The push-up, which was never the problem, stays at week 20's 12, and the tricep extension adds a rep (13 to 14). If the third round of press is still a grind, the answer is fewer reps (11) with the 4-count tempo intact — never faster reps.",
     exercises: [
-      { name: "Chin tuck", sets: "2 x 8 reps (3-sec hold)", superset: "A", note: "Standing or sitting tall, glide the head straight back as if making a double chin, without tilting down. Hold 3 seconds, release. Tiny movement, no force." },
-      { name: "Wall angel", sets: "2 x 8 slow reps", superset: "A", note: "Back and head against a wall, elbows bent at your sides, slide the arms up only as far as they stay on the wall without the ribs flaring or the neck cranking. Stop well short of the top if needed." },
-      { name: "Band pull-apart (light)", sets: "2 x 10 reps", superset: "B", note: "Light band at chest height, arms straight, pull apart from the shoulder blades. Shoulders stay down away from the ears. Stop at 80 percent of your range." },
-      { name: "Alternating bicep curl – 8 lb", sets: "2 x 10 each arm", superset: "B", note: "Seated with your back against a chair, so the spine is supported. Slow 4-count down. No swing, and don't shrug." },
+      { name: "Overhead press – 8 lb (tempo)", sets: "3 x 13 reps", superset: "A", note: "Still first in the session and holding at 13 for a fourth week, until I hear how it went. It fell apart two weeks ago because it came behind push-ups; now it is first, paired with a pull. 4-count up, 4-count down — the tempo is the load here, so if the third round gets hard, drop to 11 reps and keep the count rather than speeding up." },
+      { name: "Bent-over row – 12 lb", sets: "3 x 15 reps", superset: "A", note: "Up to 15 — week 20's number and week 18's. Paired with the overhead press on purpose: pulling gives the shoulders and triceps a full round to recover between pressing sets, which is exactly what was missing. Back flat, elbows driving toward your hips, no yanking with the lower back." },
+      { name: "Knee push-up (progressing to full)", sets: "3 x 12 reps", superset: "B", note: "Holding at 12, week 20's number, paired with the dead bug. Not because push-ups were the problem — they were fine — but because stacking them in front of the press was. Knees whenever you need them, the rep still counts." },
+      { name: "Dead bug", sets: "2 x 16 each side", superset: "B", note: "Up to 16 each side, back at week 20's number. Now paired with the push-up, so the chest and triceps get a core exercise to rest behind. Lower back stays flat — shorten the range before you let it arch." },
+      { name: "Alternating bicep curl – 8 lb", sets: "3 x 15 each arm", superset: "C", note: "Up to 15 each arm — week 20's number. 4-count descent, full extension at the bottom, no swing from the hips." },
+      { name: "Overhead tricep extension – 8 lb", sets: "2 x 14 reps", superset: "C", note: "Up one rep to 14, still 2 rounds. Elbows pointing forward rather than flared. This is still the designated trim if Wednesday runs past 25 minutes — cut this, not the row and not the press." },
+      { name: "Plank hold", sets: "2 x 30 sec", note: "Standalone, up to 30 sec — week 20's number. Stop the moment your hips sag rather than grinding out the clock — a shorter honest hold beats a longer sagging one." },
     ],
-    cooldown: "3 min — doorframe chest stretch (30 sec, elbows below shoulder height), gentle upper-trap stretch (ear toward shoulder, 20 sec each side, no pulling), 5 slow breaths"
+    cooldown: "2 min — overhead tricep stretch (20 sec each arm), chest opener, doorframe pec stretch"
   },
   {
-    label: "Thu", name: "Thursday", type: "Mobility + recovery", tag: "mobility", cal: "~40-50 cal (recovery session)", time: "~18-22 min total",
+    label: "Thu", name: "Thursday", type: "Mobility + recovery", tag: "mobility",
     warmup: null,
-    note: "Gentle version of the usual mobility routine. Hip flexors and hamstrings are the priority — sitting tightens both and they pull on the lower back — so those stay in. Pigeon pose and the spinal twist step out for the week because they twist and load the lower back; child's pose takes their place. Hold every stretch to a mild pull, never a pinch.",
+    note: "Unchanged — the standard seven-stretch routine. Mobility does not ramp with the strength days, and the standing hamstring stretch is untouched, as always.",
     exercises: [
-      { name: "Standing hamstring stretch", sets: "2 x 30 sec each leg", note: "Hold stays in every week. Heel on a low step, hinge only until you feel the back of the leg, spine long. If the back objects, lie on your back and use a towel around the foot instead." },
-      { name: "Cat-cow", sets: "2 x 8 slow reps", note: "Small, comfortable range, with the breath leading it: inhale into the arch, exhale into the round. Don't push to the end of the range." },
-      { name: "Kneeling hip flexor stretch", sets: "2 x 30 sec each side", note: "Tuck the pelvis under so the stretch is in the front of the hip rather than the lower back. Pad the kneeling knee." },
-      { name: "90/90 hip stretch", sets: "1 x 30 sec each side", note: "Sit tall first. Skip the forward fold this week — just sit tall and breathe. Cushion under the seat if the back rounds." },
-      { name: "Child's pose", sets: "2 x 45 sec", note: "Knees wide, sit hips back toward heels, arms long in front or resting by your sides. Let the back relax and the breath move into the lower ribs." },
-      { name: "Legs-up-the-wall", sets: "1 x 4 min", note: "Standard 4 min. Eyes closed, nothing else going on. It takes load off the lower back." },
+      { name: "Standing hamstring stretch", sets: "2 x 45 sec each leg", note: "Unchanged, and the one that never moves. Foot forward on a low step or the floor, hinge from the hips with a flat back. No bouncing." },
+      { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Full breath with every rep — inhale into the arch, exhale into the round." },
+      { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Both knees at right angles, sit tall first, then walk the hands forward over the front shin. Stop where it is a stretch, not a pinch." },
+      { name: "Pigeon pose", sets: "2 x 60 sec each side", note: "Holding at the full 60 sec. Prop the hip on a cushion if the knee complains." },
+      { name: "Overhead tricep stretch", sets: "1 x 30 sec each arm", note: "Reach one arm overhead, bend the elbow, gently pull with the other hand." },
+      { name: "Supine spinal twist", sets: "2 x 45 sec each side", note: "Holding at 2 rounds. Let the knee drop completely and keep both shoulders on the floor." },
+      { name: "Legs-up-the-wall", sets: "1 x 4 min", note: "Standard 4 min. Eyes closed, nothing else going on." },
     ],
     cooldown: "5 slow deep breaths — inhale 5, hold 2, exhale 7"
   },
   {
-    label: "Fri", name: "Friday", type: "Gentle lower body", tag: "strength", cal: "~45-55 cal", time: "~18-22 min total",
-    warmup: "3 min — slow walk, hip circles x10 each way, leg swings x8 each (small), cat-cow x6",
-    warmupItems: ["Slow walk", "Hip circles", "Leg swings", "Cat-cow"],
-    note: "Same idea as Monday — bodyweight legs and glutes only, with the back supported. Romanian deadlift, hip thrust and the loaded hinge work, close-grip push-up, Arnold press, Pallof press and finishers are parked until you report the neck and back as fine.",
+    label: "Fri", name: "Friday", type: "Full body strength", tag: "strength",
+    warmup: "3 min — high knees x20, goblet squat hold (12 lb, 20 sec), wrist circles",
+    warmupItems: ["High knees", "Goblet squat hold", "Wrist circles"],
+    note: "Friday holds at week 20's numbers, unchanged from last week — it is already at the ceiling and no round is added anywhere in the week. Sumo squat stays at 2 rounds, same felt-fine gate as the lateral lunge. Close-grip push-up sits behind the RDL, which is legs, so the triceps come to it fresh — say so if that is not how it feels.",
     exercises: [
-      { name: "Wall sit", sets: "2 x 20 sec", superset: "A", note: "Back flat against the wall, thighs roughly parallel to the floor (higher is fine). The wall supports the back, so this is a good leg-strength choice right now. Breathe and keep the neck relaxed." },
-      { name: "Glute bridge (bodyweight)", sets: "2 x 10 reps", superset: "A", note: "On your back, feet flat, press through the heels until hips and shoulders line up, with a 2-sec squeeze at the top. Stop when the glutes are doing it — don't arch the lower back to go higher." },
-      { name: "Sumo squat (bodyweight)", sets: "2 x 10 reps", superset: "B", note: "Wide stance, toes turned out, hands clasped at the chest or on hips. Inner-thigh gate unchanged. Stay tall." },
-      { name: "Calf raise (single leg)", sets: "2 x 10 each side", superset: "B", note: "Fingertips on a wall, 5-count descent." },
+      { name: "Romanian deadlift – 12 lb", sets: "3 x 14 reps", superset: "A", note: "Up to 14 — week 20's number, 12 lb held. Controlled lowering, moderate range — stop where you feel the hamstring stretch, not where the back rounds." },
+      { name: "Close-grip push-up (or knee)", sets: "3 x 10 reps", superset: "A", note: "Up to 10, week 20's number. Hands shoulder-width for the tricep emphasis. Knees whenever needed." },
+      { name: "Sumo squat – 12 lb", sets: "2 x 16 reps", superset: "B", note: "Up to 16, week 20's reps, still 2 rounds. Wide stance is adductor work — same tissue as the old strain, so it follows the lateral lunge's schedule rather than leading it, and gains reps rather than a round. Toes turned out, dumbbell at the chest." },
+      { name: "Arnold press – 8 lb", sets: "2 x 12 reps", superset: "B", note: "Up to 12, week 20's number. It is a press, but it is 2 rounds on the back half of Friday rather than stacked behind another press. Palms facing you to start, rotate outward as you press, and control the rotation on the way down too." },
+      { name: "Pallof press (resistance band)", sets: "3 x 14 each side", note: "Up to 14 each side at 3 rounds — fully back to week 20. It kept its third round from last week without complaint. If Friday runs long, this is still the round to drop first. 3-sec hold at full extension, ribs down, and do not let the torso rotate toward the band." },
+      { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Staying at 60 sec, same as Monday. Smooth and controlled, not a sprint." },
     ],
-    cooldown: "3 min — standing hamstring stretch (30 sec each leg, hand on a chair), figure-4 hip stretch (30 sec each side, lying on your back), slow breathing"
+    cooldown: "3 min — standing hamstring stretch (30 sec each leg), overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"
   },
   {
     label: "Sat", name: "Saturday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest or a gentle walk. This week is about getting the neck and back settled, not training. If you are noticeably better by now, a short walk is great. If pain is sharp or radiating, if you get numbness or tingling in the arms or legs, or if it is not improving over a week or so, please see a doctor or physio rather than training through it."
+    note: "Rest or a gentle walk. Two things worth noticing this week. First, whether the overhead press felt different in its new slot — that is the whole point of the change. Second, the inner thigh after Monday and Friday: general, even, both-sides soreness is expected and fine, but sharp, one-sided, or specifically inner-thigh soreness from lateral lunge or sumo squat is the one thing that should stop the next climb."
   },
   {
     label: "Sun", name: "Sunday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest and meal prep. Week 29 is a return week built from week 27's levels or lower, not week 28's — week 28 was never trained, so nothing was banked. Nothing ramps this week, and every movement that loads the neck or back is parked. Worth reporting before next week: (1) how the neck and back feel now — better, same or worse, and which sessions (if any) provoked them; (2) whether each of these felt fine: overhead press, bent-over row, push-ups, plank, dead bug, Romanian deadlift, hip thrust, Arnold press — this decides what returns in week 30; (3) how the inner thigh handled the bodyweight lateral lunge and sumo squat; (4) whether the overhead press fix for the Wednesday reshuffle held up before the strain — still unreported."
+    note: "Rest and meal prep. Week 29 follows a repeat of week 28, which went fine for the neck and back, so this is a light ramp: everything is already at week 20's level except the tricep extension, which adds a rep. The overhead press holds at 13 because I still never heard whether the Wednesday reshuffle fixed the third round. No round bump this week, since you are only just back from the strain. Worth reporting before next week: (1) how the neck and back felt through the week, particularly the overhead press and bent-over row; (2) whether the overhead press held up in its first slot, and whether the row felt like a rest or like more work; (3) how the inner thigh handled lateral lunge and sumo squat; (4) whether Wednesday fit inside 25 minutes; (5) how the 1.5-rep goblet squat feels, unanswered for many weeks.",
   }
 ];
 const tagStyles = {
@@ -536,8 +493,8 @@ export default function WorkoutSchedule() {
               <strong style={{ fontWeight: 500 }}>Cool-down:</strong> {d.cooldown}
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
-              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.cal}</span>
-              <span style={{ fontSize: 12, color: "#bbb" }}>{d.time}</span>
+              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.tag === "mobility" ? "~50-60 cal (recovery session)" : "~90-100 cal"}</span>
+              <span style={{ fontSize: 12, color: "#bbb" }}>~22-25 min total</span>
             </div>
           </>
         )}

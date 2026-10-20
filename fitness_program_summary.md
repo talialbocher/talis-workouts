@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-29 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_nine_workout.jsx`.
+29 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_twenty_nine_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
 
 ⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9). **Week 25 was confirmed trained on 2026-09-24** — the user reported a specific failure on its Wednesday (the overhead press's third round), which is direct evidence the session happened. That makes weeks 23 and 25 confirmed and week 24 assumed. Keep recording which weeks were *confirmed* versus *assumed*: this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
@@ -495,28 +495,18 @@ Generated 2026-10-09 by the scheduled routine. No report arrived on week 27, so 
 
 **Rule for week 29:** do not ramp off week 28. Build a return week from week 27 levels or lower, not week 28, with no rep or round increases anywhere. Neck/back-loading items need an explicit "felt fine" report before returning at full volume: overhead press, bent-over row, plank, dead bug, close-grip/knee push-ups, Arnold press, Romanian deadlift and the loaded hip-hinge work. Prefer gentle mobility (cat-cow, thoracic and chest openers, walking) and light lower-body work that does not load the spine, and drop anything that provokes pain. Ask how the neck/back is before progressing. Standing red-flag guidance applies: sharp or radiating pain, numbness or tingling in the arms or legs, or pain that is not improving warrants medical attention.
 
-### Week 29 (Return week after the neck/back strain)
+**Correction (2026-10-20): week 28 was repeated and went fine.** The user repeated the week 28 workout the following week and felt ok, so the neck and back are now reported as **felt fine** and the gate on the parked items is open. The first week 29 (a gentle bodyweight return week) and week 30 (cautious step) were generated but **never trained** and were deleted from the repo and the app. Week 28's push-up (12) and tricep (13) steps are now banked as performed.
 
-Generated 2026-10-11 on request. Week 28 was reported **not trained** (strained neck and back), so this week builds from week 27's levels or lower, with **no rep or round increases anywhere**.
+### Week 29 (Light ramp — regenerated after week 28 was repeated and felt fine)
 
-- **Parked until an explicit felt-fine report:** overhead press, bent-over row, knee/close-grip push-ups, plank, dead bug, overhead tricep extension, Arnold press, Romanian deadlift, hip thrust, goblet squat, Pallof press, and both skater finishers. Cycling and swimming are out too (sustained neck posture).
-- **Monday / Friday:** bodyweight legs only (chair squat, reverse lunge, lateral lunge, single-leg calf raise; wall sit, glute bridge, sumo squat) at 2 rounds and 8-10 reps. Adductor gate unchanged, so lateral lunge and sumo squat stay at 2 rounds.
-- **Tuesday:** easy conversational 20 min walk only.
-- **Wednesday:** replaced with neck and upper-back care: chin tuck, wall angel, light band pull-apart, seated 8 lb curl at 2 x 10/arm.
-- **Thursday:** mobility kept, gentler. Hamstring stretch stays (preference #7, 2 x 30 sec); hip flexor stretch stays; pigeon pose and spinal twist swapped for child's pose.
-- Labels lowered per day (`~50-60 cal` and similar, `~18-22 min`).
+Generated 2026-10-20 on request, replacing the deleted gentle weeks 29 and 30. Built directly from week 28.
 
-**Rule for week 30:** ask how the neck and back are and which sessions, if any, provoked them. Assume week 29 was trained per preference #9 *unless* the neck/back report says otherwise, but treat the felt-fine report as the gate: return parked items one or two at a time (curl/tricep and row first, then push-ups, then overhead press, then hinge work), at week 27 reps minus about 20 percent, one new movement per session. Red-flag guidance stands: sharp or radiating pain, numbness or tingling, or pain that is not improving warrants medical attention.
+- **Overhead tricep extension 2 x 13 → 2 x 14.** The only rep step left: every other number is already at week 20's level.
+- **Overhead press holds at 3 x 13** for a fourth week, still pending a report on the Wednesday reshuffle. Knee push-up holds at 3 x 12.
+- **No round bump**, as the user is only just back from the strain. Lateral lunge and sumo squat remain at 2 rounds pending the inner-thigh felt-fine report.
+- Labels unchanged (`~90-100 cal` / `~22-25 min total`).
 
-### Week 30 (Cautious step off the return week)
-
-Generated 2026-10-16 by the scheduled routine. No neck/back report arrived on week 29, so it is **assumed trained** (not confirmed) and the felt-fine gate is still closed.
-
-- **Legs:** chair squat 2 x 12, reverse lunge 2 x 10/leg, wall sit 2 x 25 sec, glute bridge 2 x 12. Still 2 rounds, bodyweight; lateral lunge and sumo squat unchanged (adductor gate).
-- **Wednesday:** bicep curl 2 x 12/arm, and one new movement: **supported one-arm row 8 lb, 2 x 8/arm** (hand and knee on a sofa, back supported).
-- **Tuesday walk and Thursday mobility unchanged.** Still parked: overhead press, full bent-over row, push-ups, plank, dead bug, tricep extension, Arnold press, Romanian deadlift, hip thrust, goblet squat, Pallof press, finishers, cycling, swimming.
-
-**Rule for week 31:** ask how neck/back feel and whether the supported row was fine. If fine, return one or two parked items (tricep extension, then knee push-up) at ~week 27 reps minus 20 percent; if worse, roll back to week 29. Red-flag guidance stands.
+**Rule for week 30:** assume week 29 trained. Ask how the neck and back held up on the overhead press and row. If the press report says it held, press → 3 x 14 and one round bump may be spent (tricep extension to 3 rounds is the only ungated candidate). If it failed, press drops to 11 with tempo kept. If the neck or back flared, roll back to a gentle week. Red-flag guidance stands: sharp or radiating pain, numbness or tingling, or pain that is not improving warrants medical attention.
 
 ## Open Threads / Next Steps for Week 28+
 

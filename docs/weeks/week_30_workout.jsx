@@ -268,7 +268,6 @@ const ILLUS = {
   ),
 };
 
-ILLUS["Single-leg hip thrust – 12 lb"] = ILLUS["Hip thrust – 12 lb"];
 ILLUS["Rear-foot-elevated split squat – 8 lb"] = ILLUS["Reverse lunge – 8 lb"];
 ILLUS["Supported one-arm row – 12 lb"] = ILLUS["Bent-over row – 12 lb"];
 ILLUS["Band face pull"] = () => (
@@ -281,7 +280,6 @@ ILLUS["Band face pull"] = () => (
 );
 
 const VIDEO = {
-  "Single-leg hip thrust – 12 lb": "https://www.youtube.com/results?search_query=single+leg+hip+thrust+form+tutorial+shorts",
   "Rear-foot-elevated split squat – 8 lb": "https://www.youtube.com/results?search_query=rear+foot+elevated+split+squat+form+tutorial+shorts",
   "Supported one-arm row – 12 lb": "https://www.youtube.com/results?search_query=supported+one+arm+dumbbell+row+knee+on+bench+form+shorts",
   "Band face pull": "https://www.youtube.com/results?search_query=resistance+band+face+pull+form+tutorial+shorts",
@@ -321,13 +319,13 @@ const days = [
     label: "Mon", name: "Monday", type: "Lower body strength", tag: "strength",
     warmup: "3 min — high knees x20, standing hamstring sweep x10 each leg, leg swings x10 each, ankle rolls x10 each",
     warmupItems: ["High knees", "Standing hamstring sweep", "Leg swings", "Ankle rolls"],
-    note: "Effort target for every strength set this week: stop with about 2 reps still in the tank — it should feel hard, form should hold, and if it feels easy, slow the lowering down further. Monday's legs get harder through technique, not reps, since 12 lb is the ceiling: slower lowering, pauses and single-leg work, at lower rep counts. Goblet squat and hip thrust become slow-lowering and single-leg; the reverse lunge becomes a rear-foot-elevated split squat. Lateral lunge is unchanged and still gated on the inner-thigh report. If anything pinches in the knee, hip or back, drop to the easier version from last week.",
+    note: "Effort target for every strength set this week: stop with about 2 reps still in the tank — it should feel hard, form should hold, and if it feels easy, slow the lowering down further. Monday's legs get harder through technique, not reps, since 12 lb is the ceiling: slower lowering, pauses and single-leg work, at lower rep counts. Goblet squat and hip thrust become slow-lowering; the reverse lunge becomes a rear-foot-elevated split squat. Lateral lunge is unchanged and still gated on the inner-thigh report. If anything pinches in the knee, hip or back, drop to the easier version from last week.",
     exercises: [
       { name: "Goblet squat – 12 lb", sets: "3 x 8 reps", superset: "A", note: "Fewer reps, harder reps: 4 seconds lowering, 2-second pause at the bottom, then stand up. This replaces the 1.5-rep style for now — the pause and slow descent do the same job. Chest tall, weight held at the chest, knees tracking over the toes." },
-      { name: "Single-leg hip thrust – 12 lb", sets: "3 x 6 each leg", superset: "A", note: "New this week. Shoulders on a sofa or bench, one foot on the floor and the other knee pulled in, dumbbell on the hip. Drive through the heel, squeeze for 3 seconds at the top, ribs down so the work is in the glutes and not the lower back. If it is too much, keep the free foot on the floor and lift both legs instead of one." },
+      { name: "Hip thrust – 12 lb", sets: "3 x 12 reps", superset: "A", note: "Back to the two-foot hip thrust, made harder without needing balance: lower for 4 seconds and squeeze for 3 seconds at the top, rather than adding reps. Set your shoulders on a sofa or the bottom stair instead of a wobbly bench — anything that does not move. Chin slightly tucked, ribs down, drive through the heels, dumbbell across the hips. Stop with about 2 reps left; if 12 slow reps feels easy, add a 1-second pause at the top before adding reps." },
       { name: "Rear-foot-elevated split squat – 8 lb", sets: "2 x 8 each leg", superset: "B", note: "New this week. Back foot on a sofa or low chair behind you, 8 lb in each hand, lower for 3 seconds and stand up. Hold a wall or chair back for balance the first time. Take a shorter stance if the front knee drifts past the toes or the hip flexor on the back leg pulls." },
       { name: "Lateral lunge – 8 lb", sets: "2 x 12 each side", superset: "B", note: "Unchanged — reps already at week 20's 12, rounds still at 2. Its third round waits on one answer: how the inner thigh feels the morning after." },
-      { name: "Calf raise (single leg)", sets: "2 x 15 each side", note: "Standalone, same as last week. 5-count descent, full stretch at the bottom. Stop with about 2 reps left." },
+      { name: "Calf raise (single leg)", sets: "2 x 10 each side", note: "Standalone, set at 10 each side to match what you can do with good form. 5-count descent, full stretch at the bottom. Fingertips on a wall for balance. Add reps only once 10 feels comfortable." },
       { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Staying at 60 sec — the finisher is already at its full length. Land soft, keep it smooth rather than fast." },
     ],
     cooldown: "3 min — standing hamstring stretch (30 sec each leg), calf stretch against a wall (30 sec each leg), figure-4 hip stretch (30 sec each side)"
@@ -396,7 +394,7 @@ const days = [
   },
   {
     label: "Sun", name: "Sunday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest and meal prep. Week 30 is the first week the program changes how it progresses: with 12 lb as the ceiling, legs get harder through slower lowering, pauses and single-leg work at lower rep counts, the Arnold press gives way to a supported row and a band face pull for push-pull balance, and there is a Saturday walk. Worth reporting before next week: (1) how the new single-leg hip thrust and split squat felt — balance, knee, hip or back; (2) whether the neck and back were fine, especially on the rows and face pulls; (3) whether the overhead press held up in its first slot; (4) how the inner thigh handled lateral lunge and sumo squat; (5) whether Wednesday and Friday fit inside 25 minutes.",
+    note: "Rest and meal prep. Week 30 is the first week the program changes how it progresses: with 12 lb as the ceiling, legs get harder through slower lowering, pauses and single-leg work at lower rep counts, the Arnold press gives way to a supported row and a band face pull for push-pull balance, and there is a Saturday walk. Worth reporting before next week: (1) how the slow hip thrust and the new split squat felt — balance, knee, hip or back; (2) whether the neck and back were fine, especially on the rows and face pulls; (3) whether the overhead press held up in its first slot; (4) how the inner thigh handled lateral lunge and sumo squat; (5) whether Wednesday and Friday fit inside 25 minutes.",
   }
 ];
 const tagStyles = {

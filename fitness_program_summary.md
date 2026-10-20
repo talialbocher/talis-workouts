@@ -512,12 +512,14 @@ Generated 2026-10-20 on request, replacing the deleted gentle weeks 29 and 30. B
 
 Generated 2026-10-20 on request after a review found the program had effectively stalled at week 20's ceiling (rep-creep to 14-16 at 8-12 lb), pressing outweighed pulling roughly 4:1 for a desk worker, cardio was thin, and sets had no effort target. **No heavier dumbbells** (standing preference #2): progression comes from technique, not load.
 
-- **Legs harder through technique, fewer reps:** goblet squat 3 x 8 (4-sec lowering, 2-sec pause); hip thrust becomes **single-leg hip thrust 3 x 6/leg**; reverse lunge becomes **rear-foot-elevated split squat 2 x 8/leg**; Romanian deadlift 3 x 8 (4-sec lowering); sumo squat 2 x 10 (3-sec lowering). Lateral lunge and calf raise unchanged. Adductor gate unchanged.
+- **Legs harder through technique, fewer reps:** goblet squat 3 x 8 (4-sec lowering, 2-sec pause); hip thrust is **3 x 12 with a 4-sec lowering and 3-sec squeeze** (see feedback below); reverse lunge becomes **rear-foot-elevated split squat 2 x 8/leg**; Romanian deadlift 3 x 8 (4-sec lowering); sumo squat 2 x 10 (3-sec lowering). Lateral lunge and calf raise unchanged. Adductor gate unchanged.
 - **Push/pull balance:** Arnold press removed; **supported one-arm row 12 lb 2 x 10/arm** added Friday; **band face pull 2 x 12** added Wednesday; bicep curl 3 x 15 to 2 x 12 with a 5-sec lowering. Overhead press still 3 x 13 (fifth week unreported), tricep extension 2 x 14.
 - **Cardio:** Tuesday offers an optional 6 x (1 min brisk / 1 min easy) interval structure; Saturday becomes an easy 30-40 min walk.
 - **Effort target** added to the Mon/Wed/Fri notes: stop each set about 2 reps short of failure.
 - New movements link to YouTube Shorts searches (search links with "shorts" in the query, not specific videos).
 - Deferred: small bone-loading impact work (heel drops, tiny hops) and side plank / bird dog, once the new movements are bedded in.
+
+**Feedback on week 30 Monday (2026-10-20):** the single-leg hip thrust was not doable — the bench was wobbly and the movement was too hard to follow — so the user did the old two-foot hip thrust for 15 reps. Calf raise was only 10 per leg, not 15. In response, week 30 was edited in place: hip thrust is now two-foot, 3 x 12, 4-sec lowering and 3-sec squeeze on a stable surface (sofa or stair), and calf raise is 2 x 10 per side. Single-leg hip thrust is parked; if it returns, use a floor single-leg glute bridge, not a bench. Per preference #6, targets follow what is actually completable, so calf raise stays at 10 until it feels comfortable.
 
 **Rule for week 31:** assume week 30 trained. Ask how the single-leg hip thrust and split squat felt, and whether the neck and back were fine on the row and face pull. If fine, progress by slowing the lowering further or adding a pause, then a rep (hip thrust to 3 x 8/leg), one change at a time; hold anything that was unstable. Press fix report still outstanding.
 

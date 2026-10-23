@@ -523,6 +523,15 @@ Generated 2026-10-20 on request after a review found the program had effectively
 
 **Rule for week 31:** assume week 30 trained. Ask how the single-leg hip thrust and split squat felt, and whether the neck and back were fine on the row and face pull. If fine, progress by slowing the lowering further or adding a pause, then a rep (hip thrust to 3 x 8/leg), one change at a time; hold anything that was unstable. Press fix report still outstanding.
 
+### Week 31 (Two small steps)
+
+Generated 2026-10-23 by the scheduled routine, built from week 30 (assumed trained; no report beyond the Monday hip thrust/calf feedback). One change at a time, per the week 30 rule:
+
+- **Goblet squat lowering 4 → 5 seconds** (still 3 x 8, 2-sec pause). **Band face pull 2 x 12 → 2 x 14.**
+- Everything else holds: hip thrust, split squat, RDL, sumo squat, row, curl, tricep extension, Pallof, plank. Overhead press holds at 3 x 13 for a sixth week (report still outstanding). No round bumps; adductor items still gated. No heavier weights.
+
+**Rule for week 32:** assume week 31 trained. Ask about the split squat, hip thrust, neck/back on rows and face pulls, and the press report. If fine, add one further step (e.g. split squat 3-sec to 4-sec lowering, or a 1-sec pause on the hip thrust).
+
 ## Open Threads / Next Steps for Week 28+
 
 - **Highest priority — did the Wednesday reshuffle work?** Week 26 moved overhead press to first in the session and paired it with the bent-over row instead of the knee push-up, holding it at 3 x 13. Ask specifically: did the third round hold up this time, and did the row feel like a rest or like more work? If it held, the press resumes climbing (3 x 14, then week 20's 15) and week 27 can spend a round bump again. If it still failed, reps come down to 11 with the 4-count tempo kept, and the tempo itself gets re-examined before the load does.

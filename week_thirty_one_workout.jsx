@@ -270,19 +270,18 @@ const ILLUS = {
 
 ILLUS["Split squat – 8 lb"] = ILLUS["Reverse lunge – 8 lb"];
 ILLUS["Supported one-arm row – 12 lb"] = ILLUS["Bent-over row – 12 lb"];
-ILLUS["Band face pull"] = () => (
-  <SvgWrap><Gnd /><Hd cx={50} cy={14} />
-    <Ln p={[[50,20],[50,48]]} /><Ln p={[[50,30],[34,32],[44,18]]} w={1.5} /><Ln p={[[50,30],[66,32],[56,18]]} w={1.5} />
-    <line x1="34" y1="32" x2="6" y2="30" stroke="currentColor" strokeOpacity={0.35} strokeWidth={1} strokeDasharray="4,3" />
-    <line x1="66" y1="32" x2="94" y2="30" stroke="currentColor" strokeOpacity={0.35} strokeWidth={1} strokeDasharray="4,3" />
-    <Ln p={[[50,48],[44,68],[42,79]]} /><Ln p={[[50,48],[56,68],[58,79]]} />
+ILLUS["Prone T raise"] = () => (
+  <SvgWrap><Gnd y={72} /><Hd cx={86} cy={58} r={5} />
+    <Ln p={[[80,62],[20,62]]} /><Ln p={[[20,62],[8,66]]} w={1.5} />
+    <Ln p={[[66,62],[58,44]]} w={1.5} /><Ln p={[[66,62],[58,72]]} w={1.5} />
+    <Ln p={[[66,62],[66,70]]} w={1} />
   </SvgWrap>
 );
 
 const VIDEO = {
   "Split squat – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+split+squat+form+tutorial+beginner+shorts",
   "Supported one-arm row – 12 lb": "https://www.youtube.com/results?search_query=supported+one+arm+dumbbell+row+knee+on+bench+form+shorts",
-  "Band face pull": "https://www.youtube.com/results?search_query=resistance+band+face+pull+form+tutorial+shorts",
+  "Prone T raise": "https://www.youtube.com/results?search_query=prone+t+raise+exercise+form+tutorial+beginner+shorts",
   "Goblet squat – 12 lb": "https://www.youtube.com/results?search_query=goblet+squat+dumbbell+form+tutorial",
   "Hip thrust – 12 lb": "https://www.youtube.com/results?search_query=dumbbell+hip+thrust+form+tutorial+beginner",
   "Reverse lunge – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+reverse+lunge+form+tutorial+beginner",
@@ -345,7 +344,7 @@ const days = [
     label: "Wed", name: "Wednesday", type: "Upper body + core", tag: "strength",
     warmup: "3 min — arm circles, cat-cow x10, band pull-aparts x12, tricep warm-up circles x10",
     warmupItems: ["Arm circles", "Cat-cow", "Band pull-aparts", "Tricep warm-up circles"],
-    note: "Effort target for every strength set this week: stop with about 2 reps still in the tank — it should feel hard, form should hold, and if it feels easy, slow the lowering down further. Wednesday keeps the same structure — overhead press first, paired with the bent-over row; knee push-up with the dead bug; curl with the tricep extension — with two changes aimed at balancing push and pull for a desk-sitter. The bicep curl drops to 2 rounds of 12 with a slow lowering (fewer, harder reps), and a band face pull is added at the end. Overhead press holds at 13 for another week, still pending a report on whether the first-slot fix worked. If the third round of press is a grind, the answer is 11 reps with the 4-count tempo intact.",
+    note: "Effort target for every strength set this week: stop with about 2 reps still in the tank — it should feel hard, form should hold, and if it feels easy, slow the lowering down further. Wednesday keeps the same structure — overhead press first, paired with the bent-over row; knee push-up with the dead bug; curl with the tricep extension — with two changes aimed at balancing push and pull for a desk-sitter. The bicep curl drops to 2 rounds of 12 with a slow lowering (fewer, harder reps), and a prone T raise (lying face down, no equipment) is added at the end. Overhead press holds at 13 for another week, still pending a report on whether the first-slot fix worked. If the third round of press is a grind, the answer is 11 reps with the 4-count tempo intact.",
     exercises: [
       { name: "Overhead press – 8 lb (tempo)", sets: "3 x 13 reps", superset: "A", note: "Still first in the session and holding at 13 for another week, until I hear how it went. It fell apart two weeks ago because it came behind push-ups; now it is first, paired with a pull. 4-count up, 4-count down — the tempo is the load here, so if the third round gets hard, drop to 11 reps and keep the count rather than speeding up." },
       { name: "Bent-over row – 12 lb", sets: "3 x 15 reps", superset: "A", note: "Up to 15 — week 20's number and week 18's. Paired with the overhead press on purpose: pulling gives the shoulders and triceps a full round to recover between pressing sets, which is exactly what was missing. Back flat, elbows driving toward your hips, no yanking with the lower back." },
@@ -354,7 +353,7 @@ const days = [
       { name: "Alternating bicep curl – 8 lb", sets: "2 x 12 each arm", superset: "C", note: "Down a round and three reps, but harder: 5-count lowering, full extension at the bottom, no swing from the hips. The rowing is already working the biceps, so 2 rounds is enough." },
       { name: "Overhead tricep extension – 8 lb", sets: "2 x 14 reps", superset: "C", note: "Holding at 14, 2 rounds. Elbows pointing forward rather than flared. This is still the designated trim if Wednesday runs past 25 minutes." },
       { name: "Plank hold", sets: "2 x 30 sec", note: "Standalone, week 20's number. Stop the moment your hips sag rather than grinding out the clock." },
-      { name: "Band face pull", sets: "2 x 12 reps", note: "New this week, and the answer to all the pressing. Anchor the band at about chest or face height, pull it toward your face with the elbows high and wide, squeeze the shoulder blades together for a second, and return slowly. Keep the shoulders away from the ears and the neck long — if the band is too heavy, step back. Stop with 2 reps left." },
+      { name: "Prone T raise", sets: "2 x 10 reps", note: "Replaces the band face pull — no equipment at all. Lie face down on the floor or a firm bed, forehead resting on a folded towel so the neck stays long and neutral. Arms straight out to the sides in a T, thumbs pointing to the ceiling. Squeeze the shoulder blades together and lift the arms only a few centimetres, hold for 2 seconds, then lower slowly. Keep the legs and chest relaxed on the surface, and do not arch the lower back or look up. Small and controlled is the goal; stop with about 2 reps left, and skip it if the neck or back twinges." },
     ],
     cooldown: "2 min — overhead tricep stretch (20 sec each arm), chest opener, doorframe pec stretch"
   },
@@ -394,7 +393,7 @@ const days = [
   },
   {
     label: "Sun", name: "Sunday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest and meal prep. Week 31 repeats week 30's plan, because only Monday and Wednesday of last week were trained and Friday's new movements (slow Romanian deadlift, supported one-arm row, slower sumo squat) have not been done yet. Nothing ramps. The one change is that the rear-foot-elevated split squat is replaced by a simpler split squat with both feet on the floor. Worth reporting before next week: (1) how the split squat and the slow hip thrust felt; (2) whether the neck and back were fine on the face pull and Friday's supported row; (3) whether the overhead press held up in its first slot; (4) how the inner thigh handled lateral lunge and sumo squat; (5) whether Wednesday and Friday fit inside 25 minutes.",
+    note: "Rest and meal prep. Week 31 repeats week 30's plan, because only Monday and Wednesday of last week were trained and Friday's new movements (slow Romanian deadlift, supported one-arm row, slower sumo squat) have not been done yet. Nothing ramps. The one change is that the rear-foot-elevated split squat is replaced by a simpler split squat with both feet on the floor. Worth reporting before next week: (1) how the split squat and the slow hip thrust felt; (2) whether the neck and back were fine on the prone T raise and Friday's supported row; (3) whether the overhead press held up in its first slot; (4) how the inner thigh handled lateral lunge and sumo squat; (5) whether Wednesday and Friday fit inside 25 minutes.",
   }
 ];
 const tagStyles = {

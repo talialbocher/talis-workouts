@@ -523,14 +523,14 @@ Generated 2026-10-20 on request after a review found the program had effectively
 
 **Rule for week 31:** assume week 30 trained. Ask how the single-leg hip thrust and split squat felt, and whether the neck and back were fine on the row and face pull. If fine, progress by slowing the lowering further or adding a pause, then a rep (hip thrust to 3 x 8/leg), one change at a time; hold anything that was unstable. Press fix report still outstanding.
 
-### Week 31 (Two small steps)
+### Week 31 (Repeat of week 30 — regenerated 2026-10-27)
 
-Generated 2026-10-23 by the scheduled routine, built from week 30 (assumed trained; no report beyond the Monday hip thrust/calf feedback). One change at a time, per the week 30 rule:
+The routine's original week 31 (goblet squat lowering 4 → 5 sec, face pull 12 → 14) was replaced on request. **Report on week 30: only Monday and Wednesday were trained.** Tuesday's walk, Thursday's mobility, Friday's session and Saturday's walk were skipped. Per preference #9 an explicit report of a missed session rolls the ramp back, so week 31 is **week 30 repeated with no ramps**: Friday's new movements (slow Romanian deadlift, sumo squat 2 x 10, supported one-arm row, close-grip push-up, Pallof) have never been performed, and the Monday hip thrust was done as the old 15-rep version, so the slow two-foot version is also untried. Goblet squat lowering and face pull go back to week 30's 4 sec and 2 x 12.
 
-- **Goblet squat lowering 4 → 5 seconds** (still 3 x 8, 2-sec pause). **Band face pull 2 x 12 → 2 x 14.**
-- Everything else holds: hip thrust, split squat, RDL, sumo squat, row, curl, tricep extension, Pallof, plank. Overhead press holds at 3 x 13 for a sixth week (report still outstanding). No round bumps; adductor items still gated. No heavier weights.
+- **Rear-foot-elevated split squat replaced** (user: too unclear) by a plain **split squat 8 lb, 2 x 8/leg**, both feet flat on the floor, 3-sec lowering. Illustration reuses the reverse lunge; new link is a Shorts search.
+- Everything else as week 30. No round bumps, adductor items still gated, no heavier weights.
 
-**Rule for week 32:** assume week 31 trained. Ask about the split squat, hip thrust, neck/back on rows and face pulls, and the press report. If fine, add one further step (e.g. split squat 3-sec to 4-sec lowering, or a 1-sec pause on the hip thrust).
+**Rule for week 32:** if Friday is trained and nothing flares, allow one step (goblet squat 5-sec lowering, or face pull to 14). Ask about the split squat, the slow hip thrust, neck/back on the face pull and supported row, and the press report. If sessions are being missed, shorten rather than progress.
 
 ## Open Threads / Next Steps for Week 28+
 

@@ -278,10 +278,19 @@ ILLUS["Prone T raise"] = () => (
   </SvgWrap>
 );
 
+ILLUS["Side plank (from knees)"] = () => (
+  <SvgWrap><Gnd y={72} /><Hd cx={78} cy={34} r={5} />
+    <Ln p={[[72,40],[36,52]]} /><Ln p={[[36,52],[22,64],[16,72]]} />
+    <Ln p={[[72,40],[70,70]]} w={1.5} /><Ln p={[[70,70],[80,70]]} w={1} />
+    <Ln p={[[60,44],[62,56]]} w={1.5} />
+  </SvgWrap>
+);
+
 const VIDEO = {
   "Split squat – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+split+squat+form+tutorial+beginner+shorts",
   "Supported one-arm row – 12 lb": "https://www.youtube.com/results?search_query=supported+one+arm+dumbbell+row+knee+on+bench+form+shorts",
   "Prone T raise": "https://www.youtube.com/results?search_query=prone+t+raise+exercise+form+tutorial+beginner+shorts",
+  "Side plank (from knees)": "https://www.youtube.com/results?search_query=side+plank+from+knees+form+tutorial+beginner+shorts",
   "Goblet squat – 12 lb": "https://www.youtube.com/results?search_query=goblet+squat+dumbbell+form+tutorial",
   "Hip thrust – 12 lb": "https://www.youtube.com/results?search_query=dumbbell+hip+thrust+form+tutorial+beginner",
   "Reverse lunge – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+reverse+lunge+form+tutorial+beginner",
@@ -382,7 +391,7 @@ const days = [
       { name: "Close-grip push-up (or knee)", sets: "3 x 10 reps", superset: "A", note: "Up to 10, week 20's number. Hands shoulder-width for the tricep emphasis. Knees whenever needed." },
       { name: "Sumo squat – 12 lb", sets: "2 x 10 reps", superset: "B", note: "Fewer, slower reps: 3 seconds lowering, no pause. Wide stance is adductor work — same tissue as the old strain — so it stays at 2 rounds and the tempo is moderate. Toes turned out, dumbbell at the chest." },
       { name: "Supported one-arm row – 12 lb", sets: "2 x 10 each arm", superset: "B", note: "New this week, replacing the Arnold press. One hand and the same-side knee on a sofa or chair, back flat and supported, dumbbell in the other hand. Pull the elbow toward your hip and pause for a second at the top. The support takes most of the load off the lower back — skip it and tell me if anything twinges." },
-      { name: "Pallof press (resistance band)", sets: "3 x 14 each side", note: "Up to 14 each side at 3 rounds — fully back to week 20. It kept its third round from last week without complaint. If Friday runs long, this is still the round to drop first. 3-sec hold at full extension, ribs down, and do not let the torso rotate toward the band." },
+      { name: "Side plank (from knees)", sets: "2 x 20 sec each side", note: "Replaces the Pallof press, since the band has nothing to anchor to. Lie on your side with your forearm on the floor directly under your shoulder and your knees bent at about 90 degrees. Lift your hips so your body makes a straight line from knees to head, and hold. Keep your neck long, looking at the floor in front of you, and your top hip stacked over the bottom one. Stop when the hips sag rather than grinding out the clock. Stop with about 2 reps (seconds) left, and skip it if the shoulder, neck or back twinges." },
       { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Staying at 60 sec, same as Monday. Smooth and controlled, not a sprint." },
     ],
     cooldown: "3 min — standing hamstring stretch (30 sec each leg), overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"

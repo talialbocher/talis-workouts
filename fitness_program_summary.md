@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-30 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
+32 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_two_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
 
 ⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9). **Week 25 was confirmed trained on 2026-09-24** — the user reported a specific failure on its Wednesday (the overhead press's third round), which is direct evidence the session happened. That makes weeks 23 and 25 confirmed and week 24 assumed. Keep recording which weeks were *confirmed* versus *assumed*: this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
@@ -533,6 +533,12 @@ The routine's original week 31 (goblet squat lowering 4 → 5 sec, face pull 12 
 - Everything else as week 30. No round bumps, adductor items still gated, no heavier weights.
 
 **Rule for week 32:** if Friday is trained and nothing flares, allow one step (goblet squat 5-sec lowering, or face pull to 14). Ask about the split squat, the slow hip thrust, neck/back on the prone T raise and supported row, and the press report. If sessions are being missed, shorten rather than progress.
+
+### Week 32 (Hold week 31 as trained — one small step, generated 2026-10-30)
+
+No report arrived on week 31, so per preference #9 it is **assumed trained** and week 32 takes the single step week 31's rule allowed: **goblet squat lowering 4 → 5 seconds**. Everything else is unchanged — split squat (two feet on the floor), slow two-foot hip thrust, prone T raise, side plank from knees, supported one-arm row. No round bumps, adductor items still gated, no heavier weights, no band anchor needed.
+
+**Rule for week 33:** ask whether Friday was actually done, and how the split squat, slow hip thrust, prone T raise, supported row and press felt. If clean, take one more step (face pull replacement to 12 reps on the prone T raise, or hip thrust pause). If sessions are being missed, shorten rather than progress.
 
 ## Open Threads / Next Steps for Week 28+
 

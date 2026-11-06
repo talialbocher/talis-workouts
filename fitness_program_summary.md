@@ -540,6 +540,12 @@ No report arrived on week 31, so per preference #9 it is **assumed trained** and
 
 **Rule for week 33:** ask whether Friday was actually done, and how the split squat, slow hip thrust, prone T raise, supported row and press felt. If clean, take one more step (face pull replacement to 12 reps on the prone T raise, or hip thrust pause). If sessions are being missed, shorten rather than progress.
 
+### Week 33 (Hold week 32 as trained — one small step, generated 2026-11-06)
+
+No report arrived on week 32, so per preference #9 it is **assumed trained** and week 33 takes the single step week 32's rule allowed: **prone T raise 2 x 10 → 2 x 12**. Goblet squat stays at the 5-second lowering. Everything else unchanged — split squat (two feet on the floor), slow two-foot hip thrust, side plank from knees, supported one-arm row. No round bumps, adductor items still gated, no heavier weights, no band anchor needed.
+
+**Rule for week 34:** ask whether Friday was actually done, and how the split squat, slow hip thrust, prone T raise, supported row and press felt. If clean, take one more step (hip thrust pause). If sessions are being missed, shorten rather than progress.
+
 ## Open Threads / Next Steps for Week 28+
 
 - **Highest priority — did the Wednesday reshuffle work?** Week 26 moved overhead press to first in the session and paired it with the bent-over row instead of the knee push-up, holding it at 3 x 13. Ask specifically: did the third round hold up this time, and did the row feel like a rest or like more work? If it held, the press resumes climbing (3 x 14, then week 20's 15) and week 27 can spend a round bump again. If it still failed, reps come down to 11 with the 4-count tempo kept, and the tempo itself gets re-examined before the load does.

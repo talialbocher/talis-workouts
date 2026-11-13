@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-32 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_two_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
+34 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_four_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
 
 ⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9). **Week 25 was confirmed trained on 2026-09-24** — the user reported a specific failure on its Wednesday (the overhead press's third round), which is direct evidence the session happened. That makes weeks 23 and 25 confirmed and week 24 assumed. Keep recording which weeks were *confirmed* versus *assumed*: this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
@@ -545,6 +545,12 @@ No report arrived on week 31, so per preference #9 it is **assumed trained** and
 No report arrived on week 32, so per preference #9 it is **assumed trained** and week 33 takes the single step week 32's rule allowed: **prone T raise 2 x 10 → 2 x 12**. Goblet squat stays at the 5-second lowering. Everything else unchanged — split squat (two feet on the floor), slow two-foot hip thrust, side plank from knees, supported one-arm row. No round bumps, adductor items still gated, no heavier weights, no band anchor needed.
 
 **Rule for week 34:** ask whether Friday was actually done, and how the split squat, slow hip thrust, prone T raise, supported row and press felt. If clean, take one more step (hip thrust pause). If sessions are being missed, shorten rather than progress.
+
+### Week 34 (Hold week 33 as trained — one small step, generated 2026-11-13)
+
+No report arrived on week 33 (no reply to the week 33 email), so per preference #9 it is **assumed trained** and week 34 takes the single step week 33's rule allowed: **hip thrust gets a 1-second pause at the bottom**, hips hovering just off the floor, between the 4-second lowering and the 3-second squeeze at the top; still 3 x 12. Prone T raise holds at 2 x 12, goblet squat at the 5-second lowering. Everything else unchanged. No round bumps, adductor items still gated, no heavier weights, no band anchor needed.
+
+**Rule for week 35:** ask whether Friday was actually done, and how the paused hip thrust, split squat, prone T raise, supported row and press felt. Weeks 31–34 have all been assumed trained with no report, so if one arrives showing missed sessions, roll back rather than continue. If clean, the next single step is split squat 2 x 8 → 2 x 10 per leg (or a 1-second pause at the bottom of it). If sessions are being missed, shorten rather than progress.
 
 ## Open Threads / Next Steps for Week 28+
 

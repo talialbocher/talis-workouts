@@ -546,11 +546,16 @@ No report arrived on week 32, so per preference #9 it is **assumed trained** and
 
 **Rule for week 34:** ask whether Friday was actually done, and how the split squat, slow hip thrust, prone T raise, supported row and press felt. If clean, take one more step (hip thrust pause). If sessions are being missed, shorten rather than progress.
 
-### Week 34 (Hold week 33 as trained — one small step, generated 2026-11-13)
+### Week 34 (Return week after two weeks without training — regenerated 2026-11-16)
 
-No report arrived on week 33 (no reply to the week 33 email), so per preference #9 it is **assumed trained** and week 34 takes the single step week 33's rule allowed: **hip thrust gets a 1-second pause at the bottom**, hips hovering just off the floor, between the 4-second lowering and the 3-second squeeze at the top; still 3 x 12. Prone T raise holds at 2 x 12, goblet squat at the 5-second lowering. Everything else unchanged. No round bumps, adductor items still gated, no heavier weights, no band anchor needed.
+The routine's original week 34 (hip thrust bottom pause, otherwise a hold) was replaced on request. **Report (2026-11-16): no training for the past two weeks due to travel**, so weeks 32 and 33 were **never trained** and the assumed-trained bookkeeping for them is wrong. The last (assumed) trained week is week 31. Nothing about weeks 32 and 33's steps (5-second goblet squat lowering, prone T raise at 12) is banked. Travel activity is unknown, so this follows the week 23 reasoning rather than week 21's walking-trip one.
 
-**Rule for week 35:** ask whether Friday was actually done, and how the paused hip thrust, split squat, prone T raise, supported row and press felt. Weeks 31–34 have all been assumed trained with no report, so if one arrives showing missed sessions, roll back rather than continue. If clean, the next single step is split squat 2 x 8 → 2 x 10 per leg (or a 1-second pause at the bottom of it). If sessions are being missed, shorten rather than progress.
+- **Volume down about 25 percent, nothing added:** goblet squat 3 x 6 (4-sec lowering, 2-sec pause), hip thrust 3 x 10 (3-sec lowering, no bottom pause), split squat 2 x 6/leg, lateral lunge 2 x 8/side, calf raise 2 x 8/side; overhead press 3 x 10, **bent-over row back to 2 rounds x 12**, knee push-up 3 x 9, dead bug 2 x 10/side, curl 2 x 10/arm, tricep extension 2 x 10, plank 2 x 20 sec, prone T raise 2 x 8; Romanian deadlift 3 x 6, close-grip push-up 3 x 6, sumo squat 2 x 8, supported row 2 x 8/arm, side plank 2 x 15 sec.
+- **Finishers 45 sec**, Tuesday walk at conversational effort with no intervals, Saturday walk 20-30 min. Labels `~70-80 cal` / `~18-22 min`.
+- **Thursday:** kneeling hip flexor stretch replaces the 90/90 (sitting on travel tightens hip flexors), pigeon 45 sec, spinal twist 1 round. Standing hamstring stretch untouched (preference #7).
+- Adductor items still gated, no heavier weights, no band anchor needed.
+
+**Rule for week 35:** ask whether this week was actually trained and how it felt. If it was, step back up to the week 31 levels (the last trained numbers) rather than week 33's. If sessions are being missed, shorten rather than progress. Ramp one step at a time as before.
 
 ## Open Threads / Next Steps for Week 28+
 

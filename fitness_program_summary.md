@@ -25,7 +25,7 @@
 
 ## File Deliverables
 
-34 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_four_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
+35 interactive React (.jsx) artifacts were created: `week_one_workout.jsx` through `week_thirty_five_workout.jsx` (the gentle week 29 and week 30 generated earlier were deleted; the current week 29 is the one described below).
 
 ⚠️ **Prescribed ≠ performed — but assume performed.** Weeks 19, 20, 21 and 22 were all generated and pushed but **never trained** (see weeks 21 and 23). **As of 2026-09-18 the standing rule is to assume an unreported week was trained** (preference #9). **Week 25 was confirmed trained on 2026-09-24** — the user reported a specific failure on its Wednesday (the overhead press's third round), which is direct evidence the session happened. That makes weeks 23 and 25 confirmed and week 24 assumed. Keep recording which weeks were *confirmed* versus *assumed*: this file is still a record of what was written, not of what was done, and a reported miss is what corrects a ramp.
 
@@ -556,6 +556,19 @@ The routine's original week 34 (hip thrust bottom pause, otherwise a hold) was r
 - Adductor items still gated, no heavier weights, no band anchor needed.
 
 **Rule for week 35:** ask whether this week was actually trained and how it felt. If it was, step back up to the week 31 levels (the last trained numbers) rather than week 33's. If sessions are being missed, shorten rather than progress. Ramp one step at a time as before.
+
+### Week 35 (Back up to pre-travel levels — generated 2026-11-20)
+
+No report arrived on week 34 (the return week), so per preference #9 it is **assumed trained**, and week 35 executes week 34's own rule: step back up to the **week 31 levels** (the last trained numbers), not week 33's. Built from `week_thirty_one_workout.jsx`; every number and prescription matches week 31 exactly, only the notes changed. Week 34's in-app Sunday note had already told the user "next week returns to the previous levels".
+
+- **Restored to week 31:** goblet squat 3 x 8 (4-sec lowering, 2-sec pause), hip thrust 3 x 12 (4-sec lowering, 3-sec squeeze), split squat 2 x 8/leg, lateral lunge 2 x 12/side, calf raise 2 x 10/side; overhead press 3 x 13, knee push-up 3 x 12, dead bug 2 x 16/side, curl 2 x 12/arm (5-count lowering), tricep extension 2 x 14, plank 2 x 30 sec, prone T raise 2 x 10; Romanian deadlift 3 x 8 (4-sec lowering, 1-sec pause), close-grip push-up 3 x 10, sumo squat 2 x 10, supported row 2 x 10/arm, side plank 2 x 20 sec.
+- **The one round bump:** bent-over row 2 x 12 → **3 x 15**. Nothing else gains a round.
+- **Finishers back to 60 sec**, Tuesday interval option back, Saturday walk 30-40 min. Labels `~90-100 cal` / `~22-25 min`.
+- **Thursday:** standard seven-stretch routine — 90/90 back in place of the kneeling hip flexor stretch, pigeon 60 sec, spinal twist 2 rounds.
+- **Still parked:** week 32-33's steps (5-second goblet squat lowering, prone T raise at 12) and the hip thrust bottom pause — they were never trained. Adductor items still gated at 2 rounds, no heavier weights, no band anchor needed.
+- Notes tell the user that if any restored number is too much, last week's number for that exercise is fine.
+
+**Rule for week 36:** ask whether weeks 34 and 35 were actually trained and whether any restored number was too much. If clean, take one small step (goblet squat 5-second lowering is the first candidate, then prone T raise to 12, then the hip thrust bottom pause), one at a time. If a number was too much, hold it at the reported level. If sessions are being missed, shorten rather than progress.
 
 ## Open Threads / Next Steps for Week 28+
 

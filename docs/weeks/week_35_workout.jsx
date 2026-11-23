@@ -286,11 +286,38 @@ ILLUS["Side plank (from knees)"] = () => (
   </SvgWrap>
 );
 
+ILLUS["Bodyweight squat (slow lowering)"] = ILLUS["Goblet squat – 12 lb"];
+ILLUS["Hip thrust (bodyweight)"] = ILLUS["Hip thrust – 12 lb"];
+ILLUS["Split squat (bodyweight)"] = ILLUS["Reverse lunge – 8 lb"];
+ILLUS["Lateral lunge (bodyweight)"] = ILLUS["Lateral lunge – 8 lb"];
+ILLUS["Sumo squat (bodyweight)"] = ILLUS["Sumo squat – 12 lb"];
+ILLUS["Overhead press – 8 lb, left arm (tempo)"] = ILLUS["Overhead press – 8 lb (tempo)"];
+ILLUS["Bicep curl – 8 lb, left arm"] = ILLUS["Alternating bicep curl – 8 lb"];
+ILLUS["Overhead tricep extension – 8 lb, left arm"] = ILLUS["Overhead tricep extension – 8 lb"];
+ILLUS["Figure-4 hip stretch"] = ILLUS["Pigeon pose"];
+ILLUS["Wall sit"] = () => (
+  <SvgWrap>
+    <line x1="24" y1="4" x2="24" y2="79" stroke="currentColor" strokeOpacity={0.4} strokeWidth={2} strokeLinecap="round" />
+    <Gnd /><Hd cx={32} cy={16} r={6} />
+    <Ln p={[[32,22],[32,52]]} /><Ln p={[[32,52],[62,52],[62,78]]} /><Ln p={[[32,32],[48,42]]} w={1.5} />
+  </SvgWrap>
+);
+
 const VIDEO = {
   "Split squat – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+split+squat+form+tutorial+beginner+shorts",
   "Supported one-arm row – 12 lb": "https://www.youtube.com/results?search_query=supported+one+arm+dumbbell+row+knee+on+bench+form+shorts",
   "Prone T raise": "https://www.youtube.com/results?search_query=prone+t+raise+exercise+form+tutorial+beginner+shorts",
   "Side plank (from knees)": "https://www.youtube.com/results?search_query=side+plank+from+knees+form+tutorial+beginner+shorts",
+  "Bodyweight squat (slow lowering)": "https://www.youtube.com/results?search_query=slow+tempo+bodyweight+squat+form+shorts",
+  "Hip thrust (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+hip+thrust+glute+bridge+form+shorts",
+  "Split squat (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+split+squat+form+tutorial+shorts",
+  "Lateral lunge (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+lateral+lunge+form+tutorial+shorts",
+  "Sumo squat (bodyweight)": "https://www.youtube.com/results?search_query=bodyweight+sumo+squat+form+tutorial+shorts",
+  "Figure-4 hip stretch": "https://www.youtube.com/results?search_query=supine+figure+4+hip+stretch+tutorial+shorts",
+  "Wall sit": "https://www.youtube.com/results?search_query=wall+sit+exercise+form+tutorial+shorts",
+  "Overhead press – 8 lb, left arm (tempo)": "https://www.youtube.com/results?search_query=single+arm+dumbbell+overhead+press+slow+tempo+form+shorts",
+  "Bicep curl – 8 lb, left arm": "https://www.youtube.com/results?search_query=single+arm+dumbbell+bicep+curl+form+shorts",
+  "Overhead tricep extension – 8 lb, left arm": "https://www.youtube.com/results?search_query=single+arm+overhead+tricep+extension+dumbbell+form+shorts",
   "Goblet squat – 12 lb": "https://www.youtube.com/results?search_query=goblet+squat+dumbbell+form+tutorial",
   "Hip thrust – 12 lb": "https://www.youtube.com/results?search_query=dumbbell+hip+thrust+form+tutorial+beginner",
   "Reverse lunge – 8 lb": "https://www.youtube.com/results?search_query=dumbbell+reverse+lunge+form+tutorial+beginner",
@@ -325,57 +352,56 @@ const VIDEO = {
 const days = [
   {
     label: "Mon", name: "Monday", type: "Lower body strength", tag: "strength",
-    warmup: "3 min — high knees x20, standing hamstring sweep x10 each leg, leg swings x10 each, ankle rolls x10 each",
+    warmup: "3 min — high knees x20, standing hamstring sweep x10 each leg, leg swings x10 each (left hand on a wall), ankle rolls x10 each",
     warmupItems: ["High knees", "Standing hamstring sweep", "Leg swings", "Ankle rolls"],
-    note: "Effort target for every strength set: stop with about 2 reps still in the tank — it should feel hard, form should hold. Back up to the levels you were at before the travel break (week 31's numbers, the last trained week), now that last week's return session has re-grooved the movements. Nothing new is added: goblet squat goes back to 8 slow reps, the hip thrust back to 12 with a 4-second lowering, split squat back to 8 per leg, and the skater finisher back to 60 seconds. If a number feels like too much this first week back at it, use last week's number for that exercise — that is fine, not a failure. If anything pinches in the knee, hip or back, drop to the easier version and tell me.",
+    note: "Right-palm rule for the whole week: nothing grips, presses or bears weight through the right hand, and the right hand does not lift or move dumbbells. Left-hand-only work uses the left hand; anything that hurts the palm gets skipped. If you get numbness, tingling, weakness, swelling, a deformity, or pain that is not clearly improving over a few days, please have a doctor look at it — palm injuries can involve tendons or small bones. Stop each set with about 2 reps still in the tank. Monday needs no hands, so legs carry the week: the same movements as planned, bodyweight instead of dumbbells, with the slow lowering doing the work the weight would. Keep the arms crossed over the chest or on the hips, and use the left hand only for balance on a wall or chair.",
     exercises: [
-      { name: "Goblet squat – 12 lb", sets: "3 x 8 reps", superset: "A", note: "Back to 8 reps, from last week's 6: 4 seconds lowering, 2-second pause at the bottom, then stand up. Chest tall, weight held at the chest, knees tracking over the toes. The 5-second lowering stays parked until this feels comfortable again." },
-      { name: "Hip thrust – 12 lb", sets: "3 x 12 reps", superset: "A", note: "Back to 12 reps with a 4-second lowering (up from 3) and a 3-second squeeze at the top. Shoulders on a sofa or the bottom stair — anything that does not move. Chin slightly tucked, ribs down, drive through the heels, dumbbell across the hips. The 1-second bottom pause stays parked for now." },
-      { name: "Split squat – 8 lb", sets: "2 x 8 each leg", superset: "B", note: "Back to 8 per leg, from 6. One foot a big step in front of the other, both feet flat and hip-width apart, 8 lb in each hand. Lower straight down for 3 seconds until the back knee hovers just above the floor, then push through the front heel to stand. Both feet stay put the whole set. Rest a hand on a wall or chair if you need to." },
-      { name: "Lateral lunge – 8 lb", sets: "2 x 12 each side", superset: "B", note: "Back to 12 per side, rounds still at 2. It is adductor work on the tissue you strained, so keep the range comfortable and stop if anything feels sharp or one-sided. Its third round still waits on one answer: how the inner thigh feels the morning after." },
-      { name: "Calf raise (single leg)", sets: "2 x 10 each side", note: "Back to 10 each side, from 8. 5-count descent, full stretch at the bottom, fingertips on a wall for balance. Add reps only once 10 feels comfortable." },
+      { name: "Bodyweight squat (slow lowering)", sets: "3 x 10 reps", superset: "A", note: "Replaces the goblet squat this week, because it needs two hands. Arms crossed over your chest, feet shoulder-width, lower for 4 seconds, pause for 2 seconds at the bottom, then stand up. Chest tall, knees tracking over the toes. Without the dumbbell the slow lowering and pause are what make it hard." },
+      { name: "Hip thrust (bodyweight)", sets: "3 x 12 reps", superset: "A", note: "Same set-up as before without the dumbbell: shoulders on a sofa or the bottom stair, arms crossed over your chest, feet flat. Lower for 4 seconds and squeeze for 3 seconds at the top, ribs down, driving through the heels. If it feels too easy, pause 1 second at the top before adding reps." },
+      { name: "Split squat (bodyweight)", sets: "2 x 8 each leg", superset: "B", note: "Both feet flat on the floor, one a big step in front of the other, hip-width apart, right hand on your hip and left hand ready to touch a wall or chair for balance. Lower straight down for 4 seconds until the back knee hovers above the floor, then push through the front heel to stand. Both feet stay put the whole set." },
+      { name: "Lateral lunge (bodyweight)", sets: "2 x 12 each side", superset: "B", note: "Without the dumbbell this week. Hands on hips, step wide, sit back into the hip, and push back to centre. Same inner-thigh caution as always — adductor work on the tissue you strained, so keep the range comfortable and stop if anything feels sharp or one-sided." },
+      { name: "Calf raise (single leg)", sets: "2 x 10 each side", note: "Left fingertips on a wall for balance — use the fingertips, do not push through the right palm. 5-count descent, full stretch at the bottom." },
       { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Back to 60 sec, from 45. Land soft, keep it smooth rather than fast." },
     ],
-    cooldown: "3 min — standing hamstring stretch (30 sec each leg), calf stretch against a wall (30 sec each leg), figure-4 hip stretch (30 sec each side)"
+    cooldown: "3 min — standing hamstring stretch (30 sec each leg, left hand on a chair), calf stretch against a wall (30 sec each leg, using the left hand or forearm), figure-4 hip stretch lying on your back (30 sec each side)",
   },
   {
     label: "Tue", name: "Tuesday", type: "Low-impact cardio", tag: "cardio",
     warmup: "2 min — slow walk, arm swings, ankle rolls",
     warmupItems: ["Slow walk", "Arm swings", "Ankle rolls"],
-    note: "The interval option is back: after a 4-minute easy start, do 6 rounds of 1 minute brisk (breathing hard, can only speak a few words) and 1 minute easy, then walk easy to finish. If you would rather keep it steady, that is fine — steady and brisk still counts.",
+    note: "Walking is fully fine with one hand out of action — let the right arm swing loosely or keep it relaxed at your side, whichever is more comfortable. Same plan as the week: 20 minutes, with the interval option if you feel good. Cycling and swimming are out this week because both need a grip.",
     exercises: [
-      { name: "Brisk walk or light cycling", sets: "20 min", note: "Intervals are optional: 4 min easy, then 6 x (1 min brisk + 1 min easy), then easy to finish. Otherwise a steady talk-but-slightly-breathless pace for the full 20 minutes." },
-      { name: "Alternatively: dance or swim", sets: "20 min", note: "Swimming is still a good pick: it adds shoulder and lat work that nothing else in the week covers twice." },
+      { name: "Brisk walk or light cycling", sets: "20 min", note: "Walk only this week: 4 min easy, then 6 x (1 min brisk + 1 min easy) if you want intervals, otherwise a steady talk-but-slightly-breathless pace. Let the right hand hang relaxed — do not carry anything in it." },
+      { name: "Alternatively: dance or swim", sets: "20 min", note: "Dancing is fine if you prefer it; skip the swimming this week, as it needs both hands. Keep the right hand relaxed." },
     ],
     cooldown: "2 min — slow walk, deep breathing, standing hamstring stretch (30 sec each leg)"
   },
   {
     label: "Wed", name: "Wednesday", type: "Upper body + core", tag: "strength",
-    warmup: "3 min — arm circles, cat-cow x10, band pull-aparts x12, tricep warm-up circles x10",
-    warmupItems: ["Arm circles", "Cat-cow", "Band pull-aparts", "Tricep warm-up circles"],
-    note: "Effort target for every strength set: stop with about 2 reps still in the tank — it should feel hard, form should hold. Wednesday keeps the same structure — overhead press first, paired with the bent-over row; knee push-up with the dead bug; curl with the tricep extension — and every number returns to where it was before the travel break. The one round added back this week is the bent-over row's third round; nothing else gains a round. If the third round of press is a grind, drop to 11 reps and keep the 4-count tempo intact.",
+    warmup: "3 min — slow walk, arm circles, shoulder rolls x10 backward, seated cat-cow x10 (hands resting on your thighs, not pressing)",
+    warmupItems: ["Slow walk", "Arm circles", "Shoulder rolls", "Cat-cow"],
+    note: "Right-palm rule for the whole week: nothing grips, presses or bears weight through the right hand, and the right hand does not lift or move dumbbells. Left-hand-only work uses the left hand; anything that hurts the palm gets skipped. If you get numbness, tingling, weakness, swelling, a deformity, or pain that is not clearly improving over a few days, please have a doctor look at it — palm injuries can involve tendons or small bones. Stop each set with about 2 reps still in the tank. Wednesday becomes a left-arm and core day. Every movement that grips or presses through the right hand is out: the push-up and both-hand row drop, the press, row, curl and tricep extension become left-arm only, and the right arm stays at rest. Overhead press still goes first, paired with a pull. The row is the supported kind: right forearm (not the palm) rests on a chair seat. Keep the weights at 8 and 12 lb and let the left hand do the picking up.",
     exercises: [
-      { name: "Overhead press – 8 lb (tempo)", sets: "3 x 13 reps", superset: "A", note: "Back to 13, from 10, still first in the session and paired with the row. 4-count up, 4-count down — the tempo is the load here, so if the third round gets hard, drop to 11 reps and keep the count rather than speeding up." },
-      { name: "Bent-over row – 12 lb", sets: "3 x 15 reps", superset: "A", note: "Back to 3 rounds of 15 — this week's one added round. Paired with the overhead press on purpose: pulling gives the shoulders and triceps a full round to recover between pressing sets. Back flat, elbows driving toward your hips, no yanking with the lower back. If the third round feels like too much, stop at 2 and tell me." },
-      { name: "Knee push-up (progressing to full)", sets: "3 x 12 reps", superset: "B", note: "Back to 12, from 9, paired with the dead bug. Knees whenever you need them — the rep still counts." },
-      { name: "Dead bug", sets: "2 x 16 each side", superset: "B", note: "Back to 16 each side, from 10. Lower back stays flat — shorten the range before you let it arch." },
-      { name: "Alternating bicep curl – 8 lb", sets: "2 x 12 each arm", superset: "C", note: "Back to 12 each arm with the 5-count lowering. Full extension at the bottom, no swing from the hips. The rowing is already working the biceps, so 2 rounds is enough." },
-      { name: "Overhead tricep extension – 8 lb", sets: "2 x 14 reps", superset: "C", note: "Back to 14, 2 rounds. Elbows pointing forward rather than flared. Still the designated trim if Wednesday runs past 25 minutes." },
-      { name: "Plank hold", sets: "2 x 30 sec", note: "Back to 30 seconds, from 20. Stop the moment your hips sag rather than grinding out the clock." },
-      { name: "Prone T raise", sets: "2 x 10 reps", note: "Back to 10, from 8. Lie face down with your forehead on a folded towel so the neck stays long. Arms out in a T, thumbs up, squeeze the shoulder blades and lift the arms only a few centimetres, hold 2 seconds, lower slowly. Keep the legs and chest relaxed and do not arch the lower back or look up. Skip it if the neck or back twinges." },
+      { name: "Overhead press – 8 lb, left arm (tempo)", sets: "3 x 10 reps", superset: "A", note: "Left arm only, 8 lb, standing tall with the right arm relaxed at your side. 4-count up, 4-count down. Stop if your back arches or your neck tenses — ribs stay down. Drop to 8 reps if the third round is a grind." },
+      { name: "Supported one-arm row – 12 lb", sets: "3 x 10 reps (left arm)", superset: "A", note: "Left arm only this week. Stand beside a chair or sofa arm, rest your right forearm (not the palm) on the seat and lean forward with a flat back, 12 lb in your left hand hanging down. Pull the elbow toward your hip and pause for a second at the top. Do not put weight through the right hand — if forearm pressure bothers the palm, rest the forearm on a pillow or use a high table instead." },
+      { name: "Dead bug", sets: "2 x 12 each side", superset: "B", note: "Arms and legs only, no gripping. Reach the arms up toward the ceiling with open hands and loose fingers (no fists), lower the opposite arm and leg slowly, and keep your lower back flat — shorten the range before you let it arch. Down from 16 per side while the upper body is out." },
+      { name: "Prone T raise", sets: "2 x 10 reps", superset: "B", note: "Lie face down, forehead on a folded towel, arms out in a T with the thumbs pointing up and the hands open and relaxed (no pressing into the floor). Squeeze the shoulder blades together and lift the arms a few centimetres, hold 2 seconds, lower slowly. Small and controlled; skip it if the neck, back or right palm twinges." },
+      { name: "Bicep curl – 8 lb, left arm", sets: "2 x 12 reps", superset: "C", note: "Left arm only, 8 lb, 5-count lowering, full extension at the bottom, no swing from the hips. The right arm rests." },
+      { name: "Overhead tricep extension – 8 lb, left arm", sets: "2 x 12 reps", superset: "C", note: "Left arm only, 8 lb, elbow pointing forward rather than flared, left hand holding the dumbbell upright. Stop if your back arches. Still the designated trim if Wednesday runs past 25 minutes." },
+      { name: "Plank hold", sets: "2 x 30 sec", note: "On the forearms with the right hand open and relaxed — rest on the forearm, not the palm, and do not make a fist. If the right palm or wrist complains at all, skip it and do an extra round of dead bug instead. Stop the moment your hips sag." },
     ],
-    cooldown: "2 min — overhead tricep stretch (20 sec each arm), chest opener, doorframe pec stretch"
+    cooldown: "2 min — overhead tricep stretch (20 sec each arm; use the left hand to help on the right elbow, and just reach with the left arm), doorframe pec stretch on the forearms (20 sec each side), gentle upper-trap stretch (ear toward shoulder, no pulling)",
   },
   {
     label: "Thu", name: "Thursday", type: "Mobility + recovery", tag: "mobility",
     warmup: null,
-    note: "Back to the standard seven-stretch routine now that the travel is behind you: the 90/90 hip stretch returns in place of the kneeling hip flexor stretch, pigeon pose goes back to 60 seconds and the spinal twist to 2 rounds. The standing hamstring stretch is untouched, as always.",
+    note: "Same mobility routine with the hand-loaded parts adjusted for the right palm: cat-cow is done seated with hands resting on the thighs, the 90/90 skips the hands-forward fold, and pigeon pose (which presses through the palms) is replaced by the figure-4 hip stretch lying on your back. Standing hamstring stretch is untouched, with the left hand on a chair.",
     exercises: [
-      { name: "Standing hamstring stretch", sets: "2 x 45 sec each leg", note: "Unchanged, and the one that never moves. Foot forward on a low step or the floor, hinge from the hips with a flat back. No bouncing." },
-      { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Full breath with every rep — inhale into the arch, exhale into the round." },
-      { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Back in this week, taking its slot back from the kneeling hip flexor stretch. Both knees at right angles, sit tall first, then walk the hands forward over the front shin. Stop where it is a stretch, not a pinch." },
-      { name: "Pigeon pose", sets: "2 x 60 sec each side", note: "Back to the full 60 sec. Prop the hip on a cushion if the knee complains." },
-      { name: "Overhead tricep stretch", sets: "1 x 30 sec each arm", note: "Reach one arm overhead, bend the elbow, gently pull with the other hand." },
+      { name: "Standing hamstring stretch", sets: "2 x 45 sec each leg", note: "Unchanged, and the one that never moves. Foot forward on a low step or the floor, hinge from the hips with a flat back, left hand resting on a chair or counter if you need balance. No bouncing." },
+      { name: "Cat-cow", sets: "2 x 10 slow reps", note: "Seated version this week: sit tall on a chair with your hands resting on your thighs, not pressing. Inhale to arch and lift the chest, exhale to round the back. Full breath with every rep." },
+      { name: "90/90 hip stretch", sets: "2 x 45 sec each side", note: "Both knees at right angles. Sit tall and stay tall — skip the hands-forward fold this week since it needs the palms on the floor. If sitting upright is hard, put a cushion under your seat." },
+      { name: "Figure-4 hip stretch", sets: "2 x 60 sec each side", note: "Replaces pigeon pose this week, because pigeon presses through the hands. Lie on your back with both knees bent and feet on the floor, cross the right ankle over the left knee, then pull the left thigh toward you by wrapping the left hand behind the thigh (or just let gravity do it if the right palm cannot help). Repeat on the other side. No pinching in the knee." },
+      { name: "Overhead tricep stretch", sets: "1 x 30 sec each arm", note: "Reach one arm overhead, bend the elbow, and gently pull the elbow with the other hand. For the right arm use the left hand; for the left arm, just reach without pulling — the right palm sits this out." },
       { name: "Supine spinal twist", sets: "2 x 45 sec each side", note: "Back to 2 rounds. Let the knee drop completely and keep both shoulders on the floor." },
       { name: "Legs-up-the-wall", sets: "1 x 4 min", note: "Standard 4 min. Eyes closed, nothing else going on." },
     ],
@@ -383,26 +409,26 @@ const days = [
   },
   {
     label: "Fri", name: "Friday", type: "Full body strength", tag: "strength",
-    warmup: "3 min — high knees x20, goblet squat hold (12 lb, 20 sec), wrist circles",
-    warmupItems: ["High knees", "Goblet squat hold", "Wrist circles"],
-    note: "Effort target for every strength set: stop with about 2 reps still in the tank — it should feel hard, form should hold. Friday returns to its pre-break numbers as well: slow Romanian deadlift at 8 with the 1-second bottom pause back in, supported row at 10 per arm, side plank at 20 seconds, finisher at 60 seconds. Sumo squat stays at 2 rounds under the same adductor caution as the lateral lunge. Close-grip push-up sits behind the RDL, which is legs, so the triceps arrive fresh.",
+    warmup: "3 min — slow walk, high knees x20, hip circles x10 each way, bodyweight squat x8 (arms crossed)",
+    warmupItems: ["Slow walk", "High knees", "Hip circles"],
+    note: "Right-palm rule for the whole week: nothing grips, presses or bears weight through the right hand, and the right hand does not lift or move dumbbells. Left-hand-only work uses the left hand; anything that hurts the palm gets skipped. If you get numbness, tingling, weakness, swelling, a deformity, or pain that is not clearly improving over a few days, please have a doctor look at it — palm injuries can involve tendons or small bones. Stop each set with about 2 reps still in the tank. Friday has no pressing and no two-hand lifting this week. Romanian deadlift runs with 12 lb in the left hand only, the sumo squat is bodyweight, the close-grip push-up is swapped for a wall sit (hands free), and the supported row is left arm only with the right forearm resting. Wall sit sits behind the RDL, which is the hinge, so the quads and the hamstrings work in turn.",
     exercises: [
-      { name: "Romanian deadlift – 12 lb", sets: "3 x 8 reps", superset: "A", note: "Back to 8 slow reps, from 6: 4 seconds lowering, 1-second pause at the bottom, then stand tall. Moderate range — stop where you feel the hamstring stretch, not where the back rounds." },
-      { name: "Close-grip push-up (or knee)", sets: "3 x 10 reps", superset: "A", note: "Back to 10, from 6. Hands shoulder-width for the tricep emphasis. Knees whenever needed." },
-      { name: "Sumo squat – 12 lb", sets: "2 x 10 reps", superset: "B", note: "Back to 10, from 8, with a 3-second lowering and no pause. Wide stance is adductor work — same tissue as the old strain — so it stays at 2 rounds. Toes turned out, dumbbell at the chest." },
-      { name: "Supported one-arm row – 12 lb", sets: "2 x 10 each arm", superset: "B", note: "Back to 10 each arm, from 8. One hand and the same-side knee on a sofa or chair, back flat and supported, dumbbell in the other hand. Pull the elbow toward your hip and pause for a second at the top. Skip it and tell me if anything twinges." },
-      { name: "Side plank (from knees)", sets: "2 x 20 sec each side", note: "Back to 20 seconds, from 15. Forearm on the floor directly under the shoulder, knees bent at about 90 degrees, hips lifted so the body makes a straight line from knees to head. Keep the neck long and the top hip stacked over the bottom one. Stop when the hips sag." },
+      { name: "Romanian deadlift – 12 lb", sets: "3 x 8 reps (left hand)", superset: "A", note: "12 lb in your left hand, held along the front of the thigh, right hand resting on your hip. Hinge at the hips with a flat back, 4 seconds lowering and a 1-second pause at the bottom, then stand tall. Stop where you feel the hamstring stretch, not where the back rounds. The weight pulls toward one side, so keep the shoulders square." },
+      { name: "Wall sit", sets: "2 x 25 sec", superset: "A", note: "Replaces the close-grip push-up, which needs the palms. Back flat against a wall, feet about 60 cm out, slide down until the thighs are roughly parallel to the floor (higher is fine), arms crossed over your chest. Breathe and keep the neck relaxed. Stop with a few seconds left." },
+      { name: "Sumo squat (bodyweight)", sets: "2 x 10 reps", superset: "B", note: "Bodyweight this week, because it needs two hands on the dumbbell. Wide stance, toes turned out, arms crossed over your chest, 3 seconds lowering. Wide stance is adductor work on the strained tissue, so it stays at 2 rounds." },
+      { name: "Supported one-arm row – 12 lb", sets: "2 x 10 reps (left arm)", superset: "B", note: "Left arm only. Right forearm (not the palm) rests on a chair seat, flat back, 12 lb in the left hand. Pull the elbow toward your hip and pause for a second. If the right forearm pressure bothers the palm, rest it on a pillow or use a higher surface." },
+      { name: "Side plank (from knees)", sets: "2 x 20 sec each side", note: "On the forearm with the hand open and relaxed — rest on the forearm, not the palm. Knees bent, hips lifted in a straight line. If the right palm or wrist complains on the right side, skip that side and do two rounds on the left only, or an extra dead bug round instead." },
       { name: "Low-impact skaters (finisher)", sets: "60 sec continuous", note: "Back to 60 sec, same as Monday. Smooth and controlled, not a sprint." },
     ],
-    cooldown: "3 min — standing hamstring stretch (30 sec each leg), overhead tricep stretch (20 sec each arm), pigeon pose (45 sec each side)"
+    cooldown: "3 min — standing hamstring stretch (30 sec each leg, left hand on a chair), overhead tricep stretch (20 sec each arm, left hand helps the right elbow), figure-4 hip stretch lying on your back (45 sec each side)",
   },
   {
     label: "Sat", name: "Saturday", type: "Easy walk (optional)", tag: "rest", isRest: true,
-    note: "Easy walk day: 30 to 40 minutes at a conversational pace, outdoors if the weather allows. This is the main way the week gets closer to the usual 150 minutes of movement, so it is worth doing even if the strength days were tiring — but skip it if the neck, back or legs feel sore. Two things worth noticing this week: how the legs and back feel the morning after Monday and Friday now that the numbers are back up, and the inner thigh after the lateral lunge and sumo squat — general, even soreness is expected, but sharp or one-sided inner-thigh soreness is the one thing that should stop the next climb.",
+    note: "Easy walk, 30 to 40 minutes at a conversational pace, if the hand and legs feel good. Let the right hand hang relaxed. Two things worth noticing this week: how the right palm is doing day to day (better, same or worse — and what aggravates it), and the inner thigh after the lateral lunge and sumo squat.",
   },
   {
     label: "Sun", name: "Sunday", type: "Rest", tag: "rest", isRest: true,
-    note: "Rest and meal prep. Week 35 steps back up from last week's return week to the levels you were training at before the travel break: reps, tempos and pauses return, the bent-over row gets its third round back, the finishers are 60 seconds again, the Tuesday interval option is back, and Thursday swaps the 90/90 back in. Nothing new is added. If this week goes well, next week takes one small step forward from here. Worth reporting before next week: (1) whether you got this week's sessions in, and if any number was too much; (2) how the legs, back and neck felt after each session; (3) whether the overhead press held up in its first slot; (4) how the inner thigh handled the lateral lunge and sumo squat; (5) whether Wednesday and Friday fit inside 25 minutes.",
+    note: "Rest and meal prep. This week is week 35 reworked around the right palm: legs went bodyweight, Wednesday became a left-arm and core day, and pressing, push-ups, two-hand lifts, hand-supported poses and band work are all out until the palm is healed. Worth reporting before next week: (1) how the right palm is — whether it can grip, bear weight or press yet; (2) how the single-arm rows, press and Romanian deadlift felt on the back and neck; (3) how the legs held up to the slow bodyweight work; (4) how the inner thigh handled the lateral lunge and sumo squat; (5) whether Wednesday and Friday fit inside 25 minutes.",
   }
 ];
 const tagStyles = {
@@ -516,8 +542,8 @@ export default function WorkoutSchedule() {
               <strong style={{ fontWeight: 500 }}>Cool-down:</strong> {d.cooldown}
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
-              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.tag === "mobility" ? "~50-60 cal (recovery session)" : "~90-100 cal"}</span>
-              <span style={{ fontSize: 12, color: "#bbb" }}>~22-25 min total</span>
+              <span style={{ fontSize: 12, color: "#6b7280" }}>{d.tag === "mobility" ? "~50-60 cal (recovery session)" : "~80-90 cal"}</span>
+              <span style={{ fontSize: 12, color: "#bbb" }}>~20-24 min total</span>
             </div>
           </>
         )}

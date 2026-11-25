@@ -578,6 +578,8 @@ No report arrived on week 34 (the return week), so per preference #9 it is **ass
 - **Hand-loaded warm-ups and stretches adapted:** no band pull-aparts, wrist circles or goblet squat hold; cat-cow seated with hands on thighs; 90/90 without the forward fold; **pigeon pose replaced by figure-4 hip stretch on the back**; tricep stretch helped by the left hand only; cycling and swimming out. Standing hamstring stretch kept (preference #7), with the left hand on a chair.
 - **Dropped round bump:** bent-over row's third round is gone for this week. New items link to YouTube Shorts searches. Labels `~80-90 cal` / `~20-24 min`.
 
+**Update 2026-11-25:** the injury is actually the **right thumb and finger**, and the user can hold weights — just not do push-ups or press through the hand. Wednesday was edited in place: two-arm weights return (overhead press 3 x 10, bent-over row 3 x 12, alternating curl 2 x 12, overhead tricep extension 2 x 12, dead bug 2 x 16/side), the push-up stays dropped, prone T raise and forearm plank stay, and each note says to drop to left-hand-only or the supported row if the thumb or finger hurts. Monday and Friday were not changed (bodyweight legs; Friday still left-hand RDL and supported row) and can be loosened on request.
+
 **Rule for week 36:** ask how the right palm is. If it can bear weight and grip again, return two-hand and palm-loaded work gradually (push-ups on knees or incline first, then goblet squat, two-hand row) at no more than week 34's reps. If it is still out, repeat this plan. Assume week 35 trained only if reported; the injury may mean sessions were missed.
 
 ## Open Threads / Next Steps for Week 28+
